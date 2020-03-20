@@ -10,7 +10,7 @@ title: COVID-19 México
 - Crear una manera fácil de descargar los datos recopilados de México. 
 - Realizar análisis con los datos existentes para generar previsiones y recomendaciones gubernamentales.
 
-#Casos
+# Casos
 
 Name | Lunch order | Spicy      | Owes
 ------- | ---------------- | ---------- | ---------:
