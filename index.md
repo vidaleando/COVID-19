@@ -2,7 +2,7 @@
 layout: page
 title: COVID-19 México
 ---
-# En construcción
+###### En construcción
 
 # Objetivos
 
@@ -10,8 +10,7 @@ title: COVID-19 México
 - Crear una manera fácil de descargar los datos recopilados de México. 
 - Realizar análisis con los datos existentes para generar previsiones y recomendaciones gubernamentales.
 
-# Casos
-
+#Casos
 
 | TOTALES | RECUPERADOS | EN LAS ÚLTIMAS 24 HRS |
 |:-------:|:-----------:|:---------------------:|
