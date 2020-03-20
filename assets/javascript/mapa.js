@@ -1,5 +1,6 @@
 (function() {
 
+  var css_class = "img-fluid";
   var height = 600;
   var width = 900;
   var projection = d3.geo.mercator();
@@ -18,8 +19,7 @@
 
   var svg = d3.select("#map")
       .append("svg")
-      .attr("width", width)
-      .attr("height", height);
+      .attr("class", css_class);
 
   d3.json('../assets/javascript/geo-data.json', function(data) {
     var states = topojson.feature(data, data.objects.MEX_adm1);
