@@ -13,6 +13,13 @@ title: COVID-19 México
 # Casos
 | TOTALES | RECUPERADOS | EN LAS ÚLTIMAS 24 HRS |
 |:-------:|:-----------:|:---------------------:|
+<table class="tg">
+  <tr>
+    <th class="tg-c3ow">TOTALES</th>
+    <th class="tg-c3ow">RECUPERADOS</th>
+    <th class="tg-c3ow">EN LAS ÚLTIMAS 24 HRS</th>
+  </tr>
+</table>
 
 # Llamado a la comunidad para resolución de conflictos
 
