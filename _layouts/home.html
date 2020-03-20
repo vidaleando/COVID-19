@@ -10,6 +10,12 @@ layout: default
   </header>
   {%- endif -%}
 
+<div id="map"></div>
+<div id="tooltip"></div>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script src="../assets/javascript/mapa.js"></script>
+
 <h1>Casos</h1>
 <div class="row">
 <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
@@ -34,6 +40,7 @@ layout: default
   </div>
 </div>
 </div>
+   
 <button type="button" class="btn btn-primary btn-lg btn-block btn-info">Descarga los datos</button>
 
   <section>
