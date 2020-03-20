@@ -4,7 +4,9 @@ var margin = {top: 10, right: 100, bottom: 30, left: 30},
     height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-var svg = d3.select("#my_dataviz")
+
+var svg = d3.select("#grafica")
+
   .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -16,14 +18,16 @@ var svg = d3.select("#my_dataviz")
 d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_connectedscatter.csv", function(data) {
 
     // List of groups (here I have one group per column)
-    var allGroup = ["Usual", "Logarítmica"]
+
+    var allGroup = ["valueA", "valueB", "valueC"]
+
 
     // add the options to the button
     d3.select("#selectButton")
       .selectAll('myOptions')
-     	.data(allGroup)
+      .data(allGroup)
       .enter()
-    	.append('option')
+      .append('option')
       .text(function (d) { return d; }) // text showed in the menu
       .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
@@ -99,3 +103,4 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/da
     })
 
 })
+
