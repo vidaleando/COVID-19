@@ -4,22 +4,16 @@ title: COVID-19 México
 ---
 # En construcción
 
-# Objetivos:
+# Objetivos
 
 - Crear una plataforma para _visualizar_ datos sobre la evolución de la pandemia del Coronavirus en México, ya sea por entidad federativa, en conjunto, o con respecto a otros países.
 - Crear una manera fácil de descargar los datos recopilados de México. 
 - Realizar análisis con los datos existentes para generar previsiones y recomendaciones gubernamentales.
 
 # Casos
+
 | TOTALES | RECUPERADOS | EN LAS ÚLTIMAS 24 HRS |
 |:-------:|:-----------:|:---------------------:|
-<table class="tg">
-  <tr>
-    <th class="tg-c3ow">TOTALES</th>
-    <th class="tg-c3ow">RECUPERADOS</th>
-    <th class="tg-c3ow">EN LAS ÚLTIMAS 24 HRS</th>
-  </tr>
-</table>
 
 # Llamado a la comunidad para resolución de conflictos
 
