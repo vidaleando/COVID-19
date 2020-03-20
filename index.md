@@ -2,7 +2,8 @@
 layout: page
 title: COVID-19 México
 ---
-###### En construcción
+
+###{:.text-muted} En construcción
 
 # Objetivos
 
@@ -12,7 +13,7 @@ title: COVID-19 México
 
 # Casos
 
-{:.table table-hover}
+{:.table .table-hover}
 totales | recuperados | en las últimas 24 hrs.
 :-------: | :----------------: | :----------:
  1234 | 34 | 48  
