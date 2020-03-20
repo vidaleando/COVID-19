@@ -3,7 +3,8 @@ layout: page
 title: COVID-19 México
 ---
 
-{:.h3 .text-muted} En construcción
+{:.text-muted} 
+###En construcción
 
 # Objetivos
 
