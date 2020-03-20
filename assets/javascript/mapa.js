@@ -1,8 +1,8 @@
 (function() {
 
   var css_class = "img-fluid block";
-  var height = 600;
-  var width = 900;
+  var height = "100%";
+  var width = "100%";
   var projection = d3.geo.mercator();
   var map = void 0;
   var mexico = void 0;
@@ -19,7 +19,9 @@
 
   var svg = d3.select("#map")
       .append("svg")
-      .attr("class", css_class);
+      .attr("class", css_class)
+      .attr("height", height)
+      .attr("width", width);
 
   d3.json('../assets/javascript/geo-data.json', function(data) {
     var states = topojson.feature(data, data.objects.MEX_adm1);
