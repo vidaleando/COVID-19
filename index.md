@@ -14,7 +14,7 @@ title: COVID-19 México
 
 totales | recuperados | en las últimas 24 hrs.
 ------- | ---------------- | ----------:
-Joan  | saag paneer | medium | $11
+Joan  | saag paneer | medium 
 
 
 # Llamado a la comunidad para resolución de conflictos
