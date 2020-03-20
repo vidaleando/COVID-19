@@ -1,5 +1,5 @@
 // The svg
-var svg = d3.select("svg"),
+var svg = d3.select("#mapa"),
   width = +svg.attr("width"),
   height = +svg.attr("height");
 
@@ -25,7 +25,7 @@ d3.queue()
 function ready(error, topo) {
 
   // Draw the map
-  svg.append("f")
+  svg.append("g")
     .selectAll("path")
     .data(topo.features)
     .enter()
