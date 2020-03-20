@@ -1,6 +1,6 @@
 (function() {
 
-  var css_class = "img-fluid";
+  var css_class = "img-fluid block";
   var height = 600;
   var width = 900;
   var projection = d3.geo.mercator();
