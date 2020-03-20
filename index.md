@@ -12,8 +12,8 @@ title: COVID-19 México
 
 # Casos
 
-totales | recuperados | en las últimas 24 hrs.      | Owes
-------- | ---------------- | ---------- | ---------:
+totales | recuperados | en las últimas 24 hrs.
+------- | ---------------- | ----------:
 Joan  | saag paneer | medium | $11
 
 
