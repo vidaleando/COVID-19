@@ -14,9 +14,7 @@ title: COVID-19 México
 
 totales| recuperados | en las últimas 24 hrs.      | Owes
 ------- | ---------------- | ---------- | ---------:
-Joan  | saag paneer | medium | $11
-Sally  | vindaloo        | mild       | $14
-Erin   | lamb madras | HOT      | $5
+
 
 # Llamado a la comunidad para resolución de conflictos
 
