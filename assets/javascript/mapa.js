@@ -19,6 +19,7 @@
 
   var svg = d3.select("#map")
       .append("svg")
+      .attr("class", css_class)
       .attr("height", height)
       .attr("width", width);
 
