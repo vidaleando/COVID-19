@@ -14,9 +14,7 @@ layout: default
 <h1 class="text-center">Mapa</h1>
 <div id="map" class="d-block text-center"></div>
 <div id="tooltip" class="text-center"></div>
-<script src="https://d3js.org/d3.v3.min.js"></script>
-<script src="https://d3js.org/topojson.v1.min.js"></script>
-<script src="{{ "/assets/javascript/mapa.js" | relative_url }}"></script>
+
 
 <h1 class="text-center">Casos</h1>
 <div class="row d-flex justify-content-center">
@@ -43,18 +41,14 @@ layout: default
 </div>
 </div>
 
-<select id="selectButton"></select>
-<div class="row d-flex justify-content-center">
 <!--INICIA LA GRAFICA-->
 <!-- Initialize a select button -->
+<select id="selectButton"></select>
+<div class="row d-flex justify-content-center">
 
 
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
-
-<!-- Color Scale -->
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-
 
 
 </div>
@@ -98,3 +92,4 @@ layout: default
 </div>
 
 <script src="{{ "/assets/javascript/grafica.js" | relative_url }}"></script>
+<script src="{{ "/assets/javascript/mapa.js" | relative_url }}"></script>
