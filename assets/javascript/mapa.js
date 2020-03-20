@@ -1,5 +1,5 @@
 // The svg
-var svg = d3.select("#mapa"),
+var svg = d3.select("#mapa").append("svg"),
   width = +svg.attr("width"),
   height = +svg.attr("height");
 
