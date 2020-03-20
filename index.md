@@ -12,6 +12,7 @@ title: COVID-19 México
 
 # Casos
 
+
 | TOTALES | RECUPERADOS | EN LAS ÚLTIMAS 24 HRS |
 |:-------:|:-----------:|:---------------------:|
 
