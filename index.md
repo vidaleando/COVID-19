@@ -14,7 +14,7 @@ title: COVID-19 México
 
 totales | recuperados | en las últimas 24 hrs.
 ------- | ---------------- | ----------:
-  |  |  
+ 1234 | 34 | 48  
 
 
 # Llamado a la comunidad para resolución de conflictos
