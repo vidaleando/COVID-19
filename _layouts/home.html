@@ -5,7 +5,7 @@ layout: default
 <div>
 
   {%- if page.title -%}
-  <header>
+  <header class="hola">
     <h1>{{ page.title }}</h1>
   </header>
   {%- endif -%}
@@ -13,6 +13,7 @@ layout: default
   <section>
     {{ content }}
   </section>
+
   <h1>Casos</h1>
 <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
   <div class="card-header">Header</div>
@@ -56,6 +57,7 @@ layout: default
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 </div>
+
   {%- if site.posts.size > 0 -%}
     <p class="h4">{{ page.list_title | default: "Posts" }}</p>
     <ul class="list-unstyled">
