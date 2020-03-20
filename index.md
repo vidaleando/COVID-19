@@ -12,8 +12,9 @@ title: COVID-19 México
 
 # Casos
 
-totales| recuperados | en las últimas 24 hrs.      | Owes
+totales | recuperados | en las últimas 24 hrs.      | Owes
 ------- | ---------------- | ---------- | ---------:
+Joan  | saag paneer | medium | $11
 
 
 # Llamado a la comunidad para resolución de conflictos
