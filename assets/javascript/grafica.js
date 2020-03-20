@@ -16,7 +16,7 @@ var svg = d3.select("#my_dataviz")
 d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_connectedscatter.csv", function(data) {
 
     // List of groups (here I have one group per column)
-    var allGroup = ["Usual", "Logarítmica"]
+    var allGroup = ["valueA", "valueB", "valueC"]
 
     // add the options to the button
     d3.select("#selectButton")
