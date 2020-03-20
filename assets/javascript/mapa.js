@@ -21,7 +21,7 @@
       .attr("width", width)
       .attr("height", height);
 
-  d3.json('geo-data.json', function(data) {
+  d3.json('../assets/javascript/geo-data.json', function(data) {
     var states = topojson.feature(data, data.objects.MEX_adm1);
 
     var b, s, t;
