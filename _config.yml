@@ -21,6 +21,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 #url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
 github_username:  vidaleando
+markdown: kramdown
 
 repository: "nicolas-van/bootstrap-4-github-pages"
 
@@ -31,8 +32,8 @@ plugins:
 
 # A list of the pages to display in the navigation bar
 header_pages:
-  -Entidades federativas
-  -Predicciones
+  #-Entidades federativas
+  #-Predicciones
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
