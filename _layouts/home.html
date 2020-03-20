@@ -10,10 +10,6 @@ layout: default
   </header>
   {%- endif -%}
 
-  <section>
-    {{ content }}
-  </section>
-
 <h1>Casos</h1>
 <div class="d-block">
 <div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
@@ -39,6 +35,11 @@ layout: default
 </div>
 </div>
 <button type="button" class="btn btn-primary btn-lg btn-block btn-info">Descarga los datos</button>
+
+  <section>
+    {{ content }}
+  </section>
+
 
   {%- if site.posts.size > 0 -%}
     <p class="h4">{{ page.list_title | default: "Posts" }}</p>
