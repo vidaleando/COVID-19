@@ -3,20 +3,22 @@ layout: default
 ---
 
 <div>
-
+{% comment %}
   {%- if page.title -%}
   <header>
     <h1>{{ page.title }}</h1>
   </header>
   {%- endif -%}
+{% endcomment %}
 
+<h1 class="text-center">Casos</h1>
 <div id="map" class="d-block text-center"></div>
 <div id="tooltip"></div>
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script src="https://d3js.org/topojson.v1.min.js"></script>
 <script src="../assets/javascript/mapa.js"></script>
 
-<h1>Casos</h1>
+<h1 class="text-center">Casos</h1>
 <div class="row d-flex justify-content-center">
 <div class="card text-white bg-danger mb-3 col-md-4" style="max-width: 20rem;">
   <div class="card-header">Totales</div>
