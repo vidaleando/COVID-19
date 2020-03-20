@@ -21,9 +21,9 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/da
     // add the options to the button
     d3.select("#selectButton")
       .selectAll('myOptions')
-     	.data(allGroup)
+      .data(allGroup)
       .enter()
-    	.append('option')
+      .append('option')
       .text(function (d) { return d; }) // text showed in the menu
       .attr("value", function (d) { return d; }) // corresponding value returned by the button
 
@@ -99,3 +99,4 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/da
     })
 
 })
+
