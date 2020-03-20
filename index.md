@@ -12,7 +12,7 @@ title: COVID-19 México
 
 # Casos
 
-Name | Lunch order | Spicy      | Owes
+totales| recuperados | en las últimas 24 hrs.      | Owes
 ------- | ---------------- | ---------- | ---------:
 Joan  | saag paneer | medium | $11
 Sally  | vindaloo        | mild       | $14
