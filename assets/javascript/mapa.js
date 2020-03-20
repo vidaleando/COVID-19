@@ -1,8 +1,8 @@
 (function() {
 
   var css_class = "img-fluid block";
-  var height = "100%";
-  var width = "100%";
+  var height = "500";
+  var width = "500";
   var projection = d3.geo.mercator();
   var map = void 0;
   var mexico = void 0;
