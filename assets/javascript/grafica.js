@@ -99,4 +99,3 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/da
     })
 
 })
-
