@@ -196,13 +196,14 @@ th {
     #tooltip{
       position: absolute;
       z-index: 2;
-      background: rgba(0,70,30,1.0);
+      background: #1F9BCF;
       width:130px;
       height:20px;
       color:white;
-      font-size: 14px;
+      font-size: 0.765625rem;
+      text-transform: uppercase;
       padding:5px;
       top:-150px;
       left:-150px;
-      font-family: Lucida Grande, sans-serif;
+      font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" ;
     }
