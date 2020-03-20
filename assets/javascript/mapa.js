@@ -25,7 +25,7 @@ d3.queue()
 function ready(error, topo) {
 
   // Draw the map
-  svg.append("g")
+  svg.append("f")
     .selectAll("path")
     .data(topo.features)
     .enter()
