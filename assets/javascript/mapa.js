@@ -16,7 +16,7 @@ var colorScale = d3.scaleThreshold()
   .domain([100000, 1000000, 10000000, 30000000, 100000000, 500000000])
   .range(d3.schemeBlues[7]);
 
-d3.json("uk.json", function(error, uk) {
+d3.json("../assets/javascript/mexico.json", function(error, uk) {
   if (error) return console.error(error);
 
   svg.append("path")
