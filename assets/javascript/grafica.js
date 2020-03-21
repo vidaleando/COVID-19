@@ -102,5 +102,12 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/da
         update(selectedOption)
     })
 
+
+    //DEBUG
+
+    d3.csv("https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv").then(function(data) {
+  console.log(data[0]);
+});
+
 })
 
