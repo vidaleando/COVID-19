@@ -1,3 +1,5 @@
+
+/*
 // The svg
 var mapSvg = d3.select("svg"),
   width = +mapSvg.attr("width"),
@@ -16,15 +18,7 @@ var colorScale = d3.scaleThreshold()
   .domain([100000, 1000000, 10000000, 30000000, 100000000, 500000000])
   .range(d3.schemeBlues[7]);
 
-d3.json("../assets/javascript/mexico.json", function(error, uk) {
-  if (error) return console.error(error);
 
-  svg.append("path")
-      .datum(topojson.feature(uk, uk.objects.subunits))
-      .attr("d", d3.geo.path().projection(d3.geo.mercator()));
-});
-
-/*
 // Load external data and boot
 d3.queue()
   .defer(d3.json,"../assets/javascript/mexican_states.geojson")
@@ -51,3 +45,53 @@ function ready(error, topo) {
       });
     }
     */
+
+    (function() {
+
+  var css_class = "img-fluid";
+  var height = "500";
+  var width = "500";
+  var projection = d3.geo.mercator();
+  var map = void 0;
+  var mexico = void 0;
+
+  var hover = function(d) {
+    console.log('d', d, 'event', event);
+    var div = document.getElementById('tooltip');
+    div.style.left = event.pageX +'px';
+    div.style.top = event.pageY + 'px';
+    div.innerHTML = d.properties.NAME_1;
+  };
+
+  var path = d3.geo.path().projection(projection);
+
+  var svg = d3.select("#map")
+      .append("svg")
+      .attr("class", css_class)
+      .attr("height", height)
+      .attr("width", width);
+
+  d3.json('../assets/javascript/geo-data.json', function(data) {
+    var states = topojson.feature(data, data.objects.MEX_adm1);
+
+    var b, s, t;
+    projection.scale(1).translate([0, 0]);
+    var b = path.bounds(states);
+    var s = .9 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height);
+    var t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
+    projection.scale(s).translate(t);
+
+    map = svg.append('g').attr('class', 'boundary');
+    mexico = map.selectAll('path').data(states.features);
+
+    mexico.enter()
+       .append('path')
+       .attr('d', path)
+       .on("mouseover", hover);
+
+    mexico.attr('fill', '#1F9BCF');
+
+    mexico.exit().remove();
+  });
+
+})();
