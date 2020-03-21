@@ -42,7 +42,7 @@ layout: default
                     .attr("height", h);
 
           //load GeoJson data
-          d3.json("mexico.json", function(json) {
+          d3.json("{{ "/assets/javascript/mexico.json" | relative_url }}", function(json) {
             // bind data
             svg.selectAll("path")
                .data(json.features)
