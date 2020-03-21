@@ -1,5 +1,3 @@
-
-
           //set dimensions
           var w = 700;
           var h = 400;
