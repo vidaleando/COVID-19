@@ -12,13 +12,10 @@ layout: default
 {% endcomment %}
 
 <h1 class="text-center">Mapa</h1>
-<div class="row d-flex justify-content-center">
-<svg id="mapa" width="400" height="300"></svg>
+<div id="mapa" class="row d-flex justify-content-center">
+<!--svg id="mapa" width="400" height="300"></svg-->
 </div>
-<div id="container">
-      <h2>Mapa de México por división politica.</h2>
-      <p>GeoJson demo.</p>
-    </div>
+
       <script type="text/javascript">
 
           //set dimensions
@@ -36,7 +33,7 @@ layout: default
                     .projection(projection)
 
           //svg
-          var mapSvg = d3.select("#container")
+          var mapSvg = d3.select("#mapa")
                     .append("svg")
                     .attr("width", w)
                     .attr("height", h);
