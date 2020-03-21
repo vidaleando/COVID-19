@@ -113,11 +113,9 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/da
   var cause = [],
     prevalence = [],
     disability = [];
-csv.map(function(data) {
     cause.push(data.cause);
     prevalence.push(data.prevalence);
     disability.push(data.disability);
-}
   console.log(data[1]);
   console.log(cause[0]);
 });
