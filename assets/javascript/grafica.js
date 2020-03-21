@@ -119,5 +119,5 @@ csv.map(function(data) {
     disability.push(data.disability);
 }
   console.log(data[1]);
-  console.log(cause);
+  console.log(cause[0]);
 });
