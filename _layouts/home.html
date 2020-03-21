@@ -15,44 +15,10 @@ layout: default
 <div id="mapa" class="row d-flex justify-content-center">
 <!--svg id="mapa" width="400" height="300"></svg-->
 </div>
-
-      <script type="text/javascript">
-
-          //set dimensions
-          var w = 700;
-          var h = 400;
-
-          //define projection
-          var projection = d3.geoMercator()
-                          .center([-100, 22])
-                          .translate([ w/1.7, h/1.7])
-                          .scale([ w/.7 ]);
-
-          //define path generator
-          var path = d3.geoPath()
-                    .projection(projection)
-
-          //svg
-          var mapSvg = d3.select("#mapa")
-                    .append("svg")
-                    .attr("width", w)
-                    .attr("height", h);
-
-          //load GeoJson data
-          d3.json("../assets/javascript/mexico.json", function(json) {
-            // bind data
-            mapSvg.selectAll("path")
-               .data(json.features)
-               .enter()
-               .append("path")
-               .attr("d", path);
-
-          });
-      </script>
 <!--div id="map" class="d-block text-center"></div>
 <div id="tooltip" class="text-center"></div-->
 
-<!--script src="{{ "/assets/javascript/mapa.js" | relative_url }}"></script-->
+<script src="{{ "/assets/javascript/mapa.js" | relative_url }}"></script>
 
 
 <h1 class="text-center">Casos</h1>

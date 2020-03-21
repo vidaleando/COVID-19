@@ -1,4 +1,39 @@
 
+
+          //set dimensions
+          var w = 700;
+          var h = 400;
+
+          //define projection
+          var projection = d3.geoMercator()
+                          .center([-100, 22])
+                          .translate([ w/1.7, h/1.7])
+                          .scale([ w/.7 ]);
+
+          //define path generator
+          var path = d3.geoPath()
+                    .projection(projection)
+
+          //svg
+          var mapSvg = d3.select("#mapa")
+                    .append("svg")
+                    .attr("width", w)
+                    .attr("height", h);
+
+          //load GeoJson data
+          d3.json("../assets/javascript/mexico.json", function(json) {
+            // bind data
+            mapSvg.selectAll("path")
+               .data(json.features)
+               .enter()
+               .append("path")
+               .attr("d", path);
+
+          });
+
+
+/*
+//MK II
 // The svg
 var mapSvg = d3.select("svg"),
   width = +mapSvg.attr("width"),
@@ -45,7 +80,7 @@ function ready(error, topo) {
       });
     }
     
-/*
+/* //MK I
     (function() {
 
   var css_class = "img-fluid";
