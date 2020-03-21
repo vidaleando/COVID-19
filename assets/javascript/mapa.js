@@ -1,5 +1,4 @@
 
-
 // The svg
 var mapSvg = d3.select("svg"),
   width = +mapSvg.attr("width"),
