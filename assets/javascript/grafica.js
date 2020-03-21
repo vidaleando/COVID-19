@@ -68,7 +68,7 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/da
         .attr("cx", function(d) { return x(+d.time) })
         .attr("cy", function(d) { return y(+d.valueA) })
         .attr("r", 7)
-        .style("fill", "#69b3a2")
+        .style("fill", "#1F9BCF")
 
 
     // A function that update the chart
