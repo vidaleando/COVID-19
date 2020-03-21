@@ -16,6 +16,15 @@ var colorScale = d3.scaleThreshold()
   .domain([100000, 1000000, 10000000, 30000000, 100000000, 500000000])
   .range(d3.schemeBlues[7]);
 
+d3.json("uk.json", function(error, uk) {
+  if (error) return console.error(error);
+
+  svg.append("path")
+      .datum(topojson.feature(uk, uk.objects.subunits))
+      .attr("d", d3.geo.path().projection(d3.geo.mercator()));
+});
+
+/*
 // Load external data and boot
 d3.queue()
   .defer(d3.json,"../assets/javascript/mexican_states.geojson")
@@ -41,3 +50,4 @@ function ready(error, topo) {
         return colorScale(d.total);
       });
     }
+    */
