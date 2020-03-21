@@ -117,5 +117,5 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/da
     prevalence.push(data.prevalence);
     disability.push(data.disability);
   console.log(data[1]);
-  console.log(cause[0]);
+  console.log(cause[1]);
 });
