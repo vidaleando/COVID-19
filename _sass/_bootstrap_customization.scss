@@ -183,7 +183,17 @@ th {
 }
 
 // Mapa ==================================================================
+path {
+      stroke-width: 0.3;
+      stroke:#2B2B2B;
+      fill: #C9FF05;
+    }
 
+    path:hover {
+      fill: #07918A;
+    }
+
+/* MARK II
 .boundary {
       fill: none;
       stroke: #888;
@@ -204,3 +214,4 @@ th {
       left:-150px;
       font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" ;
     }
+    */
