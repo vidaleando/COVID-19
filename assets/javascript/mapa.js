@@ -1,6 +1,6 @@
           //set dimensions
           var urla="../COVID-19/assets/javascript/mexico.json";
-          var urlb="../assets/javascript/mexico.json"
+          var urlb="../assets/javascript/mexico.json";
           var w = 700;
           var h = 400;
           var hover = function(d) {
