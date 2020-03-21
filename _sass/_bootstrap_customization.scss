@@ -183,13 +183,13 @@ th {
 }
 
 // Mapa ==================================================================
-path {
+#mapa path {
       stroke-width: 0.3;
       stroke:#2B2B2B;
       fill: #C9FF05;
     }
 
-    path:hover {
+   #mapa path:hover {
       fill: #07918A;
     }
 
