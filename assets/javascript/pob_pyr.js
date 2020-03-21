@@ -76,6 +76,6 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/ir
             .x0(function(d){ return(xNum(-d.length)) } )
             .x1(function(d){ return(xNum(d.length)) } )
             .y(function(d){ return(y(d.x0)) } )
-            .curve(d3.curveCatmullRom)    // This makes the line smoother to give the violin appearance. Try d3.curveStep to see the difference
+            .curve(d3.curveStep)    // This makes the line smoother to give the violin appearance. Try d3.curveStep to see the difference
         )
 })
