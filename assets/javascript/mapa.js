@@ -1,5 +1,5 @@
 
-/*
+
 // The svg
 var mapSvg = d3.select("svg"),
   width = +mapSvg.attr("width"),
@@ -21,10 +21,11 @@ var colorScale = d3.scaleThreshold()
 
 // Load external data and boot
 d3.queue()
-  .defer(d3.json,"../assets/javascript/mexican_states.geojson")
+.defer(d3.csv, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv", function(d) { data.set(d.code, +d.pop); })
+.defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
+  //.defer(d3.json,"../assets/javascript/mexican_states.geojson")
   .await(ready);
-  //.defer(d3.csv, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv", function(d) { data.set(d.code, +d.pop); })
-//.defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
+  
 
 function ready(error, topo) {
 
@@ -44,8 +45,8 @@ function ready(error, topo) {
         return colorScale(d.total);
       });
     }
-    */
-
+    
+/*
     (function() {
 
   var css_class = "img-fluid";
@@ -95,3 +96,4 @@ function ready(error, topo) {
   });
 
 })();
+*/
