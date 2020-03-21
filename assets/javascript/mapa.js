@@ -4,13 +4,12 @@
           var w = 700;
           var h = 400;
           var hover = function(d) {
-          console.log('d', d, 'event', event);
-          var div = document.getElementById('tooltip');
-          div.style.left = event.pageX +'px';
-          div.style.top = event.pageY + 'px';
-          div.innerHTML = d.properties.NAME_1;
-          };   
-
+    console.log('d', d, 'event', event);
+    var div = document.getElementById('tooltip');
+    div.style.left = event.pageX +'px';
+    div.style.top = event.pageY + 'px';
+    div.innerHTML = d.properties.name;
+  };
           //define projection
           var projection = d3.geoMercator()
                           .center([-100, 22])
@@ -34,10 +33,7 @@
                .data(json.features)
                .enter()
                .append("path")
-               .attr("d", path)
-               .on("mouseover", hover);
-
-            
+               .attr("d", path);
 
           });
 
@@ -102,7 +98,13 @@ function ready(error, topo) {
   var map = void 0;
   var mexico = void 0;
 
-  
+  var hover = function(d) {
+    console.log('d', d, 'event', event);
+    var div = document.getElementById('tooltip');
+    div.style.left = event.pageX +'px';
+    div.style.top = event.pageY + 'px';
+    div.innerHTML = d.properties.NAME_1;
+  };
 
   var path = d3.geo.path().projection(projection);
 
