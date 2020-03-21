@@ -27,7 +27,7 @@
                     .attr("height", h);
 
           //load GeoJson data
-          d3.json(urla, function(json) {
+          d3.json("https://raw.githubusercontent.com/vidaleando/COVID-19/master/assets/javascript/mexico.json", function(json) {
             // bind data
             mapSvg.selectAll("path")
                .data(json.features)
