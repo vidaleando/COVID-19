@@ -23,8 +23,6 @@
           //svg
           var mapSvg = d3.select("#mapa")
                     .append("svg")
-                    .attr("width", w)
-                    .attr("height", h)
                     .attr("class","img-fluid");
 
           //load GeoJson data
