@@ -20,7 +20,7 @@ var colorScale = d3.scaleThreshold()
 d3.queue()
   
   .await(ready);
-.defer(d3.json, "mexico.json")
+.defer(d3.json, "../assets/javascript/mexico.json")
   //.defer(d3.csv, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv", function(d) { data.set(d.code, +d.pop); })
 //.defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
 
