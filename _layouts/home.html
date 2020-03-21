@@ -36,7 +36,7 @@ layout: default
                     .projection(projection)
 
           //svg
-          var svg = d3.select("#container")
+          var mapSvg = d3.select("#container")
                     .append("svg")
                     .attr("width", w)
                     .attr("height", h);
@@ -44,7 +44,7 @@ layout: default
           //load GeoJson data
           d3.json("../assets/javascript/mexico.json", function(json) {
             // bind data
-            svg.selectAll("path")
+            mapSvg.selectAll("path")
                .data(json.features)
                .enter()
                .append("path")
