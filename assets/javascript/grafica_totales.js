@@ -16,7 +16,7 @@ var svg = d3.select("#grafica")
           "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
-d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_connectedscatter.csv", function(data) {
+d3.csv(url, function(data) {
 
     // List of groups (here I have one group per column)
     var allGroup = ["Mexico"];
