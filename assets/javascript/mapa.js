@@ -25,8 +25,7 @@
           var mapSvg = d3.select("#mapa")
                     .append("svg")
                     .attr("width", w)
-                    .attr("height", h)
-                    .attr("viewBox","0 0 700 400");
+                    .attr("height", h);
 
           //load GeoJson data
           d3.json("https://raw.githubusercontent.com/vidaleando/COVID-19/master/assets/javascript/mexico.json", function(json) {
