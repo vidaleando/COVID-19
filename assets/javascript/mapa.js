@@ -7,12 +7,6 @@
           var w = mapa.node().getBoundingClientRect().width;
           var h = w / 2;
 
-//Define map projection 
-var projection = d3.geo.mercator();
-      projection
-      .scale([width/3.5])
-      .translate([width/1,height*1.4]);
-
           var hover = function(d) {
           var div = document.getElementById('tooltip');
           div.innerHTML = d.properties.name;
