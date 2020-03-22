@@ -1,15 +1,17 @@
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 100, bottom: 30, left: 30},
+var graph = d3.select("#grafica"),
+    margin = {top: 10, right: 100, bottom: 30, left: 30},
     width = 460 - margin.left - margin.right,
     height = 450 - margin.top - margin.bottom,
     url="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv";
-
+var w = mapa.node().getBoundingClientRect().width;
+var h = w / 2;
 // append the svg object to the body of the page
 
 var svg = d3.select("#grafica")
   .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", w) //width + margin.left + margin.right
+    .attr("height", h)//height + margin.top + margin.bottom)
   .append("g")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
