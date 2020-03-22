@@ -22,6 +22,7 @@ var div = document.getElementById('totales');
 .defer(d3.csv, urlRecu,function(data) {
    var largo = data.length;
    var tope =largo-1;
+   console.log(data[tope]["Mexico"]);
 var div = document.getElementById('recu');
     div.innerHTML = data[tope]["Mexico"];
 })
