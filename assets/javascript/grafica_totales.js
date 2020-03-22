@@ -20,11 +20,13 @@ d3.csv(url, function(data) {
 
     // List of groups (here I have one group per column)
     var allGroup = ["Lineal","Logarítmica"];
+    var allGroupb = {"Lineal":Mexico,"Logarítmica":Mexico_log10};
     var tope=data.length-1;
     data.forEach(function(d) {
                d.Fecha = new Date(d.Fecha);
                d.Mexico = +d.Mexico;
             });
+console.log(allGroupb);
     // add the options to the button
     d3.select("#selectButton")
       .selectAll('myOptions')
@@ -33,6 +35,8 @@ d3.csv(url, function(data) {
       .append('option')
       .text(function (d) { return d; }) // text showed in the menu
       .attr("value", function (d) { return d; }) // corresponding value returned by the button
+ 
+
  // define the x scale (horizontal)
 
       var today = new Date();
