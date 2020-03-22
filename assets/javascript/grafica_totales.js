@@ -52,7 +52,16 @@ d3.csv(url, function(data) {
       .range([ height, 0 ]);
     svg.append("g")
       .call(d3.axisLeft(y));
+// define the line
+         var valueline = d3.line()
+            .x(function(d) { return x(d.Fecha); })
+            .y(function(d) { return y(d.Mexico); });
 
+             // Add the valueline path.
+            svg.append("path")
+               .data([data])
+               .attr("class", "line")
+               .attr("d", valueline);
     // Initialize line with group a
     var line = svg
       .append('g')
