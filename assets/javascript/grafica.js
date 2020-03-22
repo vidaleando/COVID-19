@@ -113,4 +113,5 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/da
       var largo = data[1].length;
   console.log(data[1][largo]);
 console.log(largo);
+console.log("prueba");
 });
