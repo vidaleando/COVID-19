@@ -3,6 +3,7 @@
           var urlb="../assets/javascript/mexico.json";
           //var w = 700;
           //var h = 400;
+          var map = d3.select("#mapa");
           var w = map.node().getBoundingClientRect().width;
           var h = w / 2;
 
