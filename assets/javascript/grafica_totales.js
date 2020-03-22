@@ -14,11 +14,7 @@ var svg = d3.select("#grafica")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
-//rota las etiquetas del eje t
-svg.selectAll(".graph_date text")  // select all the text elements for the xaxis
-          .attr("transform", function(d) {
-              return "translate(" + this.getBBox().height*-2 + "," + this.getBBox().height + ")rotate(-45)";
-        });
+
 
 //Read the data
 d3.csv(url, function(data) {
@@ -67,7 +63,12 @@ var yyyy = today.getFullYear();
     svg.append("g")
       .attr("transform", "translate(0," + height + ")")
       .attr("class","graph_date")
-      .call(d3.axisBottom(x));
+      .call(d3.axisBottom(x))
+      .selectAll("text")  
+        .style("text-anchor", "end")
+        .attr("dx", "-.8em")
+        .attr("dy", ".15em")
+        .attr("transform", "rotate(-65)");
 
     // Add Y axis
     var y = d3.scaleLinear()
