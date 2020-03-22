@@ -54,7 +54,7 @@ d3.csv(url, function(data) {
         .datum(data)
         .attr("d", d3.line()
           .x(function(d) { return x(+d.time) })
-          .y(function(d) { return y(+d.valueA) })
+          .y(function(d) { return y(+d.Mexico) })
         )
         .attr("stroke", "black")
         .style("stroke-width", 4)
@@ -67,7 +67,7 @@ d3.csv(url, function(data) {
       .enter()
       .append('circle')
         .attr("cx", function(d) { return x(+d.time) })
-        .attr("cy", function(d) { return y(+d.valueA) })
+        .attr("cy", function(d) { return y(+d.Mexico) })
         .attr("r", 7)
         .style("fill", "#1F9BCF")
 
