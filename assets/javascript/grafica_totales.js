@@ -36,10 +36,25 @@ d3.csv(url, function(data) {
       .append('option')
       .text(function (d) { return d; }) // text showed in the menu
       .attr("value", function (d) { return d; }) // corresponding value returned by the button
+ // define the x scale (horizontal)
 
+      var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+//today = mm + '/' + dd + '/' + yyyy;
+
+
+        var mindate = new Date(2020,0,1),
+            maxdate = new Date(2012,0,31);
+            
+        var xScale = d3.time.scale()
+          .domain([mindate, maxdate])    // values between for month of january
+    .range([padding, width - padding * 2]);   // map these the the chart width = total width minus padding at both sides
     // Add X axis --> it is a date format
-    var x = d3.scaleLinear()
-      .domain([0,tope])
+    var x = d3.scaleTime()
+      .domain([0,today])
       .range([ 0, width ]);
     svg.append("g")
       .attr("transform", "translate(0," + height + ")")
