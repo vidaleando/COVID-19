@@ -72,7 +72,7 @@ var yyyy = today.getFullYear();
 
     // Add Y axis
     var y = d3.scaleLinear()
-      .domain( [0,300])
+      //.domain( [0,300])
       .range([ height, 0 ]);
     svg.append("g")
       .call(d3.axisLeft(y));
