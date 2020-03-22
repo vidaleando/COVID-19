@@ -20,7 +20,7 @@ var svg = d3.select("#grafica")
 d3.csv(url, function(data) {
 
     // List of groups (here I have one group per column)
-    var allGroup = ["Mexico"];
+    var allGroup = ["Lineal"];
     var tope=data.length-1;
     //console.log(data[tope]["Mexico"]);
     data.forEach(function(d) {
