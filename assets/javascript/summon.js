@@ -11,7 +11,7 @@ urlRecu="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/
 var div = document.getElementById('totales');
     div.innerHTML = data[tope]["Mexico"];
 });
-
+/*
   d3.queue()
 .defer(d3.csv, urlTotal,function(data) {
    var largo = data.length;
@@ -39,3 +39,4 @@ var div = document.getElementById('recu');
     div.innerHTML = data[tope]["Mexico"];
            }
 }
+*/
