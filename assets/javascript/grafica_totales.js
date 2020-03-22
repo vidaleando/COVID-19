@@ -66,7 +66,7 @@ d3.csv(url, function(data) {
       .enter()
       .append('circle')
         .attr("cx", function(d) { return x(+d.Fecha) })
-        .attr("cy", function(d) { return y(+d.Mexico) })
+        .attr("cy", function(d) { console.log(y(+d.Mexico)); return y(+d.Mexico) })
         .attr("r", 7)
         .style("fill", "#1F9BCF")
 
