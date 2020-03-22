@@ -42,12 +42,10 @@ function set_responsive() {
 set_responsive();
 */
 
-/*.attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    */
+
 var svg = d3.select("#grafica")
   .append("svg")
-  .append("viewBox","0 0 800 860")  
+      .attr("viewBox","0 0 800 860")  
   .append("g")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
