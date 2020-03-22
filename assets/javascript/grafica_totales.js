@@ -21,8 +21,6 @@ d3.csv(url, function(data) {
     // List of groups (here I have one group per column)
     var allGroup = ["Mexico"];
     var tope=data.length-1;
-    console.log(allGroup);
-    console.log(tope);
     console.log(data[4]["Mexico"]);
     // add the options to the button
     d3.select("#selectButton")
