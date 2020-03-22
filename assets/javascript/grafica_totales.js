@@ -13,12 +13,13 @@ var svg = d3.select("#grafica")
   .append("g")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
-
+/*
 //rota las etiquetas del eje t
 svg.selectAll(".graph_date text")  // select all the text elements for the xaxis
           .attr("transform", function(d) {
               return "translate(" + this.getBBox().height*-2 + "," + this.getBBox().height + ")rotate(-45)";
         });
+*/
 //Read the data
 d3.csv(url, function(data) {
 
