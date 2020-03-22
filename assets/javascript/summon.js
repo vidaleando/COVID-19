@@ -26,13 +26,16 @@ var div = document.getElementById('totales');
 var div = document.getElementById('recu');
     div.innerHTML = data[tope]["Mexico"];
 })
-.await(console.log["Exito"]);
-/*function(error, file1, file2) {
+.await(semaforo);
+semaforo(error, covid19_mex_casos_totales, covid19_mex_casos_totales) {
     if (error) {
         console.error('Valió madres por esto: ' + error);
     }
     else {
-       // doStuff(file1, file2);
-        console.log('Éxito');
-    }
-}*/
+       var largo = data.length;
+   var tope =largo-1;
+   console.log(data[tope]["Mexico"]);
+var div = document.getElementById('recu');
+    div.innerHTML = data[tope]["Mexico"];
+           }
+}
