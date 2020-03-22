@@ -27,7 +27,7 @@
             if (error) throw error;
             // format the data
             data.forEach(function(d) {
-               d.year = d.year;
+               d.year = Date(d.year);
                d.population = +d.population;
             });
 
