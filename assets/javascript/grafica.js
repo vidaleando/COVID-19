@@ -110,12 +110,7 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/da
     //DEBUG
 
     d3.csv("https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv",function(data) {
-  var cause = [],
-    prevalence = [],
-    disability = [];
-    cause.push(data.Lat);
-    prevalence.push(data.prevalence);
-    disability.push(data.disability);
-  console.log(data[1]);
-  console.log(cause);
+      var largo = data[1].length;
+  console.log(data[1][largo]);
+
 });
