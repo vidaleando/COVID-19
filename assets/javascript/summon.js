@@ -26,7 +26,7 @@ var div = document.getElementById('totales');
 var div = document.getElementById('recu');
     div.innerHTML = data[tope]["Mexico"];
 })
-.await(ready);
+.await(console.log["Exito"]);
 /*function(error, file1, file2) {
     if (error) {
         console.error('Valió madres por esto: ' + error);
