@@ -1,18 +1,22 @@
-// set the data url
-var url="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv";
+// set the dimensions and margins of the graph
+var margin = {top: 10, right: 100, bottom: 30, left: 30},
+    width = 460 - margin.left - margin.right,
+    height = 450 - margin.top - margin.bottom,
+    url="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv";
 
+/*
 // Set default width and height, calculate ratio
 var default_width = 460;
 var default_height = 400;
 var default_ratio = default_width / default_height;
 
 // Current (non-responsive) width and height are calcuated from the default, minus the margins
-var margin = {top: 10, right: 100, bottom: 30, left: 30},
+var margin = {top: 10, right: 180, bottom: 30, left: 30},
     width = default_width - margin.left - margin.right,
     height = default_height - margin.top - margin.bottom;
 
 // Determine current size, which determines vars
-function set_resp() {
+function set_responsive() {
   //alert('setting vars')
   current_width = window.innerWidth;
   current_height = window.innerHeight;
@@ -35,7 +39,8 @@ function set_resp() {
 
 };
 
-set_resp();
+set_responsive();
+*/
 
 // append the svg object to the body of the page
 
@@ -78,8 +83,16 @@ var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 
 //today = mm + '/' + dd + '/' + yyyy;
-        var mindate = new Date(2020,1,28);
 
+
+        var mindate = new Date(2020,1,28),
+            maxdate = new Date(2012,0,31);
+
+      /*
+      var xScale = d3.time.scale()
+          .domain([today, maxdate])    // values between for month of january
+    .range([padding, width - padding * 2]);   // map these the the chart width = total width minus padding at both sides
+    */
     // Add X axis --> it is a date format
     var x = d3.scaleTime()
       .domain([mindate,today])
