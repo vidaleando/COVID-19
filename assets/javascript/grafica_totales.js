@@ -23,7 +23,7 @@ d3.csv(url, function(data) {
     var tope=data.length-1;
     console.log(allGroup);
     console.log(tope);
-    console.log(data[4]["Mexico"]);
+    console.log(data[4]);
     // add the options to the button
     d3.select("#selectButton")
       .selectAll('myOptions')
