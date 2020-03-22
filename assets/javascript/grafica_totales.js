@@ -10,8 +10,8 @@ var h = w / 2;
 
 var svg = d3.select("#grafica")
   .append("svg")
-    .attr("width", w ) //width + margin.left + margin.right
-    .attr("height", h)//height + margin.top + margin.bottom)
+    .attr("width", height ) //width + margin.left + margin.right
+    .attr("height", width)//height + margin.top + margin.bottom)
   .append("g")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
