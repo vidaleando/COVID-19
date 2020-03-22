@@ -48,10 +48,13 @@ var yyyy = today.getFullYear();
 
         var mindate = new Date(2020,1,28),
             maxdate = new Date(2012,0,31);
-            
-        var xScale = d3.time.scale()
-          .domain([mindate, maxdate])    // values between for month of january
+         console.log("Hoy "+today); 
+         console.log("min "+mindate);  
+      /*
+      var xScale = d3.time.scale()
+          .domain([today, maxdate])    // values between for month of january
     .range([padding, width - padding * 2]);   // map these the the chart width = total width minus padding at both sides
+    */
     // Add X axis --> it is a date format
     var x = d3.scaleTime()
       .domain([mindate,today])
