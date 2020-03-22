@@ -15,19 +15,15 @@ var svg = d3.select("#grafica")
           "translate(" + margin.left + "," + margin.top + ")");
 
 
-
 //Read the data
 d3.csv(url, function(data) {
 
     // List of groups (here I have one group per column)
-    var allGroup = ["Lineal"];
+    var allGroup = ["Lineal","Logarítmica"];
     var tope=data.length-1;
-    //console.log(data[tope]["Mexico"]);
     data.forEach(function(d) {
                d.Fecha = new Date(d.Fecha);
                d.Mexico = +d.Mexico;
-               console.log(d.Fecha);
-               console.log(d.Mexico);
             });
     // add the options to the button
     d3.select("#selectButton")
@@ -71,7 +67,7 @@ var yyyy = today.getFullYear();
 
     // Add Y axis      //
     var y = d3.scaleLinear()
-    .domain( [0,d3.max(data, function(d){return +d.Mexico;  })])
+    .domain( [0,d3.max(data, function(d){return d.Mexico;  })])
       .range([ height, 0 ]);
     svg.append("g")
       .call(d3.axisLeft(y));
