@@ -2,7 +2,7 @@
 var margin = {top: 10, right: 100, bottom: 30, left: 30},
     width = 460 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom,
-    url;
+    url="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv";
 
 // append the svg object to the body of the page
 
@@ -19,7 +19,6 @@ var svg = d3.select("#grafica")
 d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_connectedscatter.csv", function(data) {
 
     // List of groups (here I have one group per column)
-
     var allGroup = ["Mexico"],
     var tope=data.length-1;
     console.log(allGroup);
