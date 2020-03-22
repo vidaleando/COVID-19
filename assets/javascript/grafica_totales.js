@@ -19,8 +19,8 @@ var svg = d3.select("#grafica")
 d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_connectedscatter.csv", function(data) {
 
     // List of groups (here I have one group per column)
-    var allGroup = ["Mexico"],
-     tope=data.length-1;
+    var allGroup = ["Mexico"];
+    var tope=data.length-1;
     console.log(allGroup);
     console.log(tope);
     // add the options to the button
