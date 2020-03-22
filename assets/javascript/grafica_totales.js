@@ -1,7 +1,7 @@
 // set the dimensions and margins of the graph
- var  width = 460 - margin.left - margin.right,
-    height = 450 - margin.top - margin.bottom;
-   var margin = {top: 10, right: 100, bottom: 30, left: 30}; 
+var margin = {top: 10, right: 100, bottom: 30, left: 30},
+    width = 460 - margin.left - margin.right,
+    height = 450 - margin.top - margin.bottom; 
 var url="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv";
 
 /*
