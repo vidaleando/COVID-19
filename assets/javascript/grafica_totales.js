@@ -15,10 +15,6 @@ var svg = d3.select("#grafica")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
- d3.csv("data.csv", function(error, data) {
-            if (error) throw error;
-            // format the data
-            
 
 
 //Read the data
