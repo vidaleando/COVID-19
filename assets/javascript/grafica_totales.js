@@ -1,17 +1,13 @@
-// set the dimensions and margins of the graph
-var margin = {top: 10, right: 100, bottom: 30, left: 30},
-    width = 460 - margin.left - margin.right,
-    height = 450 - margin.top - margin.bottom,
-    url="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv";
-
+// set the data url
+var url="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv";
 
 // Set default width and height, calculate ratio
-var default_width = 960;
-var default_height = 500;
+var default_width = 460;
+var default_height = 400;
 var default_ratio = default_width / default_height;
 
 // Current (non-responsive) width and height are calcuated from the default, minus the margins
-var margin = {top: 80, right: 180, bottom: 80, left: 180},
+var margin = {top: 10, right: 180, bottom: 30, left: 30},
     width = default_width - margin.left - margin.right,
     height = default_height - margin.top - margin.bottom;
 
