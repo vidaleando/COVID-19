@@ -7,7 +7,6 @@ var margin = {top: 10, right: 100, bottom: 30, left: 30},
 // append the svg object to the body of the page
 
 var svg = d3.select("#grafica")
-
   .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -24,7 +23,7 @@ d3.csv(url, function(data) {
     var tope=data.length-1;
     //console.log(data[tope]["Mexico"]);
     data.forEach(function(d) {
-               d.Fecha = d.Fecha;
+               d.Fecha = Date(d.Fecha);
                d.Mexico = +d.Mexico;
                console.log(d.Fecha);
                console.log(d.Mexico);
@@ -52,24 +51,7 @@ d3.csv(url, function(data) {
       .range([ height, 0 ]);
     svg.append("g")
       .call(d3.axisLeft(y));
-// define the line
-         var valueline = d3.line()
-            .x(function(d) { return x(d.Fecha); })
-            .y(function(d) { return y(d.Mexico); });
 
-             // Add the valueline path.
-            svg.append("path")
-               .data([data])
-               .attr("class", "line")
-               .attr("d", valueline);
-      // append the svg obgect to the body of the page
-         // appends a 'group' element to 'svg'
-         // moves the 'group' element to the top left margin
-         var svg = d3.select("body").append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
-            .append("g").attr("transform",
-               "translate(" + margin.left + "," + margin.top + ")");         
     // Initialize line with group a
     var line = svg
       .append('g')
