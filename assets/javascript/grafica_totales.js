@@ -7,7 +7,7 @@ var default_height = 400;
 var default_ratio = default_width / default_height;
 
 // Current (non-responsive) width and height are calcuated from the default, minus the margins
-var margin = {top: 10, right: 180, bottom: 30, left: 30},
+var margin = {top: 10, right: 100, bottom: 30, left: 30},
     width = default_width - margin.left - margin.right,
     height = default_height - margin.top - margin.bottom;
 
