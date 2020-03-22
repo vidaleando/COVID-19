@@ -7,5 +7,5 @@
 console.log(data[largo-1]);
 console.log("hello");
 var div = document.getElementById('totales');
-    div.innerHTML = data[largo-1];
+    div.innerHTML = data[21];
 });
