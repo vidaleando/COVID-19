@@ -12,7 +12,7 @@ var margin = {top: 10, right: 100, bottom: 30, left: 30},
     height = default_height - margin.top - margin.bottom;
 
 // Determine current size, which determines vars
-function set_responsive() {
+function set_resp() {
   //alert('setting vars')
   current_width = window.innerWidth;
   current_height = window.innerHeight;
@@ -35,7 +35,7 @@ function set_responsive() {
 
 };
 
-set_responsive();
+set_resp();
 
 // append the svg object to the body of the page
 
