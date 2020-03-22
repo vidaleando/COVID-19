@@ -70,9 +70,8 @@ var yyyy = today.getFullYear();
         .attr("dy", ".15em")
         .attr("transform", "rotate(-65)");
 
-    // Add Y axis
+    // Add Y axis      //.domain( [0,300])
     var y = d3.scaleLinear()
-      //.domain( [0,300])
       .range([ height, 0 ]);
     svg.append("g")
       .call(d3.axisLeft(y));
