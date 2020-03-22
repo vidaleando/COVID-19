@@ -1,17 +1,52 @@
 // set the dimensions and margins of the graph
-var graph = d3.select("#grafica"),
-    margin = {top: 10, right: 100, bottom: 30, left: 30},
+var margin = {top: 10, right: 100, bottom: 30, left: 30},
     width = 460 - margin.left - margin.right,
     height = 450 - margin.top - margin.bottom,
     url="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv";
-var w = mapa.node().getBoundingClientRect().width;
-var h = w / 2;
+
+
+// Set default width and height, calculate ratio
+var default_width = 960;
+var default_height = 500;
+var default_ratio = default_width / default_height;
+
+// Current (non-responsive) width and height are calcuated from the default, minus the margins
+var margin = {top: 80, right: 180, bottom: 80, left: 180},
+    width = default_width - margin.left - margin.right,
+    height = default_height - margin.top - margin.bottom;
+
+// Determine current size, which determines vars
+function set_responsive() {
+  //alert('setting vars')
+  current_width = window.innerWidth;
+  current_height = window.innerHeight;
+
+  current_ratio = current_width / current_height;
+
+  // Check if height is limiting factor
+  if ( current_ratio > default_ratio ){
+    h = current_height;
+    w = h * default_ratio;
+  // Else width is limiting
+  } else {
+    w = current_width;
+    h = w / default_ratio;
+  }
+
+  // Set new width and height based on graph dimensions
+  width = w - margin.left - margin.right;
+  height = h - margin.top - margin.bottom;
+
+};
+
+set_responsive();
+
 // append the svg object to the body of the page
 
 var svg = d3.select("#grafica")
   .append("svg")
-    .attr("width", height ) //width + margin.left + margin.right
-    .attr("height", width)//height + margin.top + margin.bottom)
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
   .append("g")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
