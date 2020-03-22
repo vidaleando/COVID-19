@@ -16,7 +16,6 @@ var svg = d3.select("#grafica")
           "translate(" + margin.left + "," + margin.top + ")");
 
 
-
 //Read the data
 d3.csv(url, function(data) {
 
@@ -110,5 +109,5 @@ d3.csv(url, function(data) {
         update(selectedOption)
     })
 
-})
+});
 
