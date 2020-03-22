@@ -15,6 +15,12 @@ var svg = d3.select("#grafica")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
+ d3.csv("data.csv", function(error, data) {
+            if (error) throw error;
+            // format the data
+            
+
+
 //Read the data
 d3.csv(url, function(data) {
 
@@ -22,6 +28,12 @@ d3.csv(url, function(data) {
     var allGroup = ["Mexico"];
     var tope=data.length-1;
     //console.log(data[tope]["Mexico"]);
+    data.forEach(function(d) {
+               d.Fecha = d.Fecha;
+               d.Mexico = +d.Mexico;
+               console.log(d.Fecha);
+               console.log(d.Mexico);
+            });
     // add the options to the button
     d3.select("#selectButton")
       .selectAll('myOptions')
@@ -52,8 +64,8 @@ d3.csv(url, function(data) {
       .append("path")
         .datum(data)
         .attr("d", d3.line()
-          .x(function(d) { console.log(x(+d.Fecha)); return x(+d.Fecha) })
-          .y(function(d) { console.log(y(+d.Mexico)); return y(+d.Mexico) })
+          .x(function(d) { return x(+d.Fecha) })
+          .y(function(d) { return y(+d.Mexico) })
         )
         .attr("stroke", "black")
         .style("stroke-width", 4)
@@ -66,7 +78,7 @@ d3.csv(url, function(data) {
       .enter()
       .append('circle')
         .attr("cx", function(d) { return x(+d.Fecha) })
-        .attr("cy", function(d) { console.log(y(+d.Mexico)); return y(+d.Mexico) })
+        .attr("cy", function(d) { return y(+d.Mexico) })
         .attr("r", 7)
         .style("fill", "#1F9BCF")
 
