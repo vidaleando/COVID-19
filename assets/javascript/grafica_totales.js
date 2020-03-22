@@ -23,7 +23,7 @@ d3.csv(url, function(data) {
     var tope=data.length-1;
     //console.log(data[tope]["Mexico"]);
     data.forEach(function(d) {
-               d.Fecha = Date(d.Fecha);
+               d.Fecha = new Date(d.Fecha);
                d.Mexico = +d.Mexico;
                console.log(d.Fecha);
                console.log(d.Mexico);
