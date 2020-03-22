@@ -58,7 +58,7 @@ d3.csv(url, function(data) {
       .append("path")
         .datum(data)
         .attr("d", d3.line()
-          .x(function(d) { return x(d.Fecha) })
+          .x(function(d) { return x(d.Mexico) })
           .y(function(d) { return y(d.Mexico) })
         )
         .attr("stroke", "black")
