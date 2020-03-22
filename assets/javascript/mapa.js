@@ -1,8 +1,16 @@
           //set dimensions
           var urla="../COVID-19/assets/javascript/mexico.json";
           var urlb="../assets/javascript/mexico.json";
-          var w = 700;
-          var h = 400;
+          //var w = 700;
+          //var h = 400;
+          var w = map.node().getBoundingClientRect().width;
+          var h = w / 2;
+
+//Define map projection 
+var projection = d3.geo.mercator();
+      projection
+      .scale([width/3.5])
+      .translate([width/1,height*1.4]);
 
           var hover = function(d) {
           var div = document.getElementById('tooltip');
