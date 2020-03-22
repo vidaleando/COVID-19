@@ -5,7 +5,7 @@
    var largo = data.length;
   //console.log(data);
 console.log("hello");
-console.log(data[largo-1][2]);
+console.log(data[largo-1]);
 var div = document.getElementById('totales');
     div.innerHTML = data[21];
 });
