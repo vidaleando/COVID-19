@@ -57,7 +57,7 @@ var yyyy = today.getFullYear();
     */
     // Add X axis --> it is a date format
     var x = d3.scaleTime()
-      .domain([mindate,today])
+      .domain([0,10])
       .range([ 0, width ]);
     svg.append("g")
       .attr("transform", "translate(0," + height + ")")
