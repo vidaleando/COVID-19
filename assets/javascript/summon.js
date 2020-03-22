@@ -18,3 +18,11 @@ var div = document.getElementById('totales');
 var div = document.getElementById('recu');
     div.innerHTML = data[tope]["Mexico"];
 });
+
+  d3.csv(urlRecu,function(data) {
+   var largo = data.length;
+   var tope =largo-1;
+var div = document.getElementById('recu');
+    div.innerHTML = data[tope]["Mexico"];
+});
+
