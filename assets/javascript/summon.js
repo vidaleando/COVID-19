@@ -5,4 +5,6 @@
    var largo = data.length;
   console.log(data);
 console.log(data[largo-1]);
+var div = document.getElementById('totales');
+    div.innerHTML = data[largo-1];
 });
