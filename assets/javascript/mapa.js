@@ -3,12 +3,10 @@
           var urlb="../assets/javascript/mexico.json";
           var w = 700;
           var h = 400;
+
           var hover = function(d) {
-    console.log('d', d, 'event', event);
-    var div = document.getElementById('tooltip');
-    div.style.left = event.pageX +'px';
-    div.style.top = event.pageY + 'px';
-    div.innerHTML = d.properties.name;
+          var div = document.getElementById('tooltip');
+          div.innerHTML = d.properties.name;
   };
           //define projection
           var projection = d3.geoMercator()
