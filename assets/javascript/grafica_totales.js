@@ -43,12 +43,12 @@ set_responsive();
 
 // append the svg object to the body of the page
           var graf = d3.select("#grafica");
-          var width = graf.node().getBoundingClientRect().width;
-          var height = width / 2;
+          var w = graf.node().getBoundingClientRect().width;
+          var h = w / 2;
 var svg = d3.select("#grafica")
   .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", w + margin.left + margin.right)
+    .attr("height", h + margin.top + margin.bottom)
   .append("g")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
