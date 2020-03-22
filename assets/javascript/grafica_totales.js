@@ -20,7 +20,7 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/da
 
     // List of groups (here I have one group per column)
     var allGroup = ["Mexico"],
-    var tope=data.length-1;
+     tope=data.length-1;
     console.log(allGroup);
     console.log(tope);
     // add the options to the button
