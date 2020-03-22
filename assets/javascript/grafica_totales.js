@@ -49,8 +49,7 @@ var yyyy = today.getFullYear();
 
         var mindate = new Date(2020,1,28),
             maxdate = new Date(2012,0,31);
-         console.log("Hoy "+today); 
-         console.log("min "+mindate);  
+
       /*
       var xScale = d3.time.scale()
           .domain([today, maxdate])    // values between for month of january
@@ -71,9 +70,9 @@ var yyyy = today.getFullYear();
         .attr("transform", "rotate(-65)");
 
     // Add Y axis      //
-    /*var y = d3.scaleLinear()
+    var y = d3.scaleLinear()
     .domain( [0,300])
-      .range([ height, 0 ]);*/
+      .range([ height, 0 ]);
     svg.append("g")
       .call(d3.axisLeft(y));
 
