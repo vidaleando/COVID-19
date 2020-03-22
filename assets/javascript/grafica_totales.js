@@ -21,8 +21,7 @@ d3.csv(url, function(data) {
     // List of groups (here I have one group per column)
     var allGroup = ["Mexico"];
     var tope=data.length-1;
-    console.log(tope);
-    console.log(data[tope]["Mexico"]);
+    //console.log(data[tope]["Mexico"]);
     // add the options to the button
     d3.select("#selectButton")
       .selectAll('myOptions')
@@ -53,7 +52,7 @@ d3.csv(url, function(data) {
       .append("path")
         .datum(data)
         .attr("d", d3.line()
-          .x(function(d) { return x(+d.time) })
+          .x(function(d) { console.log(x(+d.Fecha)); return x(+d.Fecha) })
           .y(function(d) { return y(+d.Mexico) })
         )
         .attr("stroke", "black")
@@ -66,7 +65,7 @@ d3.csv(url, function(data) {
       .data(data)
       .enter()
       .append('circle')
-        .attr("cx", function(d) { return x(+d.time) })
+        .attr("cx", function(d) { return x(+d.Fecha) })
         .attr("cy", function(d) { return y(+d.Mexico) })
         .attr("r", 7)
         .style("fill", "#1F9BCF")
