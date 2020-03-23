@@ -45,7 +45,7 @@ set_responsive();
 
 var svg = d3.select("#grafica")
   .append("svg")
-  .attr("viewBox","0 0 4600 5000")  
+  .attr("viewBox","0 0 46 50")  
   .append("g")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
