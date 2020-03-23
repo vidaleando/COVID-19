@@ -50,7 +50,7 @@ var svg = d3.select("#grafica")
   .append("svg")
   .append("g")
     .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
+          "translate(" + margin.left + "," + margin.top + ")")
     .attr("viewBox","0 0 460 400");
 
 
