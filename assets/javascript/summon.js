@@ -23,6 +23,6 @@ var div = document.getElementById('recu');
  	var tot = document.getElementById('totales').innerHTML,
  		rec = document.getElementById('recu').innerHTML;
  		console.log(tot); 
- 	conole.log(document.getElementById('activos').innerHTML=+tot-rec);
+ 	console.log(document.getElementById('activos').innerHTML=+tot-rec);
  }
 
