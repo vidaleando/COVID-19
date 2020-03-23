@@ -24,7 +24,7 @@
           //svg
           var mapSvg = d3.select("#mapa")
                     .append("svg")
-                      .attr("viewBox","0 0 700 400")
+                      .attr("viewBox","0 0 700 400");
                     /*.attr("width", w)
                     .attr("height", h);*/
 
