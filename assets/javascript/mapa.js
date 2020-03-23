@@ -4,7 +4,7 @@
           //var w = 700;
           //var h = 400;
           var mapa = d3.select("#mapa");
-          var w = mapa.node().getBoundingClientRect().width*0.8;
+          var w = mapa.node().getBoundingClientRect().width*0.75;
           var h = w / 2;
 
           var hover = function(d) {
