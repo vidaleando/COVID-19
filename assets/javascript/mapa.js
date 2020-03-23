@@ -3,9 +3,8 @@
           var urlb="../assets/javascript/mexico.json";
           var w = 700;
           var h = 400;
-         //var mapa = d3.select("#mapa");
-          //var w = mapa.node().getBoundingClientRect().width*0.75;
-          //var h = w / 2;
+         var  adjust = window.innerWidth;
+        $('#mapa').scrollLeft(adjust/2);
 
           var hover = function(d) {
           var div = document.getElementById('tooltip');
