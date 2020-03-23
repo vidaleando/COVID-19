@@ -126,8 +126,8 @@ var yyyy = today.getFullYear();
           .x(function(d) { return x(d.Fecha) })
           .y(function(d) { return y(+d.Mexico) })
         )
-        .attr("stroke", "black")
-        .style("stroke-width", 4)
+        .attr("stroke", "#1f9bcf")
+        .style("stroke-width", 3)
         .style("fill", "none")
 
     // Initialize dots with group a
