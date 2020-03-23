@@ -65,7 +65,7 @@ $(document).ready(function() {
 
   var csvfile_import_122860 = "https://raw.githubusercontent.com/LeonardoCastro/COVID-20/master/assets/estados_hoy.csv";
 
-  $('.122860 .databaseTable_import_wrap').CSVToTable( csvfile_import_122860 , { loadingText: 'Generating Table', loadingImage: 'https://campus.mst.edu/emctest/t4_template/content_types/search_sort_table/images/loading.gif', startLine: 0, tableClass: "databaseTable_import", theadClass: "heading" }).bind("loadComplete",function() {
+  $('.122860 .databaseTable_import_wrap').CSVToTable( csvfile_import_122860 , { loadingText: 'Generando tabla', loadingImage: 'https://campus.mst.edu/emctest/t4_template/content_types/search_sort_table/images/loading.gif', startLine: 0, tableClass: "databaseTable_import", theadClass: "heading" }).bind("loadComplete",function() {
     $('.122860 .databaseTable_import_wrap').find('TABLE').tablesorter({ widgets: ["zebra"] });
     $('.122860 .databaseTable_import').filterTable({inputSelector:".122860 .databaseTable_search"});
     assignButtons_122860();
