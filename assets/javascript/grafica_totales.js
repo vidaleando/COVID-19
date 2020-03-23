@@ -41,12 +41,12 @@ function set_responsive() {
 
 set_responsive();
 */
-var graf = d3.select("#grafica");
+var graf = d3.select("#grafica_totales");
 var w = graf.node().getBoundingClientRect().width;
 var h = w / 2;
 
 //.attr("width","0 0 400 200") 
-var svg = d3.select("#grafica")
+var svg = d3.select("#grafica_totales")
   .append("svg")
   //.attr("viewBox","0 0 460 400")
   .attr("width","460")
