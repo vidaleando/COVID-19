@@ -123,7 +123,7 @@ var firstAvailCol;if(typeof(matrix[rowIndex])=="undefined"){matrix[rowIndex]=[];
 			tableClass: "CSVTable",
 			theadClass: "",
 			thClass: "",
-			tbodyClass: "",
+			tbodyClass: "table-info",
 			trClass: "",
 			tdClass: "",
 			loadingImage: "",
