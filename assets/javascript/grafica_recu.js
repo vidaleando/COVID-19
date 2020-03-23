@@ -5,7 +5,7 @@ var margin = {top: 10, right: 30, bottom: 30, left: 30},
 var url="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_recuperados.csv";
 
 
-var svg = d3.select("#grafica_recu")
+var svgR = d3.select("#grafica_recu")
   .append("svg")
   //.attr("viewBox","0 0 460 400")
   .attr("width","460")
@@ -53,7 +53,7 @@ var yyyy = today.getFullYear();
     var x = d3.scaleTime()
       .domain([mindate,today])
       .range([ 0, width ]);
-    svg.append("g")
+    svgR.append("g")
       .attr("transform", "translate(0," + height + ")")
       .attr("class","graph_date")
       .call(d3.axisBottom(x))
@@ -67,11 +67,11 @@ var yyyy = today.getFullYear();
     var y = d3.scaleLinear()
     .domain( [0,d3.max(data, function(d){return d.Mexico;  })])
       .range([ height, 0 ]);
-    svg.append("g")
+    svgR.append("g")
       .call(d3.axisLeft(y));
 
     // Initialize line with group a
-    var line = svg
+    var line = svgR
       .append('g')
       .append("path")
         .datum(data)
@@ -84,7 +84,7 @@ var yyyy = today.getFullYear();
         .style("fill", "none")
 
     // Initialize dots with group a
-    var dot = svg
+    var dot = svgR
       .selectAll('circle')
       .data(data)
       .enter()

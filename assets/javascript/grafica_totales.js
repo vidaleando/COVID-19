@@ -6,7 +6,7 @@ var url="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/
 
 
 //.attr("width","0 0 400 200") 
-var svg = d3.select("#grafica_totales")
+var svgT = d3.select("#grafica_totales")
   .append("svg")
   .attr("width","460")
   .attr("height","430")
@@ -52,7 +52,7 @@ var yyyy = today.getFullYear();
     var x = d3.scaleTime()
       .domain([mindate,today])
       .range([ 0, width ]);
-    svg.append("g")
+    svgT.append("g")
       .attr("transform", "translate(0," + height + ")")
       .attr("class","graph_date")
       .call(d3.axisBottom(x))
@@ -66,11 +66,11 @@ var yyyy = today.getFullYear();
     var y = d3.scaleLinear()
     .domain( [0,d3.max(data, function(d){return d.Mexico;  })])
       .range([ height, 0 ]);
-    svg.append("g")
+    svgT.append("g")
       .call(d3.axisLeft(y));
 
     // Initialize line with group a
-    var line = svg
+    var line = svgT
       .append('g')
       .append("path")
         .datum(data)
@@ -83,7 +83,7 @@ var yyyy = today.getFullYear();
         .style("fill", "none")
 
     // Initialize dots with group a
-    var dot = svg
+    var dot = svgT
       .selectAll('circle')
       .data(data)
       .enter()
