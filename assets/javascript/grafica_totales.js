@@ -138,7 +138,7 @@ var yyyy = today.getFullYear();
       .append('circle')
         .attr("cx", function(d) { return x(+d.Fecha) })
         .attr("cy", function(d) { return y(+d.Mexico) })
-        .attr("r", 3)
+        .attr("r", 4)
         .style("fill", "#1F9BCF")
 
 
