@@ -183,17 +183,17 @@ th {
 }
 // Graficas ==================================================================
 #grafica_totales {
-overflow: scroll;
+overflow: auto;
 }
 
 #grafica_recu {
-  overflow:scroll;
+  overflow:auto;
 }
 
 // Mapa ==================================================================
 
 #mapa {
-  overflow:scroll;
+  overflow:auto;
 }
 
 #mapa path {
