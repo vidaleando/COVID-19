@@ -48,7 +48,7 @@ var h = w / 2;
 //.attr("width","0 0 400 200") 
 var svg = d3.select("#grafica")
   .append("svg")
-  .attr("viewBox","0 0 460 400")
+  //.attr("viewBox","0 0 460 400")
   .attr("width",w)
   .attr("height",h)
   .append("g")
