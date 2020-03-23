@@ -181,9 +181,21 @@ th {
   margin-left:-15px;
   }
 }
+// Graficas ==================================================================
+#grafica_totales {
+overflow: scroll;
+}
 
+#grafica_recu {
+  overflow:scroll;
+}
 
 // Mapa ==================================================================
+
+#mapa {
+  overflow:scroll;
+}
+
 #mapa path {
       stroke-width: 0.3;
       stroke:#2B2B2B;
