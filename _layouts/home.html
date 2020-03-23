@@ -88,6 +88,32 @@ layout: default
 <div id="pob_pyr"></div>
 </div>
 <script src="{{ "/assets/javascript/pob_pyr.js" | relative_url }}"></script>
+
+<!---Esto inicia una tabla--->
+
+<div id='my_table'></div>
+<!---Create a div where the table will take place--->
+<div class="row d-flex justify-content-center">
+  <div class='table-responsive'>
+  <script src="{{ "/assets/javascript/databaseTable.js" | relative_url }}"></script>
+
+  <div id="DirectEditPreserve" class="wow fadeInUp databaseTable_holder 122860">
+    <div id="DirectEditPreserve" class="databaseTable_heading">
+      <div id="DirectEditPreserve" class="databaseTable_title">Estadisticas por estado</div>
+      <input id="DirectEditPreserve" class="databaseTable_search" type="text" width="200" placeholder="Busca un estado">
+    </div>
+    <div id="DirectEditPreserve" class="databaseTable">
+      <div id="DirectEditPreserve" class="databaseTable_import_wrap" style="display: block;">
+    </div>
+      <div id="DirectEditPreserve" class="databaseTable_UI_scrollLeft databaseTable_UI_button" style="display: none;"><!-- JS shows/hides by appending the .hidden class --></div>
+      <div id="DirectEditPreserve" class="databaseTable_UI_scrollRight databaseTable_UI_button" style="display: none;"><!-- JS shows/hides by appending the .hidden class --></div>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+<!--BOTÓN DE DESCARGA-->
 <form method="get" action="https://github.com/LeonardoCastro/COVID19-Mexico/archive/master/data/series_tiempo.zip">
 <button type="submit" class="btn btn-primary btn-lg btn-block btn-info">Descarga los datos</button>
 </form>

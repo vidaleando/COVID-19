@@ -56,7 +56,6 @@ var svg = d3.select("#grafica")
           "translate(" + margin.left + "," + margin.top + ")");
     //.attr("viewBox","0 0 460 400");
 
-
 //Read the data
 d3.csv(url, function(data) {
 
