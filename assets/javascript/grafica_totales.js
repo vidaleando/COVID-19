@@ -4,64 +4,22 @@ var margin = {top: 10, right: 30, bottom: 30, left: 30},
     height = 400 - margin.top - margin.bottom; 
 var url="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv";
 
-/*
-// Set default width and height, calculate ratio
-var default_width = 460;
-var default_height = 400;
-var default_ratio = default_width / default_height;
-
-// Current (non-responsive) width and height are calcuated from the default, minus the margins
-var margin = {top: 10, right: 100, bottom: 30, left: 30},
-    width = default_width - margin.left - margin.right,
-    height = default_height - margin.top - margin.bottom;
-
-// Determine current size, which determines vars
-function set_responsive() {
-  //alert('setting vars')
-  current_width = window.innerWidth;
-  current_height = window.innerHeight;
-
-  current_ratio = current_width / current_height;
-
-  // Check if height is limiting factor
-  if ( current_ratio > default_ratio ){
-    h = current_height;
-    w = h * default_ratio;
-  // Else width is limiting
-  } else {
-    w = current_width;
-    h = w / default_ratio;
-  }
-
-  // Set new width and height based on graph dimensions
-  width = w - margin.left - margin.right;
-  height = h - margin.top - margin.bottom;
-
-};
-
-set_responsive();
-*/
-var graf = d3.select("#grafica_totales");
-var w = graf.node().getBoundingClientRect().width;
-var h = w / 2;
 
 //.attr("width","0 0 400 200") 
 var svg = d3.select("#grafica_totales")
   .append("svg")
-  //.attr("viewBox","0 0 460 400")
   .attr("width","460")
   .attr("height","430")
   .append("g")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
-    //.attr("viewBox","0 0 460 400");
 
 //Read the data
 d3.csv(url, function(data) {
 
     // List of groups (here I have one group per column)
     var allGroup = ["Lineal","Logarítmica"];
-    //var allGroupb = {Lineal:Mexico,"Logar.attr("viewBox","0 0 460 400")ítmica":Mexico_log10};
+    //var allGroupb = {Lineal:Mexico,"Logarítmica":Mexico_log10};
     var tope=data.length-1;
     data.forEach(function(d) {
                d.Fecha = new Date(d.Fecha);
