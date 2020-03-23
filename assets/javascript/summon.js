@@ -19,10 +19,9 @@ var div = document.getElementById('recu');
     div.innerHTML = data[tope]["Mexico"];
 });
 
-  d3.csv(urlRecu,function(data) {
-   var largo = data.length;
-   var tope =largo-1;
-var div = document.getElementById('activos');
-    div.innerHTML = data[tope]["Mexico"];
-});
+ function resta(){
+ 	var tot = document.getElementById('totales'),
+ 		rec = document.getElementById('recu'); 
+ 	document.getElementById('activos').innerHTML=+tot-rec;
+ }
 
