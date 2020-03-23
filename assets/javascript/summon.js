@@ -24,6 +24,6 @@ var div = document.getElementById('recu');
  		rec = document.getElementById('recu').innerHTML;
  document.getElementById('activos').innerHTML =+tot-rec ;
  var  adjust = window.innerWidth;
-        $('#mapa').scrollLeft(adjust/3);
+        $('#mapa').scrollLeft(adjust/2);
  }
 
