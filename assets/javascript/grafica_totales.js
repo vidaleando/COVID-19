@@ -48,11 +48,10 @@ var h = w / 2;
 //.attr("width","0 0 400 200") 
 var svg = d3.select("#grafica")
   .append("svg")
-    .attr("width",w)
-    .attr("height",h)
   .append("g")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
+    .attr("viewBox","0 0 460 400");
 
 
 //Read the data
