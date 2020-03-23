@@ -22,7 +22,7 @@ var div = document.getElementById('recu');
   d3.csv(urlRecu,function(data) {
    var largo = data.length;
    var tope =largo-1;
-var div = document.getElementById('recu');
+var div = document.getElementById('activos');
     div.innerHTML = data[tope]["Mexico"];
 });
 
