@@ -23,5 +23,7 @@ var div = document.getElementById('recu');
  	var tot = document.getElementById('totales').innerHTML,
  		rec = document.getElementById('recu').innerHTML;
  document.getElementById('activos').innerHTML =+tot-rec ;
+ var  adjust = window.innerWidth;
+        $('#mapa').scrollLeft(adjust/2);
  }
 
