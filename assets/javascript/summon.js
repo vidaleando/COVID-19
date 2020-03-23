@@ -21,7 +21,8 @@ var div = document.getElementById('recu');
 
  function resta(){
  	var tot = document.getElementById('totales'),
- 		rec = document.getElementById('recu'); 
- 	document.getElementById('activos').innerHTML=+tot-rec;
+ 		rec = document.getElementById('recu');
+ 		console.log(tot); 
+ 	conole.log(document.getElementById('activos').innerHTML=+tot-rec);
  }
 
