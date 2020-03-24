@@ -24,7 +24,7 @@ var recu = document.getElementById('col_recu');
 });
 var finalTot document.getElementById('col_tot');
 var finalRecu document.getElementById('col_recu');
-var act document.getElementById('col_recu');
+var act document.getElementById('col_act');
 act.innerHTML = finalTot.innerHTML-finalRecu.innerHTML;
 
    /* console.log(selector);
