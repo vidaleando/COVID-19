@@ -22,7 +22,7 @@ d3.csv(urlRecu,function(data) {
 var recu = document.getElementById('col_recu');
     recu.innerHTML = data[tope][div.innerHTML];    
 });
-console.log(document.getElementById('col_tot'));
+console.log(document.getElementById('col_tot').innerHTML);
 /*var finalTot document.getElementById('col_tot');
 var finalRecu document.getElementById('col_recu');
 var act document.getElementById('col_act');
