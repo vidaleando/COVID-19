@@ -39,7 +39,7 @@
           });
 
 d3.csv("https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv",function(data) {
-                var parsedCSV = d3.csv.parse(data);
+                var parsedCSV = d3.csv.parseRows(data);
                 console.log(parsedCSV);
                 /*var container = d3.select("#tabla_mapa")
                     .append("table")
