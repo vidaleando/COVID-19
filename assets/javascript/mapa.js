@@ -40,7 +40,7 @@
 
 d3.csv("https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv")
 .row(function(d) { return {key: d.key, value: +d.value}; })
-    .get(function(error, columns) { console.log(columns[1]); });
+    .get(function(error, columns) { console.log(columns[3]); });
 /*,function(data) {
                 var parsedCSV = d3.csv.parseRows(data);
                 console.log(parsedCSV);
