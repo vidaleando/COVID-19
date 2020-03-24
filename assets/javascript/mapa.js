@@ -10,9 +10,9 @@ var hover = function(d) {
 var div = document.getElementById('tooltip');
     div.innerHTML = d.properties.name;
 var selector =div.innerHTML ;
-d3.csv(urlTotal,function(data) {
    var largo = data.length;
    var tope =largo-1;
+d3.csv(urlTotal,function(data) {
 var tot = document.getElementById('col_tot');
     tot.innerHTML = data[tope][div.innerHTML];    
 });
