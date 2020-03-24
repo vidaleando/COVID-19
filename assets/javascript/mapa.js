@@ -16,7 +16,7 @@ d3.csv(urlTotal,function(data) {
 var tot = document.getElementById('col_tot');
     tot.innerHTML = data[tope][div.innerHTML];    
 });
-d3.csv(urlTotal,function(data) {
+d3.csv(urlRecu,function(data) {
    var largo = data.length;
    var tope =largo-1;
 var recu = document.getElementById('col_recu');
