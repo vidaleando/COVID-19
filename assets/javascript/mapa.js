@@ -22,16 +22,12 @@ d3.csv(urlRecu,function(data) {
 var recu = document.getElementById('col_recu');
     recu.innerHTML = data[tope][div.innerHTML];    
 });
+console.log(document.getElementById('col_tot'));
 /*var finalTot document.getElementById('col_tot');
 var finalRecu document.getElementById('col_recu');
 var act document.getElementById('col_act');
 act.innerHTML = +finalTot.innerHTML-finalRecu.innerHTML;*/
 
-   /* console.log(selector);
-var prueba = new Date(2020,2,21);
-d3.csv("https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv")
-  .row(function(d) { console.log({selector: d.prueba, value: +d.val}); }) //return {key: d.key, value: +d.value};
-  .get(function(error, rows) {console.log(rows); });*/
 };
 
 //define projection
