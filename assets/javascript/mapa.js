@@ -39,8 +39,8 @@
           });
 
 d3.csv("https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv")
-.row(function(d) { return {key: d.key, value: +d.value}; })
-    .get(function(error,columns, rows) { console.log(columns);console.log(rows); });
+.row(function(d) { console.log(key: d.key, value: +d.val); }) //return {key: d.key, value: +d.value};
+    .get(function(error, rows) {console.log(rows); });
 /*,function(data) {
                 var parsedCSV = d3.csv.parseRows(data);
                 console.log(parsedCSV);
