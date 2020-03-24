@@ -22,10 +22,10 @@ d3.csv(urlRecu,function(data) {
 var recu = document.getElementById('col_recu');
     recu.innerHTML = data[tope][div.innerHTML];    
 });
-var finalTot document.getElementById('col_tot');
+/*var finalTot document.getElementById('col_tot');
 var finalRecu document.getElementById('col_recu');
 var act document.getElementById('col_act');
-act.innerHTML = +finalTot.innerHTML-finalRecu.innerHTML;
+act.innerHTML = +finalTot.innerHTML-finalRecu.innerHTML;*/
 
    /* console.log(selector);
 var prueba = new Date(2020,2,21);
