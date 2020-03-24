@@ -20,13 +20,14 @@ d3.csv(urlRecu,function(data) {
    var largo = data.length;
    var tope =largo-1;
 var recu = document.getElementById('col_recu');
-    recu.innerHTML = data[tope][div.innerHTML];    
+    recu.innerHTML = data[tope][div.innerHTML];  
+    return recu.innerHTML;  
 });
 console.log(document.getElementById('col_tot').innerHTML-document.getElementById('col_recu').innerHTML);
 var finalTot= document.getElementById('col_tot');
 var finalRecu =document.getElementById('col_recu');
 var act= document.getElementById('col_act');
-act.innerHTML = +finalTot.innerHTML-finalRecu.innerHTML;
+act.innerHTML = +finalTot.innerHTML-recu.innerHTML;
 
 };
 
