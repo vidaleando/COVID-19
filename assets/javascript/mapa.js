@@ -14,7 +14,13 @@ d3.csv(urlTotal,function(data) {
    var largo = data.length;
    var tope =largo-1;
 var tot = document.getElementById('col_tot');
-    tot.innerHTML = data[tope][div.innerHTML];
+    tot.innerHTML = data[tope][div.innerHTML];    
+});
+d3.csv(urlTotal,function(data) {
+   var largo = data.length;
+   var tope =largo-1;
+var recu = document.getElementById('col_recu');
+    recu.innerHTML = data[tope][div.innerHTML];    
 });
    /* console.log(selector);
 var prueba = new Date(2020,2,21);
