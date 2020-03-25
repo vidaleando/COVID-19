@@ -77,7 +77,7 @@ console.log(mindate);
   svgT.append("text")             
       .attr("transform",
             "translate(" + (width/2) + " ," + 
-                           (height + margin.top + 60) + ")")
+                           (height + margin.top + 50) + ")")
       .style("text-anchor", "middle")
       .text("Fecha");
 
