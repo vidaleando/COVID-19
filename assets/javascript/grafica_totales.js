@@ -103,7 +103,7 @@ formatMonth = d3.timeFormat("%B"),
             tip.transition()    
                 .duration(200)    
                 .style("opacity", .9);    
-            tip.html(formatDay(d.Fecha) + "/" formatMonth(d.Fecha) + "<br/> <b>"  + d.Mexico_pais + "</b>")  
+            tip.html(formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "<br/> <b>"  + d.Mexico_pais + "</b>")  
                 .style("left", (d3.event.pageX) + "px")   
                 .style("top", (d3.event.pageY - 28) + "px");  
             })          
