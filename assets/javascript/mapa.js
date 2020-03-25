@@ -60,18 +60,3 @@ d3.json("https://raw.githubusercontent.com/vidaleando/COVID-19/master/assets/jav
 });
 
 
-/*,function(data) {
-                var parsedCSV = d3.csv.parseRows(data);
-                console.log(parsedCSV);
-                var container = d3.select("#tabla_mapa")
-                    .append("table")
-
-                    .selectAll("tr")
-                        .data(parsedCSV).enter()
-                        .append("tr")
-
-                    .selectAll("td")
-                        .data(function(d) { return d; }).enter()
-                        .append("td")
-                        .text(function(d) { return d; });
-            });*/
