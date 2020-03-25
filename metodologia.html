@@ -1,0 +1,48 @@
+---
+layout: default
+---
+<article>
+
+  <header>
+    <h1>{{ page.title | escape }}</h1>
+  </header>
+
+
+  <section>
+
+    <!------------- Aviso sobre posible infeccion -------------------->
+    <div class="alert alert-dismissible alert-danger" style='margin-left: 5%; margin-right: 5%;'>
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <h4 class="alert-heading">Aviso</h4>
+      <p class="mb-0">Si crees estar <a href="https://www.cdc.gov/coronavirus/2019-ncov/downloads/2019-ncov-factsheet-sp.pdf" class="alert-link">infectado</a>, manda un mensaje con la palabra <a href="#" class="alert-link">COVID al 51515</a>.</p>
+    </div>
+
+    
+    <h1 class='text-center'>¡En construcción!</h1>
+  </section>
+
+
+  {%- if site.posts.size > 0 -%}
+    <p class="h4">{{ page.list_title | default: "Posts" }}</p>
+    <ul class="list-unstyled">
+      {%- for post in site.posts -%}
+      <li>
+        <span class="text-muted">
+          {%- assign date_format = "%b %-d, %Y" -%}
+          {{ post.date | date: date_format }}
+        </span>
+        <p class="h5">
+          <a href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </p>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  {%- endif -%}
+</article>

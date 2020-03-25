@@ -1,0 +1,81 @@
+---
+layout: default
+---
+
+<article>
+
+  <header>
+    <h1>{{ page.title | escape }}</h1>
+    <script src="/assets/bootstrap/jquery.min.js"></script>
+    <script src="/assets/tablesorter-master/js/jquery.tablesorter.js"></script>
+    <script src="/assets/tablesorter-master/js/jquery.tablesorter.widgets.js"></script>
+  </header>
+
+
+  <section>
+
+    <!----------------------------------- Informacion importante --------------------------------------->
+    <div class="alert alert-dismissible alert-danger" style='margin-left: 5%; margin-right: 5%;'>
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <h4 class="alert-heading">Aviso</h4>
+      <p class="mb-0">Si crees estar <a href="https://www.cdc.gov/coronavirus/2019-ncov/downloads/2019-ncov-factsheet-sp.pdf" class="alert-link">infectado</a>, manda un mensaje con la palabra <a href="#" class="alert-link">COVID al 51515</a>.</p>
+    </div>
+
+    <!----------------------------------- Tabla de estados --------------------------------------->
+
+    <div id='my_table'></div>
+
+    <div class="row d-flex justify-content-center">
+
+
+
+      <div class='table-responsive' style='text-align: center; margin-left: 5%; margin-right: 5%; width: 90%;'>
+      <script src="{{ "/assets/javascript/databaseTable.js" | relative_url }}"></script>
+
+
+      <div id="DirectEditPreserve" class="wow fadeInUp databaseTable_holder 122860">
+        <div id="DirectEditPreserve" class="databaseTable_heading" >
+          <div id="DirectEditPreserve" class="databaseTable_title d-inline-flex" ><h1 class="text-center" style='margin-top: 5%;'>Estadísticas por estado</h1></div>
+          <input id="DirectEditPreserve" class="databaseTable_search form-control text-center text-uppercase" type="text" style='width: 100%' placeholder="Busca un estado">
+        </div>
+        <div id="DirectEditPreserve" class="databaseTable">
+          <div id="DirectEditPreserve" class="databaseTable_import_wrap" style="display: block;">
+        </div>
+        <div id="DirectEditPreserve" class="databaseTable_UI_scrollLeft databaseTable_UI_button" style="bakground: gray;"></div>
+        <div id="DirectEditPreserve" class="databaseTable_UI_scrollRight databaseTable_UI_button" style="display: none;"></div>
+        </div>
+      </div>
+      </div>
+      </div>
+
+
+    <!----------------------------------- Boton para descargar --------------------------------------->
+    <form method="get" action="https://github.com/LeonardoCastro/COVID19-Mexico/archive/master/data/series_tiempo.zip">
+    <button type="submit" class="btn btn-primary btn-lg btn-block btn-info" style='margin-top:5%; margin-right: 5%; margin-left: 5%; width: 90%;'>Descarga los datos</button>
+  </section>
+
+
+  {%- if site.posts.size > 0 -%}
+    <p class="h4">{{ page.list_title | default: "Posts" }}</p>
+    <ul class="list-unstyled">
+      {%- for post in site.posts -%}
+      <li>
+        <span class="text-muted">
+          {%- assign date_format = "%b %-d, %Y" -%}
+          {{ post.date | date: date_format }}
+        </span>
+        <p class="h5">
+          <a href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </p>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+
+    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+  {%- endif -%}
+</article>
