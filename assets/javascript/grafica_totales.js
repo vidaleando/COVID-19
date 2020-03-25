@@ -25,7 +25,7 @@ d3.csv(url, function(data) {
     var tope=data.length-1;
     data.forEach(function(d) {
                d.Fecha = new Date(d.Fecha);
-               d.Mexico = +d.Mexico;
+               d.Mexico_pais = +d.Mexico_pais;
             });
     //console.log(allGroupb);
     // add the options to the button
@@ -78,7 +78,7 @@ var yyyy = today.getFullYear();
         .datum(data)
         .attr("d", d3.line()
           .x(function(d) { return x(d.Fecha) })
-          .y(function(d) { return y(+d.Mexico) })
+          .y(function(d) { return y(+d.Mexico_pais) })
         )
         .attr("stroke", "#1f9bcf")
         .style("stroke-width", 3)
@@ -90,8 +90,8 @@ var yyyy = today.getFullYear();
       .data(data)
       .enter()
       .append('circle')
-        .attr("cx", function(d) { return x(+d.Fecha) })
-        .attr("cy", function(d) { return y(+d.Mexico) })
+        .attr("cx", function(d) { return x(d.Fecha) })
+        .attr("cy", function(d) { return y(+d.Mexico_pais) })
         .attr("r", 4)
         .style("fill", "#1F9BCF")
         .on("mouseover", function(d) {    
