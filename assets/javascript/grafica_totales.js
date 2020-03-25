@@ -14,7 +14,12 @@ var svgT = d3.select("#grafica_totales")
   .attr("height","430")
   .append("g")
     .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
+          "translate(" + margin.left + "," + margin.top + ")")
+    .on("load", function() {    
+            tip.transition()    
+                .duration(400)    
+                .style("opacity", .9);      
+            }) ;
 
 //Read the data
 d3.csv(url, function(data) {
