@@ -61,13 +61,19 @@ d3.json("https://raw.githubusercontent.com/vidaleando/COVID-19/master/assets/jav
         .append("path")
         .attr("d", path)
         //.on("mouseover", hover);
-        .on("mouseover", function(d) {  
+        .on("mouseover", function(d) { 
+          d.properties.updated_at = new Date(d.properties.updated_at) ;
+           formatMonth = d3.timeFormat("%b"), //%m
+    formatDay = d3.timeFormat("%d"),
+    formatHour=d3.timeFormat("%H"),
+    formatMin=d3.timeFormat("%M");
             navMap.transition()    
                 .duration(200)    
                 .style("opacity", .9);    
-            navMap.html("<h6>" + d.properties.name + "</h6>"+ "<p class='text-danger'> Totales: "  + d.properties.totales + "</p>"
-              +"<p class='text-warning'> <span style='color:#fd7e14 !important;'>Activos: "  + d.properties.activos + "</span></p>"+"<p class='text-primary'> Muertes: "
-                + d.properties.muertes + "</p>" +"<p><small>"+d.properties.updated_at+"</small></p>")  
+            navMap.html("<h6>" + d.properties.name + "</h6>"+ "<p class='text-danger'> Totales: " 
+              + d.properties.totales + "</p>" + "<p class='text-warning'> <span style='color:#fd7e14 !important;'>Activos: " 
+               + d.properties.activos + "</span></p>"+"<p class='text-primary'> Muertes: " + d.properties.muertes + "</p>"
+                +"<p><small>Actualizado el_"+formatMonth(d.properties.updated_at)+"/"+formatDay(d.properties.updated_at)+ "@"+ "</small></p>")  
                 .style("left", (d3.event.pageX) + "px")   
                 .style("top", (d3.event.pageY - 28) + "px");  
             })          
