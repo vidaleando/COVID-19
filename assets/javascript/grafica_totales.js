@@ -1,6 +1,6 @@
 // set the dimensions and margins of the graph
 var margin = {top: 10, right: 30, bottom: 30, left: 30},
-    width = 460 - margin.left - margin.right,
+    width = 500 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom; 
 var url="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv";
 
@@ -10,8 +10,8 @@ var tip = d3.select("#grafica_totales").append("div")
 
 var svgT = d3.select("#grafica_totales")
   .append("svg")
-  .attr("width","460")
-  .attr("height","430")
+  .attr("width", width)
+  .attr("height",height)
   .append("g")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
