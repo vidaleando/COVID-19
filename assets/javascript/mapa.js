@@ -4,7 +4,7 @@ var urlTotal = "https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/
     w = 700,
     h = 400;
        var map = d3.select("#mapa");
-    var w = $("#mapa").width(); //map.node().getBoundingClientRect().width;
+    var w = $("div#mapa").width(); //map.node().getBoundingClientRect().width;
     var h = w / 2;
 /*var  adjust = window.innerWidth;
 $('#mapa').scrollLeft(adjust/2);*/
