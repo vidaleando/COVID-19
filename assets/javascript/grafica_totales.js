@@ -97,7 +97,7 @@ var yyyy = today.getFullYear();
             tip.transition()    
                 .duration(200)    
                 .style("opacity", .9);    
-            tip.html(formatTime(d.Fecha) + "<br/>"  + d.Mexico_pais)  
+            tip.html(d.Fecha + "<br/>"  + d.Mexico_pais)  
                 .style("left", (d3.event.pageX) + "px")   
                 .style("top", (d3.event.pageY - 28) + "px");  
             })          
