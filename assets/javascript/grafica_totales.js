@@ -2,7 +2,7 @@
 var margin = {top: 10, right: 10, bottom: 0, left: 50},
     /*width = 460 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom; */
-    width=$("#cont_graf").width(),
+    width=$(".page-content").width(),
     height=width/1.15;
 var url="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv";
 
