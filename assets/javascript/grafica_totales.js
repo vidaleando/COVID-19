@@ -61,7 +61,7 @@ console.log(mindate);
     // Add X axis --> it is a date format
     var x = d3.scaleTime()
       .domain([mindate,today])
-      .range([ 0, width ]);
+      .range([ 0, width-10 ]);
 
     svgT.append("g")
       .attr("transform", "translate(0," + height + ")")
@@ -83,7 +83,7 @@ console.log(mindate);
 
     // Add Y axis      
     var y = d3.scaleLinear()
-    .domain( [0,d3.max(data, function(d){return d.Mexico_pais;  })])
+    .domain( [0,d3.max(data, function(d){return d.Mexico_pais;  })-10])
       .range([ height, 0 ]);
     svgT.append("g")
       .call(d3.axisLeft(y));
