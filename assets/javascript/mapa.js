@@ -65,7 +65,7 @@ d3.json("https://raw.githubusercontent.com/vidaleando/COVID-19/master/assets/jav
             navMap.transition()    
                 .duration(200)    
                 .style("opacity", .9);    
-            navMap.html("<em>" +d.name+ "</em>"+ "<br/> <p class='text-primary'>"  + d.Mexico_pais + "</p>")  
+            navMap.html("<em>" +d.features.name+ "</em>"+ "<br/> <p class='text-primary'>"  + d.Mexico_pais + "</p>")  
                 .style("left", (d3.event.pageX) + "px")   
                 .style("top", (d3.event.pageY - 28) + "px");  
             })          
