@@ -39,7 +39,7 @@ var hover = function(d) {
 //define projection
 var projection = d3.geoMercator()
     .center([-100, 22])
-    .translate([0,0]) //[w / 1.7, h / 1.7]
+    .translate([w / 2, h / 1.7])
     .scale([w / .7]);
 
 //define path generator
