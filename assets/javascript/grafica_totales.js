@@ -47,8 +47,8 @@ var yyyy = today.getFullYear();
 
 //today = mm + '/' + dd + '/' + yyyy;
 
-formatMonth = d3.timeFormat("%B"),
-    formatDay = d3.timeFormat("%A");
+formatMonth = d3.timeFormat("%m"),
+    formatDay = d3.timeFormat("%d");
     //date = new Date(2014, 4, 1); // Thu May 01 2014 00:00:00 GMT-0700 (PDT)
 
 //formatMonth(date); // "May"
