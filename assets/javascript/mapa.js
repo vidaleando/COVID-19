@@ -73,8 +73,8 @@ d3.json("https://raw.githubusercontent.com/vidaleando/COVID-19/master/assets/jav
             navMap.html("<h6>" + d.properties.name + "</h6>"+ "<p class='text-danger'> Totales: " 
               + d.properties.totales + "</p>" + "<p class='text-warning'> <span style='color:#fd7e14 !important;'>Activos: " 
                + d.properties.activos + "</span></p>"+"<p class='text-primary'> Muertes: " + d.properties.muertes + "</p>"
-                +"<p><small>Actualizado el"+formatMonth(d.properties.updated_at)+"/"+formatDay(d.properties.updated_at)+ 
-                "@"+formatHour(d.properties.updated_at)+":"+formatMin(d.properties.updated_at)+ "</small></p>")  
+                +"<p><small>Actualizado el: "+formatDay(d.properties.updated_at)+ "/"+formatMonth(d.properties.updated_at)+
+                " @ "+formatHour(d.properties.updated_at)+":"+formatMin(d.properties.updated_at)+ "</small></p>")  
                 .style("left", (d3.event.pageX) + "px")   
                 .style("top", (d3.event.pageY - 28) + "px");  
             })          
