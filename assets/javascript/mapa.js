@@ -3,6 +3,9 @@ var urlTotal = "https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/
     urlRecu = "https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_recuperados.csv",
     w = 700,
     h = 400;
+       var map = d3.select("#mapa");
+    var w = map.node().getBoundingClientRect().width;
+    var h = w / 2;
 /*var  adjust = window.innerWidth;
 $('#mapa').scrollLeft(adjust/2);*/
 var navMap = d3.select("#mapa").append("div") 
