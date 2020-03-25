@@ -11,7 +11,7 @@ var tip = d3.select("#grafica_totales").append("div")
 var svgT = d3.select("#grafica_totales")
   .append("svg")
   .attr("width", width+margin.left+margin.right+80)
-  .attr("height",height+margin.top+margin.bottom+100)
+  .attr("height",height+margin.top+margin.bottom+120)
   .append("g")
     .attr("transform",
           "translate(" +(50+ margin.left )+ "," + margin.top + ")");
@@ -91,7 +91,7 @@ console.log(mindate);
     // text label for the y axis
   svgT.append("text")
       .attr("transform", "rotate(-90)")
-      .attr("y", -20 - margin.left)
+      .attr("y", -30 - margin.left)
       .attr("x",0 - (height / 2))
       .attr("dy", "1em")
       .style("text-anchor", "middle")
