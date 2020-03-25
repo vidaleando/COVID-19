@@ -53,7 +53,7 @@ var mapSvg = d3.select("#mapa")
 //load GeoJson data
 d3.json("https://raw.githubusercontent.com/vidaleando/COVID-19/master/assets/javascript/prueba.geojson", function(json) {
     feat = json.features;
-    console.log(feat[0]);
+    console.log(feat[0][0]);
     // bind data
     mapSvg.selectAll("path")
         .data(json.features)
