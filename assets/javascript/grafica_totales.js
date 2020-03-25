@@ -10,8 +10,8 @@ var tip = d3.select("#grafica_totales").append("div")
 
 var svgT = d3.select("#grafica_totales")
   .append("svg")
-  .attr("width", width)
-  .attr("height",height)
+  .attr("width", 500)
+  .attr("height",400)
   .append("g")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
@@ -57,6 +57,7 @@ formatDay = d3.timeFormat("%d");
     var x = d3.scaleTime()
       .domain([mindate,today])
       .range([ 0, width ]);
+
     svgT.append("g")
       .attr("transform", "translate(0," + height + ")")
       .attr("class","graph_date")
