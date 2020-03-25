@@ -124,7 +124,7 @@ console.log(mindate);
             tip.transition()    
                 .duration(200)    
                 .style("opacity", .9);    
-            tip.html("<em>" + formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "</em>"+ "<br/> <p class='text-primary'>"  + d.Mexico_pais + "</p>")  
+            tip.html("<h6>" + formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "</h6>"+ "<br/> <p class='text-primary'>"  + d.Mexico_pais + "</p>")  
                 .style("left", (d3.event.pageX) + "px")   
                 .style("top", (d3.event.pageY - 28) + "px");  
             })          
