@@ -58,8 +58,6 @@ var yyyy = today.getFullYear();
     formatDia = d3.timeFormat("%d");
 
   var mindate = new Date(2020,1,28);
-console.log(formatMes(mindate));
-console.log(mindate);
     // Add X axis --> it is a date format
     var x = d3.scaleTime()
       .domain([mindate,today])
