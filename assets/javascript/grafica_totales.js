@@ -85,8 +85,7 @@ var yyyy = today.getFullYear();
         .style("fill", "none")
 
     // Initialize dots with group a
-    var dot = svgT
-      .selectAll('circle')
+    var dot = svgT.selectAll('circle')
       .data(data)
       .enter()
       .append('circle')
