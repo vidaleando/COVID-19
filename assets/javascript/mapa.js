@@ -5,6 +5,9 @@ var urlTotal = "https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/
     h = 400;
 /*var  adjust = window.innerWidth;
 $('#mapa').scrollLeft(adjust/2);*/
+var navMap = d3.select("#mapa").append("div") 
+    .attr("class", "nav_map")       
+    .style("opacity", 0);
 
 var hover = function(d) {
     var div = document.getElementById('tooltip');
@@ -55,7 +58,21 @@ d3.json("https://raw.githubusercontent.com/vidaleando/COVID-19/master/assets/jav
         .enter()
         .append("path")
         .attr("d", path)
-        .on("mouseover", hover);
+        //.on("mouseover", hover);
+        .on("mouseover", function(d) {    
+            navMap.transition()    
+                .duration(200)    
+                .style("opacity", .9);    
+            navMap.html("<em>" + formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "</em>"+ "<br/> <p class='text-primary'>"  + d.Mexico_pais + "</p>")  
+                .style("left", (d3.event.pageX) + "px")   
+                .style("top", (d3.event.pageY - 28) + "px");  
+            })          
+        .on("mouseout", function(d) {   
+            navMap.transition()    
+                .duration(500)    
+                .style("opacity", 0); 
+        });
+
 
 });
 
