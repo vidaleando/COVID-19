@@ -90,10 +90,10 @@ layout: default
 <!-- Create a div where the graph will take place -->
 
 <div class="justify-content-center" id="grafica_totales"><h3 class="text-center">Casos totales</h3></div>
-{% comment %}
-<div class="justify-content-center" id="grafica_recu"><h3 class="text-center">Recuperados</h3></div>
-<script src="{{ "/assets/javascript/grafica_recu.js" | relative_url }}"></script>
-{% endcomment %}
+
+<div class="justify-content-center" id="barplot_nuevos"><h3 class="text-center">Casos diarios</h3></div>
+<script src="{{ "/assets/javascript/barplot_nuevos.js" | relative_url }}"></script>
+
 <script src="{{ "/assets/javascript/grafica_totales.js" | relative_url }}"></script>
 
 </div>
