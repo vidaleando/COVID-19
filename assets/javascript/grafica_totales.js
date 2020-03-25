@@ -75,7 +75,7 @@ formatDay = d3.timeFormat("%d");
       .style("text-anchor", "middle")
       .text("Fecha");
 
-    // Add Y axis      //
+    // Add Y axis      
     var y = d3.scaleLinear()
     .domain( [0,d3.max(data, function(d){return d.Mexico_pais;  })])
       .range([ height, 0 ]);
