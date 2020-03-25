@@ -18,35 +18,6 @@ layout: default
   {%- endif -%}
 {% endcomment %}
 
-<h1 class="text-center">Mapa</h1>
-<div class="justify-content-center row d-flex">
-<div id="mapa"></div>
-</div>
-
-<div class="justify-content-center table-responsive">
-  <table class="table table-hover" id="tabla_mapa">
-  <thead>
-    <tr>
-      <th scope="col">Entidad</th>
-      <th scope="col">Casos totales</th>
-      <th scope="col">Casos activos</th>
-      <th scope="col">Casos recuperados</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="table-info">
-      <th scope="row" id="tooltip">Selecciona</th>
-      <td id="col_tot"></td>
-      <td id="col_act"></td>
-      <td id="col_recu"></td>
-    </tr>
-  </tbody>
-  </table>  
-
-</div>
-<script src="{{ "/assets/javascript/mapa.js" | relative_url }}"></script>
-
-
 
 <!--INICIA SEMÁFORO-->
 <h1 class="text-center">Casos nacionales</h1>
@@ -74,6 +45,35 @@ layout: default
 </div>
 </div>
 <script src="{{ "/assets/javascript/summon.js" | relative_url }}"></script>
+
+<!--INICIA MAPA-->
+<h1 class="text-center">Mapa</h1>
+<div class="justify-content-center row d-flex">
+<div id="mapa"></div>
+</div>
+
+<div class="justify-content-center table-responsive">
+  <table class="table table-hover" id="tabla_mapa">
+  <thead>
+    <tr>
+      <th scope="col">Entidad</th>
+      <th scope="col">Casos totales</th>
+      <th scope="col">Casos activos</th>
+      <th scope="col">Casos recuperados</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-info">
+      <th scope="row" id="tooltip">Selecciona</th>
+      <td id="col_tot"></td>
+      <td id="col_act"></td>
+      <td id="col_recu"></td>
+    </tr>
+  </tbody>
+  </table>  
+
+</div>
+<script src="{{ "/assets/javascript/mapa.js" | relative_url }}"></script>
 
  <!--INICIA SECCION DE GRAFICAS-->  
 <!--INICIA EL PLOT-->
