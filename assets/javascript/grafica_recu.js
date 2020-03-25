@@ -63,12 +63,29 @@ var yyyy = today.getFullYear();
         .attr("dy", ".15em")
         .attr("transform", "rotate(-65)");
 
+        // text label for the x axis
+  svgR.append("text")             
+      .attr("transform",
+            "translate(" + (width/2) + " ," + 
+                           (height + margin.top + 20) + ")")
+      .style("text-anchor", "middle")
+      .text("Fecha");
+
     // Add Y axis      //
     var y = d3.scaleLinear()
     .domain( [0,d3.max(data, function(d){return d.Mexico;  })])
       .range([ height, 0 ]);
     svgR.append("g")
       .call(d3.axisLeft(y));
+
+       // text label for the y axis
+  svgR.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", -10 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Casos");      
 
     // Initialize line with group a
     var line = svgR
@@ -140,5 +157,5 @@ var yyyy = today.getFullYear();
 
 });
 
-  
+
 
