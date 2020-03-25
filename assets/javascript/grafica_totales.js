@@ -83,7 +83,7 @@ console.log(mindate);
 
     // Add Y axis      
     var y = d3.scaleLinear()
-    .domain( [0,d3.max(data, function(d){return d.Mexico_pais;  })-10])
+    .domain( [0,d3.max(data, function(d){return d.Mexico_pais;  })-20])
       .range([ height, 0 ]);
     svgT.append("g")
       .call(d3.axisLeft(y));
