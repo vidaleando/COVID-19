@@ -52,6 +52,9 @@ var yyyy = today.getFullYear();
     formatDay = d3.timeFormat("%d");
 
 
+ formatMes = d3.timeFormat("%b"),
+    formatDia = d3.timeFormat("%d");
+
   var mindate = new Date(2020,1,28);
 
     // Add X axis --> it is a date format
