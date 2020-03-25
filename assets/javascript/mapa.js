@@ -62,7 +62,7 @@ d3.json("https://raw.githubusercontent.com/vidaleando/COVID-19/master/assets/jav
         .attr("d", path)
         //.on("mouseover", hover);
         .on("mouseover", function(d) {
-        console.log(d);    
+        console.log(d.properties);    
             navMap.transition()    
                 .duration(200)    
                 .style("opacity", .9);    
