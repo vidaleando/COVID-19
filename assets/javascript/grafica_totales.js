@@ -23,6 +23,7 @@ d3.csv(url, function(data) {
     var allGroup = ["Lineal","Logarítmica"];
     //var allGroupb = {Lineal:Mexico,"Logarítmica":Mexico_log10};
     var tope=data.length-1;
+
     data.forEach(function(d) {
                d.Fecha = new Date(d.Fecha);
                d.Mexico_pais = +d.Mexico_pais;
@@ -47,12 +48,16 @@ var yyyy = today.getFullYear();
 
 //today = mm + '/' + dd + '/' + yyyy; */
 
-formatMonth = d3.timeFormat("%m"),
-formatDay = d3.timeFormat("%d");
+ formatMonth = d3.timeFormat("%b"), //%m
+    formatDay = d3.timeFormat("%d");
 
+
+ formatMes = d3.timeFormat("%b"),
+    formatDia = d3.timeFormat("%d");
 
   var mindate = new Date(2020,1,28);
-
+console.log(formatMes(mindate));
+console.log(mindate);
     // Add X axis --> it is a date format
     var x = d3.scaleTime()
       .domain([mindate,today])
@@ -91,7 +96,7 @@ formatDay = d3.timeFormat("%d");
       .attr("dy", "1em")
       .style("text-anchor", "middle")
       .text("Casos");   
-    
+  
 
     // Initialize line with group a
     var line = svgT
