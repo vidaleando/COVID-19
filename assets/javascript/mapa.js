@@ -53,7 +53,7 @@ var mapSvg = d3.select("#mapa")
     .attr("height", h);
 
 //load GeoJson data
-d3.json("https://raw.githubusercontent.com/vidaleando/COVID-19/master/assets/javascript/prueba.geojson", function(json) {
+d3.json("https://raw.githubusercontent.com/LeonardoCastro/COVID-20/master/assets/javascript/mexico.geojson", function(json) {
     feat = json.features;
     // bind data
     mapSvg.selectAll("path")
