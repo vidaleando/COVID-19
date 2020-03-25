@@ -47,6 +47,12 @@ var yyyy = today.getFullYear();
 
 //today = mm + '/' + dd + '/' + yyyy;
 
+formatMonth = d3.timeFormat("%B"),
+    formatDay = d3.timeFormat("%A");
+    //date = new Date(2014, 4, 1); // Thu May 01 2014 00:00:00 GMT-0700 (PDT)
+
+//formatMonth(date); // "May"
+//formatDay(date); // "Thursday"
 
         var mindate = new Date(2020,1,28);
 
@@ -97,7 +103,7 @@ var yyyy = today.getFullYear();
             tip.transition()    
                 .duration(200)    
                 .style("opacity", .9);    
-            tip.html(d.Fecha + "<br/>"  + d.Mexico_pais)  
+            tip.html(d.Fecha + "<br/> <b>"  + d.Mexico_pais"</b>")  
                 .style("left", (d3.event.pageX) + "px")   
                 .style("top", (d3.event.pageY - 28) + "px");  
             })          
