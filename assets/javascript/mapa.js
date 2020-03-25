@@ -64,7 +64,7 @@ d3.json("https://raw.githubusercontent.com/vidaleando/COVID-19/master/assets/jav
         .on("mouseover", function(d) {  
             navMap.transition()    
                 .duration(200)    
-                .style("opacity", .9);    
+                .style("opacity", 1);    
             navMap.html("<h6>" + d.properties.name + "</h6>"+ "<p class='text-danger'> Totales: "  + d.properties.totales + "</p>"
               +"<p class='text-warning'> <strong>Activos: "  + d.properties.activos + "</strong></p>"+"<p class='text-primary'> Muertes: "  + d.properties.muertes + "</p>")  
                 .style("left", (d3.event.pageX) + "px")   
