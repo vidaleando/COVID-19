@@ -41,20 +41,17 @@ d3.csv(url, function(data) {
  // define the x scale (horizontal)
 
       var today = new Date();
-var dd = String(today.getDate()).padStart(2, '0');
+/*var dd = String(today.getDate()).padStart(2, '0');
 var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 
-//today = mm + '/' + dd + '/' + yyyy;
+//today = mm + '/' + dd + '/' + yyyy; */
 
 formatMonth = d3.timeFormat("%m"),
-    formatDay = d3.timeFormat("%d");
-    //date = new Date(2014, 4, 1); // Thu May 01 2014 00:00:00 GMT-0700 (PDT)
+formatDay = d3.timeFormat("%d");
 
-//formatMonth(date); // "May"
-//formatDay(date); // "Thursday"
 
-        var mindate = new Date(2020,1,28);
+  var mindate = new Date(2020,1,28);
 
     // Add X axis --> it is a date format
     var x = d3.scaleTime()
@@ -70,12 +67,30 @@ formatMonth = d3.timeFormat("%m"),
         .attr("dy", ".15em")
         .attr("transform", "rotate(-65)");
 
+  // text label for the x axis
+  svg.append("text")             
+      .attr("transform",
+            "translate(" + (width/2) + " ," + 
+                           (height + margin.top + 20) + ")")
+      .style("text-anchor", "middle")
+      .text("Fecha");
+
     // Add Y axis      //
     var y = d3.scaleLinear()
     .domain( [0,d3.max(data, function(d){return d.Mexico_pais;  })])
       .range([ height, 0 ]);
     svgT.append("g")
       .call(d3.axisLeft(y));
+
+    // text label for the y axis
+  svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Casos");   
+    
 
     // Initialize line with group a
     var line = svgT
