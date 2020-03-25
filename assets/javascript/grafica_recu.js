@@ -92,7 +92,19 @@ var yyyy = today.getFullYear();
         .attr("cx", function(d) { return x(+d.Fecha) })
         .attr("cy", function(d) { return y(+d.Mexico) })
         .attr("r", 4)
-        .style("fill", "#1F9BCF")
+        .style("fill", "#1F9BCF").on("mouseover", function(d) {    
+            tip.transition()    
+                .duration(200)    
+                .style("opacity", .9);    
+            tip.html("<em>" + formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "</em>"+ "<br/> <p class='text-primary'>"  + d.Mexico_pais + "</p>")  
+                .style("left", (d3.event.pageX) + "px")   
+                .style("top", (d3.event.pageY - 28) + "px");  
+            })          
+        .on("mouseout", function(d) {   
+            tip.transition()    
+                .duration(500)    
+                .style("opacity", 0); 
+        });
 
 
     // A function that update the chart
