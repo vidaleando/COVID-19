@@ -68,7 +68,7 @@ formatDay = d3.timeFormat("%d");
         .attr("transform", "rotate(-65)");
 
   // text label for the x axis
-  svg.append("text")             
+  svgT.append("text")             
       .attr("transform",
             "translate(" + (width/2) + " ," + 
                            (height + margin.top + 20) + ")")
@@ -83,7 +83,7 @@ formatDay = d3.timeFormat("%d");
       .call(d3.axisLeft(y));
 
     // text label for the y axis
-  svg.append("text")
+  svgT.append("text")
       .attr("transform", "rotate(-90)")
       .attr("y", 0 - margin.left)
       .attr("x",0 - (height / 2))
