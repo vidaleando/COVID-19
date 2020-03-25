@@ -23,36 +23,35 @@ layout: default
 
     <!----------------------------------- Tabla de estados --------------------------------------->
 
-    <div id='my_table'></div>
+    <!---Esto inicia una tabla--->
 
-    <div class="row d-flex justify-content-center">
+<div id='my_table'></div>
+<!---Create a div where the table will take place--->
+<!--div class="row d-flex justify-content-center"-->
+<div id="DirectEditPreserve" class="databaseTable_title"><h1 class="text-center">Estadisticas por estado</h1></div>
+  <div class='table-responsive justify-content-center table-striped'>
+  <script src="{{ "/assets/javascript/databaseTable.js" | relative_url }}"></script>
 
-
-
-      <div class='table-responsive' style='text-align: center; margin-left: 5%; margin-right: 5%; width: 90%;'>
-      <script src="{{ "/assets/javascript/databaseTable.js" | relative_url }}"></script>
-
-
-      <div id="DirectEditPreserve" class="wow fadeInUp databaseTable_holder 122860">
-        <div id="DirectEditPreserve" class="databaseTable_heading" >
-          <div id="DirectEditPreserve" class="databaseTable_title d-inline-flex" ><h1 class="text-center" style='margin-top: 5%;'>Estadísticas por estado</h1></div>
-          <input id="DirectEditPreserve" class="databaseTable_search form-control text-center text-uppercase" type="text" style='width: 100%' placeholder="Busca un estado">
-        </div>
-        <div id="DirectEditPreserve" class="databaseTable">
-          <div id="DirectEditPreserve" class="databaseTable_import_wrap" style="display: block;">
-        </div>
-        <div id="DirectEditPreserve" class="databaseTable_UI_scrollLeft databaseTable_UI_button" style="bakground: gray;"></div>
-        <div id="DirectEditPreserve" class="databaseTable_UI_scrollRight databaseTable_UI_button" style="display: none;"></div>
-        </div>
-      </div>
-      </div>
-      </div>
+  <div id="DirectEditPreserve" class="wow fadeInUp databaseTable_holder 122860">
+    <div id="DirectEditPreserve" class="databaseTable_heading">
+      
+      <input id="DirectEditPreserve" class="databaseTable_search form-control text-center text-uppercase" type="text" width="200" placeholder="Busca un estado">
+    </div>
+    <div id="DirectEditPreserve" class="databaseTable">
+      <div id="DirectEditPreserve" class="databaseTable_import_wrap" style="display: block;">
+    </div>
+      <div id="DirectEditPreserve" class="databaseTable_UI_scrollLeft databaseTable_UI_button" style="display: none;"><!-- JS shows/hides by appending the .hidden class --></div>
+      <div id="DirectEditPreserve" class="databaseTable_UI_scrollRight databaseTable_UI_button" style="display: none;"><!-- JS shows/hides by appending the .hidden class --></div>
+    </div>
+  </div>
+  </div>
 
 
     <!----------------------------------- Boton para descargar --------------------------------------->
-    <form method="get" action="https://github.com/LeonardoCastro/COVID19-Mexico/archive/master/data/series_tiempo.zip">
-    <button type="submit" class="btn btn-primary btn-lg btn-block btn-info" style='margin-top:5%; margin-right: 5%; margin-left: 5%; width: 90%;'>Descarga los datos</button>
-  </section>
+ 
+<form method="get" action="https://github.com/LeonardoCastro/COVID19-Mexico/archive/master/data/series_tiempo.zip">
+<button type="submit" class="btn btn-primary btn-lg btn-block btn-info">Descarga los datos</button>
+</form>
 
 
   {%- if site.posts.size > 0 -%}
