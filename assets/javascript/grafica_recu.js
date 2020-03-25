@@ -1,9 +1,12 @@
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 30, bottom: 30, left: 30},
-    width = 460 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom; 
+var margin = {top: 10, right: 10, bottom: 0, left: 50},
+    width = 500 - margin.left - margin.right,
+    height = 450 - margin.top - margin.bottom; 
 var url="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_recuperados.csv";
 
+var tip = d3.select("#grafica_totales").append("div") 
+    .attr("class", "tip")       
+    .style("opacity", 0);
 
 var svgR = d3.select("#grafica_recu")
   .append("svg")
@@ -13,7 +16,6 @@ var svgR = d3.select("#grafica_recu")
   .append("g")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
-    //.attr("viewBox","0 0 460 400");
 
 //Read the data
 d3.csv(url, function(data) {
@@ -45,7 +47,8 @@ var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 
 //today = mm + '/' + dd + '/' + yyyy;
-
+ formatMonth = d3.timeFormat("%b"), //%m
+    formatDay = d3.timeFormat("%d");
 
         var mindate = new Date(2020,1,28);
 
@@ -53,6 +56,7 @@ var yyyy = today.getFullYear();
     var x = d3.scaleTime()
       .domain([mindate,today])
       .range([ 0, width ]);
+
     svgR.append("g")
       .attr("transform", "translate(0," + height + ")")
       .attr("class","graph_date")
@@ -67,7 +71,7 @@ var yyyy = today.getFullYear();
   svgR.append("text")             
       .attr("transform",
             "translate(" + (width/2) + " ," + 
-                           (height + margin.top + 20) + ")")
+                           (height + margin.top + 50) + ")")
       .style("text-anchor", "middle")
       .text("Fecha");
 
@@ -81,7 +85,7 @@ var yyyy = today.getFullYear();
        // text label for the y axis
   svgR.append("text")
       .attr("transform", "rotate(-90)")
-      .attr("y", -10 - margin.left)
+      .attr("y", -20 - margin.left)
       .attr("x",0 - (height / 2))
       .attr("dy", "1em")
       .style("text-anchor", "middle")
