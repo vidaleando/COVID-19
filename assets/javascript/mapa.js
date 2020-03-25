@@ -1,8 +1,8 @@
 //set dimensions
 var urlTotal = "https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv",
     urlRecu = "https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_recuperados.csv",
-    w = 700,
-    h = 400;
+    //w = 700,
+    //h = 400;
     var w = $(".page-content").width(); //map.node().getBoundingClientRect().width;
     var h = w / 2;
 /*var  adjust = window.innerWidth;
