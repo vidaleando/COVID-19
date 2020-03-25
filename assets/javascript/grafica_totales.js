@@ -11,7 +11,7 @@ var tip = d3.select("#grafica_totales").append("div")
 var svgT = d3.select("#grafica_totales")
   .append("svg")
   .attr("width", width+50)
-  .attr("height",height)
+  .attr("height",height+50)
   .append("g")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
