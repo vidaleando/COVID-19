@@ -56,7 +56,8 @@ var yyyy = today.getFullYear();
     formatDia = d3.timeFormat("%d");
 
   var mindate = new Date(2020,1,28);
-
+console.log(formatMes(mindate));
+console.log(mindate);
     // Add X axis --> it is a date format
     var x = d3.scaleTime()
       .domain([mindate,today])
@@ -76,7 +77,7 @@ var yyyy = today.getFullYear();
   svgT.append("text")             
       .attr("transform",
             "translate(" + (width/2) + " ," + 
-                           (height + margin.top + 50) + ")")
+                           (height + margin.top + 40) + ")")
       .style("text-anchor", "middle")
       .text("Fecha");
 
