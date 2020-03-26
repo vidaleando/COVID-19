@@ -191,7 +191,7 @@ var yyyy = today.getFullYear();
   var t = svgT.transition()
     .delay(750)
     .duration(6000)
-    .ease('linear')
+    .ease(d3.easeLinear)
     .each('end', function() {
       d3.select('line.guide')
         .transition()
