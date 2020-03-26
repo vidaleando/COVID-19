@@ -95,7 +95,7 @@ d3.csv(urlNuevos, function(data) {
   .duration(400)
   .attr("y", function(d) { return y(+d.Mexico_pais); })
   .attr("height", function(d) { return height - y(+d.Mexico_pais); })
-  .delay(function(d,i){console.log(i) ; return(i*100)})
+  .delay(function(d,i){ return(i*100)})
 
 
 })
