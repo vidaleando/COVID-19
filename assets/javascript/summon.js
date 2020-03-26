@@ -14,7 +14,7 @@ d3.csv(urlTotal,function(data) {
   var div = document.getElementById('totales');
      div.innerHTML = data[tope]["Mexico_pais"];
   });
-
+/*
 d3.csv(urlRecu,function(data) {
   var largo = data.length;
   var tope =largo-1;
@@ -28,7 +28,7 @@ d3.csv(urlActivos,function(data) {
   var div = document.getElementById('activos');
       div.innerHTML = data[tope]["Mexico_pais"];
   });
-
+*/
 d3.csv(urlMuertes,function(data) {
   var largo = data.length;
   var tope =largo-1;
