@@ -168,7 +168,7 @@ var yyyy = today.getFullYear();
 
 // Animation
   /* Add 'curtain' rectangle to hide entire graph */
-  var curtain = svg.append('rect')
+  var curtain = svgT.append('rect')
     .attr('x', -1 * width)
     .attr('y', -1 * height)
     .attr('height', height)
@@ -178,7 +178,7 @@ var yyyy = today.getFullYear();
     .style('fill', '#ffffff')
 
   /* Optionally add a guideline */
-  var guideline = svg.append('line')
+  var guideline = svgT.append('line')
     .attr('stroke', '#333')
     .attr('stroke-width', 0)
     .attr('class', 'guide')
@@ -188,7 +188,7 @@ var yyyy = today.getFullYear();
     .attr('y2', height)
 
   /* Create a shared transition for anything we're animating */
-  var t = svg.transition()
+  var t = svgT.transition()
     .delay(750)
     .duration(6000)
     .ease('linear')
