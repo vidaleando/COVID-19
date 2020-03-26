@@ -190,6 +190,7 @@ margin-right: 5px;
 // Graficas ==================================================================
 #grafica_totales {
 overflow: auto;
+max-width:540px;
 }
 #grafica_totales .tip { 
     position: absolute;     
