@@ -75,6 +75,19 @@ d3.csv(urlNuevos, function(data) {
           // no bar at the beginning thus:
           .attr("height", function(d) { return height - y(0); }) // always equal to 0
           .attr("y", function(d) { return y(0); })
+          .on("mouseover", function(d) {    
+            tipH.transition()    
+                .duration(200)    
+                .style("opacity", .9);    
+            tipH.html("<h6>" + formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "</h6>"+ " <p class='text-primary'>"  + d.Mexico_pais + "</p>")  
+                .style("left", (d3.event.pageX) + "px")   
+                .style("top", (d3.event.pageY - 28) + "px");  
+            })          
+        .on("mouseout", function(d) {   
+            tipH.transition()    
+                .duration(500)    
+                .style("opacity", 0); 
+        });
 
   // Animation
   svgBar.selectAll("rect")
