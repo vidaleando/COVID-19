@@ -188,11 +188,7 @@ margin-right: 5px;
   margin-left:-15px;
 }
 // Graficas ==================================================================
-#grafica_totales {
-overflow: auto;
-min-width:420px;
-max-width:650px; //Por verse
-}
+
 #grafica_totales .tip { 
     position: absolute;     
     text-align: center;     
@@ -205,11 +201,7 @@ max-width:650px; //Por verse
     border-radius: 8px;     
     pointer-events: none;     
 }
-#barplot_nuevos {
-overflow: auto;
-min-width:420px;
-max-width:650px; //Por verse
-}
+
 @media only screen and (max-width: 600px) {
  #grafica_totales {
 overflow: auto;
@@ -218,6 +210,22 @@ max-width:320px; //Por verse
   #barplot_nuevos {
 overflow: auto;
 max-width:320px; //Por verse
+}
+
+}
+
+@media only screen and (min-width: 600px) {
+
+#grafica_totales {
+overflow: auto;
+min-width:420px;
+max-width:650px; //Por verse
+}
+
+#barplot_nuevos {
+overflow: auto;
+min-width:420px;
+max-width:650px; //Por verse
 }
 
 }
