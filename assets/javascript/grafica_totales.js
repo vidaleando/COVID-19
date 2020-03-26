@@ -71,7 +71,13 @@ var yyyy = today.getFullYear();
         .style("text-anchor", "end")
         .attr("dx", "-.8em")
         .attr("dy", ".15em")
-        .attr("transform", "rotate(-65)");
+        .attr("transform", "rotate(-65)")
+        .append("line")
+        .attr("x1",30)
+        .attr("y1",20)
+        .attr("x2",11)
+        .attr("y2",1)
+        .style("stroke", "black");
 
   /*
   // text label for the x axis
