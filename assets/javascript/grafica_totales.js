@@ -96,7 +96,8 @@ console.log(x);
   .attr("x1", x( x.domain()[0] ) )
   .attr("x2", x( x.domain()[1] ) )
   .attr("y1", y( 80 ) )   // whatever the y-val should be
-  .attr("y2", y( 80 ) );;
+  .attr("y2", y( 80 ) );
+  console.log(x.domain);
 
 
 /*
