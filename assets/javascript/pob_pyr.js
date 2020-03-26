@@ -14,7 +14,7 @@ var pyrSvg = d3.select("#pob_pyr")
           "translate(" + margin.left + "," + margin.top + ")");
 
 // Read the data and compute summary statistics for each specie
-d3.csv("data.csv", function(data) {
+d3.csv("assets/javascript/data.csv", function(data) {
 
   // Build and Show the Y scale
   var y = d3.scaleLinear()
