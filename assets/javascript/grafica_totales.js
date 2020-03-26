@@ -190,7 +190,7 @@ var yyyy = today.getFullYear();
   /* Create a shared transition for anything we're animating */
   var t = svgT.transition()
     .delay(750)
-    .duration(6000)
+    .duration(5000)
     .ease(d3.easeLinear)
     .on('end', function() {
       d3.select('line.guide')
