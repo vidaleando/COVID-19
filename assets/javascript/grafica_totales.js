@@ -97,7 +97,6 @@ var fase12=new Date(2020,2,23);
   svgT.append("path")    // Add the valueline2 path.
     .attr("class", "line")
     .style("stroke", "red")
-    .attr("d", valueline2(data))
     .attr("x1", x( fase12 ) )
   .attr("x2", x( fase12 ) )
   .attr("y1", y( y.domain()[1]) )   // whatever the y-val should be
