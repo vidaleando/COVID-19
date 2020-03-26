@@ -190,7 +190,7 @@ margin-right: 5px;
 // Graficas ==================================================================
 #grafica_totales {
 overflow: auto;
-//max-width:540px; //Por verse
+max-width:540px; //Por verse
 }
 #grafica_totales .tip { 
     position: absolute;     
@@ -203,6 +203,10 @@ overflow: auto;
     border: 0px;    
     border-radius: 8px;     
     pointer-events: none;     
+}
+#barplot_nuevos {
+overflow: auto;
+max-width:540px; //Por verse
 }
 
 #barplot_nuevos .tipH { 
