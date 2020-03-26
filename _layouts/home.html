@@ -16,38 +16,38 @@ layout: default
 
 
 <!--INICIA SEMÁFORO-->
-<h1 class="text-center">Casos nacionales</h1>
-<div class="row d-flex justify-content-center">
-<div class="card text-white bg-danger mb-3 col-md-4" style="max-width: 20rem;">
-  <div class="card-header text-center">Totales</div>
-  <div class="card-body">
-    <h4 class="card-title text-center" id="totales"></h4>
-    <!--p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p-->
+<h1 class="text-center" style='margin-top: 5%'>Casos nacionales</h1>
+<div class="row d-flex justify-content-center" style='width: 90%; margin-left: 5%; margin-right: 5%;'>
+  <div class="card text-white bg-danger mb-3 col-md-4" style="max-width: 20rem;">
+    <div class="card-header text-center">Totales</div>
+    <div class="card-body">
+      <h4 class="card-title text-center" id="totales"></h4>
+      <!--p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p-->
+    </div>
+    <div class="card-footer d-flex" style='width: 100%'>
+      <small class="text-white" style='height: 1rem;' id='tiempo_actualizacion_0'></small>
+    </div>
   </div>
-  <div class="card-footer">
-        <small>Actualizado: fecha hora</small>
-      </div>
-</div>
-<div class="card text-white bg-warning mb-3 col-md-4" style="max-width: 20rem;">
-  <div class="card-header text-center">Activos</div>
-  <div class="card-body">
-    <h4 class="card-title text-center" id="activos"></h4>
-    <!--p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p-->
+  <div class="card text-white bg-warning mb-3 col-md-4" style="max-width: 20rem;">
+    <div class="card-header text-center">Nuevos (últimas 24h)</div>
+    <div class="card-body">
+      <h4 class="card-title text-center" id="nuevos"></h4>
+      <!--p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p-->
+    </div>
+    <div class="card-footer d-flex" style='width: 100%'>
+      <small class="text-white" style='height: 1rem;' id='tiempo_actualizacion_1'></small>
+    </div>
   </div>
-  <div class="card-footer">
-        <small>Actualizado: fecha hora</small>
-      </div>
-</div>
-<div class="card text-white bg-dark mb-3 col-md-4" style="max-width: 20rem;">
-  <div class="card-header text-center">Muertes</div>
-  <div class="card-body">
-    <h4 class="card-title text-center" id="recu"></h4>
-    <!--p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p-->
+  <div class="card text-white bg-dark mb-3 col-md-4" style="max-width: 20rem;">
+    <div class="card-header text-center">Muertes</div>
+    <div class="card-body">
+      <h4 class="card-title text-center" id="muertes"></h4>
+      <!--p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p-->
+    </div>
+    <div class="card-footer d-flex" style='width: 100%'>
+      <small class="text-white" style='height: 1rem;' id='tiempo_actualizacion_2'></small>
+    </div>
   </div>
-  <div class="card-footer">
-        <small>Actualizado: fecha hora</small>
-      </div>
-</div>
 </div>
 <script src="{{ "/assets/javascript/summon.js" | relative_url }}"></script>
 
