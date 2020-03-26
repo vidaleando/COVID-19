@@ -189,7 +189,7 @@ var yyyy = today.getFullYear();
     
   /* Create a shared transition for anything we're animating */
   var t = svgT.transition()
-    .delay(900)
+    .delay(1000)
     .duration(3700)
     .ease(d3.easeLinear)
     .on('end', function() {
