@@ -72,7 +72,7 @@ var yyyy = today.getFullYear();
         .attr("dx", "-.8em")
         .attr("dy", ".15em")
         .attr("transform", "rotate(-65)")
-        .append("line")
+      .append("line")
         .attr("x1",30)
         .attr("y1",20)
         .attr("x2",11)
