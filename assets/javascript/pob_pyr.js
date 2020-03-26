@@ -14,7 +14,7 @@ var pyrSvg = d3.select("#pob_pyr")
           "translate(" + margin.left + "," + margin.top + ")");
 
 // Read the data and compute summary statistics for each specie
-d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/iris.csv", function(data) {
+d3.csv("data.csv", function(data) {
 
   // Build and Show the Y scale
   var y = d3.scaleLinear()
@@ -25,7 +25,7 @@ d3.csv("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/ir
   // Build and Show the X scale. It is a band scale like for a boxplot: each group has an dedicated RANGE on the axis. This range has a length of x.bandwidth
   var x = d3.scaleBand()
     .range([ 0, width ])
-    .domain(["setosa", "versicolor", "virginica"])
+    .domain(["versicolor"])
     .padding(0.05)     // This is important: it is the space between 2 groups. 0 means no padding. 1 is the maximum.
   pyrSvg.append("g")
     .attr("transform", "translate(0," + height + ")")
