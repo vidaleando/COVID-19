@@ -98,8 +98,8 @@ var fase12=new Date(2020,2,23);
     .attr("class", "line")
     .style("stroke", "red")
     .attr(d3.line)
-    .attr("x1", x( new Date(2020,2,23) ) )
-    .attr("x2", x( new Date(2020,2,23) ) )
+    .attr("x1", x(  Date(2020,2,23) ) )
+    .attr("x2", x(  Date(2020,2,23) ) )
     .attr("y1", y( y.domain()[0]) )   // whatever the y-val should be
     .attr("y2", y( y.domain()[1]) )
     .attr("stroke", "red")
