@@ -9,7 +9,7 @@ var urlNuevos = "https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico
 var widthBar = 6;
 
 var tipH = d3.select("#barplot_nuevos").append("div") 
-    .attr("class", "tip")       
+    .attr("class", "tipH")       
     .style("opacity", 0);
 // append the svg object to the body of the page
 var svgBar = d3.select("#barplot_nuevos")
