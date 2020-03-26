@@ -16,7 +16,7 @@ var svgT = d3.select("#grafica_totales")
   .attr("height",height+margin.top+margin.bottom+70)
   .append("g")
     .attr("transform",
-          "translate(" +(0+ margin.left )+ "," + (margin.top-10) + ")");
+          "translate(" +(0+ margin.left )+ "," + (margin.top) + ")");
 
 //Read the data
 d3.csv(url, function(data) {
@@ -73,6 +73,7 @@ var yyyy = today.getFullYear();
         .attr("dy", ".15em")
         .attr("transform", "rotate(-65)");
 
+  /*
   // text label for the x axis
   svgT.append("text")             
       .attr("transform",
@@ -80,14 +81,14 @@ var yyyy = today.getFullYear();
                            (height + margin.top + 50) + ")")
       .style("text-anchor", "middle")
       .text("Fecha");
-
+*/
     // Add Y axis      
     var y = d3.scaleLinear()
     .domain( [0,d3.max(data, function(d){return d.Mexico_pais;  })*1.1])
       .range([ height-10, 0 ]);
     svgT.append("g")
       .call(d3.axisLeft(y));
-
+/*
     // text label for the y axis
   svgT.append("text")
       //.attr("transform", "rotate(-90)")
@@ -96,7 +97,7 @@ var yyyy = today.getFullYear();
       .attr("dy", "1em")
       .style("text-anchor", "middle")
       .text("Casos");   
-  
+  */
 
     // Initialize line with group a
     var line = svgT
