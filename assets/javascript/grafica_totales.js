@@ -175,8 +175,8 @@ var yyyy = today.getFullYear();
     .attr('width', width)
     .attr('class', 'curtain')
     .attr('transform', 'rotate(180)')
-    .style('fill', '#ffffff')
-
+    .style('fill', '#ffffff');
+    
   /* Optionally add a guideline */
   var guideline = svgT.append('line')
     .attr('stroke', '#333')
@@ -186,19 +186,19 @@ var yyyy = today.getFullYear();
     .attr('y1', 1)
     .attr('x2', 1)
     .attr('y2', height)
-
+    
   /* Create a shared transition for anything we're animating */
   var t = svgT.transition()
     .delay(750)
     .duration(6000)
     .ease(d3.easeLinear)
-    .each('end', function() {
+    .on('end', function() {
       d3.select('line.guide')
         .transition()
         .style('opacity', 0)
         .remove()
     });
-
+  
   t.select('rect.curtain')
     .attr('width', 0);
   t.select('line.guide')
@@ -208,7 +208,6 @@ var yyyy = today.getFullYear();
     guideline.attr('stroke-width', this.checked ? 1 : 0);
     curtain.attr("opacity", this.checked ? 0.75 : 1);
   })
-
 
 });
 
