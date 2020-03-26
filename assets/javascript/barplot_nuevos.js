@@ -2,7 +2,7 @@
 var margin = {top: 10, right: 10, bottom: 0, left: 50},
    // width = 460 - margin.left - margin.right,
     //height = 400 - margin.top - margin.bottom;
-    width=$("#barplot_nuevos").width(),
+    width=$("#barplot_nuevos").width()*1.1,
     height=width/1.5;
 var urlNuevos = "https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_nuevos.csv";
 
