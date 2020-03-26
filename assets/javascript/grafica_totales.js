@@ -63,6 +63,8 @@ var yyyy = today.getFullYear();
       .domain([mindate,today])
       .range([ 0, width-10 ]);
 
+console.log(x);
+
     svgT.append("g")
       .attr("transform", "translate(0," + (height-10) + ")")
       .attr("class","graph_date")
@@ -71,13 +73,7 @@ var yyyy = today.getFullYear();
         .style("text-anchor", "end")
         .attr("dx", "-.8em")
         .attr("dy", ".15em")
-        .attr("transform", "rotate(-65)")
-      .append("line")
-        .attr("x1",30)
-        .attr("y1",20)
-        .attr("x2",11)
-        .attr("y2",1)
-        .style("stroke", "black");
+        .attr("transform", "rotate(-65)");
 
   /*
   // text label for the x axis
@@ -94,6 +90,7 @@ var yyyy = today.getFullYear();
       .range([ height-10, 0 ]);
     svgT.append("g")
       .call(d3.axisLeft(y));
+
 /*
     // text label for the y axis
   svgT.append("text")
@@ -133,7 +130,7 @@ var yyyy = today.getFullYear();
                 .style("opacity", .9);    
             tip.html("<h6>" + formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "</h6>"+ " <p class='text-primary'>"  + d.Mexico_pais + "</p>")  
                 .style("left", (d3.event.pageX) + "px")   
-                .style("top", (d3.event.pageY - 28) + "px");  
+                .style("top", (d3.event.pageY - 30) + "px");  
             })          
         .on("mouseout", function(d) {   
             tip.transition()    
