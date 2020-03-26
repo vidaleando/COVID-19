@@ -93,7 +93,7 @@ var fase12=new Date(2020,2,23);
     svgT.append("g")
       .call(d3.axisLeft(y)) ;
 
-
+console.log(fase12);
   svgT.append("path")    // Add the valueline2 path.
     .attr("class", "line")
     .style("stroke", "red")
