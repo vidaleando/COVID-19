@@ -170,7 +170,7 @@ var yyyy = today.getFullYear();
   svgT.selectAll("circle")
   .transition()
   .duration(400)
-  .attr("cy", function(d) { return y(+d.Mexico_pais); })
+  .attr("cy", function(d) { console.log(y(+d.Mexico_pais)); return y(+d.Mexico_pais); })
   .attr("height", function(d) { return height - y(+d.Mexico_pais); })
   .delay(function(d,i){console.log(i) ; return(i*100)})
 
