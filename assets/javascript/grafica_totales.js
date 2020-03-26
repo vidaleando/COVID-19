@@ -73,7 +73,13 @@ console.log(x);
         .style("text-anchor", "end")
         .attr("dx", "-.8em")
         .attr("dy", ".15em")
-        .attr("transform", "rotate(-65)");
+        .attr("transform", "rotate(-65)")
+        .append( "line" )
+  .attr("x1", x( x.domain()[0] ) )
+  .attr("x2", x( x.domain()[1] ) )
+  .attr("y1", y( 80 ) )   // whatever the y-val should be
+  .attr("y2", y( 80 ) );
+
 
   /*
   // text label for the x axis
