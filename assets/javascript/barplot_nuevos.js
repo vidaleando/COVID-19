@@ -1,20 +1,24 @@
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 30, bottom: 30, left: 30},
-    width = 460 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
-
+var margin = {top: 10, right: 10, bottom: 0, left: 50},
+   // width = 460 - margin.left - margin.right,
+    //height = 400 - margin.top - margin.bottom;
+    width=$(".alert").width()*0.7,
+    height=width/1.5;
 var urlNuevos = "https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_nuevos.csv";
 
 var widthBar = 6;
 
+var tipH = d3.select("#barplot_nuevos").append("div") 
+    .attr("class", "tip")       
+    .style("opacity", 0);
 // append the svg object to the body of the page
 var svgBar = d3.select("#barplot_nuevos")
   .append("svg")
-  .attr("width","460")
-  .attr("height","430")
+  .attr("width", width+margin.left+margin.right+50)
+  .attr("height",height+margin.top+margin.bottom+100)
   .append("g")
   .attr("transform",
-        "translate(" + margin.left + "," + margin.top + ")");
+        "translate(" + (20+margin.left )+ "," + margin.top + ")");
 
 // Parse the Data
 d3.csv(urlNuevos, function(data) {
