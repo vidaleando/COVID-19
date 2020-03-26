@@ -63,7 +63,6 @@ var yyyy = today.getFullYear();
       .domain([mindate,today])
       .range([ 0, width-10 ]);
 
-console.log(x);
 
     svgT.append("g")
       .attr("transform", "translate(0," + (height-10) + ")")
@@ -97,7 +96,7 @@ console.log(x);
   .attr("x2", x( x.domain()[1] ) )
   .attr("y1", y( 80 ) )   // whatever the y-val should be
   .attr("y2", y( 80 ) );
-  console.log(x.domain());
+  console.log(x.domain()[0]);
 
 
 /*
