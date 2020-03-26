@@ -102,7 +102,8 @@ console.log(fase12);
     .attr("x2", x( fase12 ) )
     .attr("y1", y( y.domain()[0]) )   // whatever the y-val should be
     .attr("y2", y( y.domain()[1]) )
-    .attr("stroke", "red");
+    .attr("stroke", "red")
+      .style("stroke-width", 3);
 
 
 
