@@ -73,12 +73,8 @@ console.log(x);
         .style("text-anchor", "end")
         .attr("dx", "-.8em")
         .attr("dy", ".15em")
-        .attr("transform", "rotate(-65)")
-        .append( "line" )
-  .attr("x1", x( x.domain()[0] ) )
-  .attr("x2", x( x.domain()[1] ) )
-  .attr("y1", y( 80 ) )   // whatever the y-val should be
-  .attr("y2", y( 80 ) );
+        .attr("transform", "rotate(-65)");
+
 
 
   /*
@@ -95,7 +91,13 @@ console.log(x);
     .domain( [0,d3.max(data, function(d){return d.Mexico_pais;  })*1.1])
       .range([ height-10, 0 ]);
     svgT.append("g")
-      .call(d3.axisLeft(y));
+      .call(d3.axisLeft(y))
+    .append( "line" )
+  .attr("x1", x( x.domain()[0] ) )
+  .attr("x2", x( x.domain()[1] ) )
+  .attr("y1", y( 80 ) )   // whatever the y-val should be
+  .attr("y2", y( 80 ) );;
+
 
 /*
     // text label for the y axis
