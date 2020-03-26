@@ -96,7 +96,7 @@ var yyyy = today.getFullYear();
   .attr("x2", x( x.domain()[1] ) )
   .attr("y1", y( 80 ) )   // whatever the y-val should be
   .attr("y2", y( 80 ) );
-  console.log(d.Fecha);
+
 
 
 /*
@@ -116,7 +116,7 @@ var yyyy = today.getFullYear();
       .append("path")
         .datum(data)
         .attr("d", d3.line()
-          .x(function(d) { return x(d.Fecha) })
+          .x(function(d) { console.log(d.Fecha);return x(d.Fecha) })
           .y(function(d) { return y(+d.Mexico_pais) })
         )
         .attr("stroke", "#1f9bcf")
