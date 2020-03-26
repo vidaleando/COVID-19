@@ -203,6 +203,9 @@ overflow: auto;
     border-radius: 8px;     
     pointer-events: none;     
 }
+#grafica_totales circle:hover{
+  fill: #07918A;
+}
 
 #grafica_recu .tip { 
     position: absolute;     

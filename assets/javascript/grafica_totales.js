@@ -118,7 +118,7 @@ var yyyy = today.getFullYear();
       .append('circle')
         .attr("cx", function(d) { return x(d.Fecha) })
         .attr("cy", function(d) { return y(+d.Mexico_pais) })
-        .attr("r", 4)
+        .attr("r", 5)
         .style("fill", "#1F9BCF")
         .on("mouseover", function(d) {    
             tip.transition()    
