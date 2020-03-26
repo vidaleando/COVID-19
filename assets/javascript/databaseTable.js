@@ -902,7 +902,7 @@ $(document).ready(function() {
 						headerCount = headers.length;
 						tableHTML += '<thead class="' + options.theadClass + '"><tr class="' + options.trClass + '">';
 						$.each(headers, function(headerCount, header) {
-							tableHTML += '<th class="' + options.thClass + '">' + header + '<i class="fas fa-sort"></i></th>';
+							tableHTML += '<th class="' + options.thClass + '">' + header + '<i class="fa fa-sort"></i></th>';
 						});
 						tableHTML += '</tr></thead><tbody class="' + options.tbodyClass + '">';
 					}
@@ -911,7 +911,7 @@ $(document).ready(function() {
 						headerCount = headers.length;
 						tableHTML += '<thead class="' + options.theadClass + '"><tr class="' + options.trClass + '">';
 						$.each(headers, function(headerCount, header) {
-							tableHTML += '<th class="' + options.thClass + '">' + header + '<i class="fas fa-sort"></i></th>';
+							tableHTML += '<th class="' + options.thClass + '">' + header + '<i class="fa fa-sort"></i></th>';
 						});
 						tableHTML += '</tr></thead><tbody class="' + options.tbodyClass + '">';
 					} else if (lineCount >= options.startLine) {
