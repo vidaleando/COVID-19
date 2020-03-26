@@ -1,5 +1,5 @@
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 10, bottom: 0, left: 50},
+var margin = {top: 10, right: 10, bottom: 0, left: 53},
    // width = 460 - margin.left - margin.right,
     //height = 400 - margin.top - margin.bottom;
     width=$("#barplot_nuevos").width(),
@@ -14,11 +14,11 @@ var tipH = d3.select("#barplot_nuevos").append("div")
 // append the svg object to the body of the page
 var svgBar = d3.select("#barplot_nuevos")
   .append("svg")
-  .attr("width", width+margin.left+margin.right+50)
-  .attr("height",height+margin.top+margin.bottom+100)
+  .attr("width", width+margin.left+margin.right+0)
+  .attr("height",height+margin.top+margin.bottom+70)
   .append("g")
   .attr("transform",
-        "translate(" + (20+margin.left )+ "," + margin.top + ")");
+        "translate(" + (0+margin.left )+ "," + margin.top + ")");
 
 // Parse the Data
 d3.csv(urlNuevos, function(data) {
