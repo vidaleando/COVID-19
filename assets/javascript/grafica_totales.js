@@ -96,7 +96,7 @@ var yyyy = today.getFullYear();
   .attr("x2", x( x.domain()[1] ) )
   .attr("y1", y( 80 ) )   // whatever the y-val should be
   .attr("y2", y( 80 ) );
-  console.log(x.domain()[0]);
+  console.log(x.domain()[1]);
 
 
 /*
