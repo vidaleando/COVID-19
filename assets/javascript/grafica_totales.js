@@ -167,7 +167,7 @@ var yyyy = today.getFullYear();
     })
 
 // Animation
-  svgT.selectAll("circle")
+  dot.selectAll("circle")
   .transition()
   .duration(400)
   .attr("cy", function(d) { console.log(y(+d.Mexico_pais)); return y(+d.Mexico_pais); })
