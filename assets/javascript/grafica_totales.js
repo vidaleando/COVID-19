@@ -122,7 +122,7 @@ console.log(fase12);
       .append("path")
         .datum(data)
         .attr("d", d3.line()
-          .x(function(d) { console.log(d.Fecha);return x(d.Fecha) })
+          .x(function(d) { return x(d.Fecha) })
           .y(function(d) { return y(+d.Mexico_pais) })
         )
         .attr("stroke", "#1f9bcf")
