@@ -11,8 +11,8 @@ var margin = {
     /*dom_age = d3.extent(data, d => d.age),
     dom_year = d3.extent(data, d => d.year),
     dom_value = d3.extent(data, d => d.value),
-    formatter = d3.format(',d'),*/
-    barheight = (pyramid_h / (dom_age[1] - dom_age[0])) - 0.5,
+    formatter = d3.format(',d'),
+    barheight = (pyramid_h / (dom_age[1] - dom_age[0])) - 0.5,*/
     cx = width / 2;;
 
 var svg = d3.select('#pob_beta').append('svg')
