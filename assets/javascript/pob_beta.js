@@ -48,7 +48,7 @@ function uptext(root, lines) {
 }
 
 // year axis
-var s_year = d3.scale.linear()
+var s_year = d3.scaleLinear()
     .domain(dom_year)
     .range([0, 400])
     .clamp(true);
@@ -65,7 +65,7 @@ var svg_axis_year = svg.append('g')
     .call(ax_year);
 
 // age axis
-var s_age = d3.scale.linear()
+var s_age = d3.scaleLinear()
     .domain(dom_age.concat().reverse())
     .range([0, pyramid_h]);
 
@@ -98,12 +98,12 @@ svg.append('g')
     .call(ax_age_r);
 
 // population axen
-var s_value = d3.scale.linear()
+var s_value = d3.scaleLinear()
     .domain(dom_value)
     .range([0, 250]);
 
 // male population axis
-var s_male = d3.scale.linear()
+var s_male = d3.scaleLinear()
     .domain(dom_value.reverse())
     .range([0, 250]);
 
