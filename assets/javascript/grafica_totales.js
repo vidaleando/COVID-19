@@ -180,9 +180,9 @@ var fase12=new Date(2020,2,23);
     })
 
   var fase= svgT.append("line")
-    .attr("x1", fase12)
+    .attr("x1", x(fase12))
     .attr("y1", 5)
-    .attr("x2", fase12)
+    .attr("x2", x(fase12))
      .attr("y2", 50)
      .attr("stroke", "#1f9bcf")
         .style("stroke-width", 3)
