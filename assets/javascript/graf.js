@@ -92,7 +92,6 @@ function graficaPuntos(data, target, options) {
     .domain( [0,d3.max(data, function(d){return d.México;  })*1.1])
       .range([ height-10, 0 ]);
     svgT.append("g")
-      .call(d3.axisLeft(y)) ;
 
 // Grafica
     var line = pyramid
@@ -105,7 +104,7 @@ function graficaPuntos(data, target, options) {
         )
         .attr("stroke", "#1f9bcf")
         .style("stroke-width", 3)
-        .style("fill", "none")           
+        .style("fill", "none") ;         
 
 //Puntos
 var dot = pyramid.selectAll('circle')
