@@ -194,7 +194,7 @@ var fase12=new Date(2020,2,23);
   svgT.append("text")
       //.attr("transform", "rotate(-90)")
       .attr("y",y(y.domain()[1]))//-0 - margin.left
-      .attr("x",x(fase12)-30 )
+      .attr("x",x(fase12)-20 )
       .attr("dy", "1em")
       .style("text-anchor", "end")
       .text("Comienza la fase 2");           
