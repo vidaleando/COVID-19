@@ -77,7 +77,7 @@ function pyramidBuilder(data, target, options) {
         .attr('x', (w / 2) - (margin.middle * 2))
         .attr('y', 18)
         .attr('dy', '0.32em')
-        .text('Males');
+        .text('Hombres');
 
     legend.append('rect')
         .attr('class', 'bar right')
@@ -91,7 +91,7 @@ function pyramidBuilder(data, target, options) {
         .attr('x', (w / 2) + (margin.middle * 3))
         .attr('y', 18)
         .attr('dy', '0.32em')
-        .text('Females');
+        .text('Mujeres');
 
     var tooltipDiv = d3.select("body").append("div")
         .attr("class", "tooltip")
