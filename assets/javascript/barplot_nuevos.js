@@ -97,8 +97,8 @@ var fase12=new Date(2020,2,23);
     .attr("y1", y(y.domain()[0]))
     .attr("x2", x(fase12))
      .attr("y2", y(y.domain()[1]))
-     .attr("stroke", "#fd7e14")
-        .style("stroke-width", 2)
+     .attr("stroke", "#000")
+        .style("stroke-width", 1)
         .style("fill", "none")
         .style("stroke-dasharray", "5,5") ;
 
@@ -110,7 +110,7 @@ var fase12=new Date(2020,2,23);
       .attr("dy", "1em")
       .style("text-anchor", "end")
       .text("Comienza la fase 2")
-      .attr("stroke", "#fd7e14");     
+      .attr("stroke", "#000");     
 
 
   // Animation
