@@ -24,27 +24,22 @@ d3.queue()
   .defer(d3.csv, 'https://raw.githubusercontent.com/blas-ko/COVID-19_Coupled-Epidemics/master/results/covid19_mex_proyeccion_susana_00.csv')
   .await(grafica);
 
-function grafica(data) {
+function grafica(error,dataL,dataB) {
 
     // List of groups (here I have one group per column)
     var allGroup = ["Lineal","Logarítmica"];
     //var allGroupb = {Lineal:Mexico,"Logarítmica":Mexico_log10};
-    var tope=data.length-1;
+    //var tope=data.length-1;
 
-    data.forEach(function(d) {
-               d.Fecha = new Date(d.Fecha);
-               d.México = +d.México;
+    dataL.forEach(function(d) {
+               dataL.Fecha = new Date(dataL.Fecha);
+               console.log(dataL.Fecha);
+               dataL.México = +dataL.México;
             });
-    //console.log(allGroupb);
-    // add the options to the button
-    d3.select("#selectButton")
-      .selectAll('myOptions')
-      .data(allGroup)
-      .enter()
-      .append('option')
-      .text(function (d) { return d; }) // text showed in the menu
-      .attr("value", function (d) { return d; }) // corresponding value returned by the button
- 
+    dataB.forEach(function(d) {
+               dataB.Fecha = new Date(dataB.Fecha);
+               dataB.México = +dataB.Totales;
+            });
 
  // define the x scale (horizontal)
 
@@ -96,7 +91,7 @@ var fase12=new Date(2020,2,23);
 
     // Add Y axis      
     var y = d3.scaleLinear()
-    .domain( [0,d3.max(data, function(d){return d.México;  })*1.1])
+    .domain( [0,d3.max(dataL, function(d){return d.México;  })])
       .range([ height-10, 0 ]);
     svgT.append("g")
       .call(d3.axisLeft(y)) ;
@@ -117,10 +112,10 @@ var fase12=new Date(2020,2,23);
 
 
     // Initialize line with group a
-    var line = svgT
+    var lineL = svgT
       .append('g')
       .append("path")
-        .datum(data)
+        .datum(dataL)
         .attr("d", d3.line()
           .x(function(d) { return x(d.Fecha) })
           .y(function(d) { return y(+d.México) })
@@ -130,8 +125,8 @@ var fase12=new Date(2020,2,23);
         .style("fill", "none")
 
     // Initialize dots with group a
-    var dot = svgT.selectAll('circle')
-      .data(data)
+    var dotL = svgT.selectAll('circle')
+      .data(dataL)
       .enter()
       .append('circle')
         .attr("cx", function(d) { return x(d.Fecha) })
