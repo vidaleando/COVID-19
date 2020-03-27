@@ -184,9 +184,10 @@ var fase12=new Date(2020,2,23);
     .attr("y1", y(y.domain()[0]))
     .attr("x2", x(fase12))
      .attr("y2", y(y.domain()[1]))
-     .attr("stroke", "#1f9bcf")
-        .style("stroke-width", 3)
-        .style("fill", "none");
+     .attr("stroke", "#f0ad4e")
+        .style("stroke-width", 1)
+        .style("fill", "none")
+        .style("stroke-dasharray", "5,5")  ;
 
 // Animation
   /* Add 'curtain' rectangle to hide entire graph */
