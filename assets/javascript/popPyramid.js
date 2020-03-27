@@ -49,7 +49,7 @@ function pyramidBuilder(data, target, options) {
     .text('svg {max-width:100%} \
     .axis line,axis path {shape-rendering: crispEdges;fill: transparent;stroke: #555;} \
     .axis text {font-size: 11px;} \
-    .bar {fill-opacity: 0.5;} \
+    .bar {fill-opacity: 1.0;} \
     .bar.left {fill: ' + style.leftBarColor + ';} \
     .bar.left:hover {fill: ' + colorTransform(style.leftBarColor, '333333') + ';} \
     .bar.right {fill: ' + style.rightBarColor + ';} \
