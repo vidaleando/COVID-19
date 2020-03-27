@@ -8,14 +8,14 @@ var margin = {
     height = 500 - margin.top - margin.bottom,
     gutter = 30,
     pyramid_h = height - 105,
-    dom_age = d3.extent(data, d => d.age),
+    /*dom_age = d3.extent(data, d => d.age),
     dom_year = d3.extent(data, d => d.year),
     dom_value = d3.extent(data, d => d.value),
-    formatter = d3.format(',d'),
+    formatter = d3.format(',d'),*/
     barheight = (pyramid_h / (dom_age[1] - dom_age[0])) - 0.5,
     cx = width / 2;;
 
-var svg = d3.select('body').append('svg')
+var svg = d3.select('#pob_beta').append('svg')
     .attr('width', width + margin.left + margin.right)
     .attr('height', height + margin.top + margin.bottom)
     .append('g')
