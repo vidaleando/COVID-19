@@ -179,6 +179,7 @@ var fase12=new Date(2020,2,23);
         update(selectedOption)
     })
 
+//Añadde línea de fase 2
   var fase= svgT.append("line")
     .attr("x1", x(fase12))
     .attr("y1", y(y.domain()[0]))
@@ -187,7 +188,16 @@ var fase12=new Date(2020,2,23);
      .attr("stroke", "#fd7e14")
         .style("stroke-width", 2)
         .style("fill", "none")
-        .style("stroke-dasharray", "5,5")  ;
+        .style("stroke-dasharray", "5,5") ;
+
+    // texto fase 12
+  svgT.append("text")
+      //.attr("transform", "rotate(-90)")
+      .attr("y",y(y.domain()[1]))//-0 - margin.left
+      .attr("x",x(fase12)-30 )
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Comienza la fase 2");           
 
 // Animation
   /* Add 'curtain' rectangle to hide entire graph */
