@@ -139,4 +139,32 @@ var dot = pyramid.selectAll('circle')
     function prettyFormat(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
+      // lighten colors
+    function colorTransform(c1, c2) {
+        var c1 = c1.replace('#','')
+            origHex = {
+                r: c1.substring(0, 2),
+                g: c1.substring(2, 4),
+                b: c1.substring(4, 6)
+            },
+            transVec = {
+                r: c2.substring(0, 2),
+                g: c2.substring(2, 4),
+                b: c2.substring(4, 6)
+            },
+            newHex = {};
+
+        function transform(d, e) {
+            var f = parseInt(d, 16) + parseInt(e, 16);
+            if (f > 255) {
+                f = 255;
+            }
+            return f.toString(16);
+        }
+        newHex.r = transform(origHex.r, transVec.r);
+        newHex.g = transform(origHex.g, transVec.g);
+        newHex.b = transform(origHex.b, transVec.b);
+        return '#' + newHex.r + newHex.g + newHex.b;
+    }
+
 }    
