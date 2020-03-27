@@ -87,15 +87,8 @@ var yyyy = today.getFullYear();
 */
 var fase12=new Date(2020,2,23);
 
-svgT.append("line")
-    .attr("x1", 5)
-    .attr("y1", 5)
-    .attr("x2", 50)
-     .attr("y2", 50)
-     .attr("stroke", "#1f9bcf")
-        .style("stroke-width", 3)
-        .style("fill", "none");
-        
+
+
     // Add Y axis      
     var y = d3.scaleLinear()
     .domain( [0,d3.max(data, function(d){return d.Mexico_pais;  })*1.1])
@@ -185,6 +178,15 @@ svgT.append("line")
         // run the updateChart function with this selected option
         update(selectedOption)
     })
+
+   var fase= svgT.append("line")
+    .attr("x1", 5)
+    .attr("y1", 5)
+    .attr("x2", 50)
+     .attr("y2", 50)
+     .attr("stroke", "#1f9bcf")
+        .style("stroke-width", 3)
+        .style("fill", "none");
 
 // Animation
   /* Add 'curtain' rectangle to hide entire graph */
