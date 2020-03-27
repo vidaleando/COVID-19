@@ -196,7 +196,7 @@ var fase12=new Date(2020,2,23);
       .attr("y",y(y.domain()[1]))//-0 - margin.left
       .attr("x",x(fase12)-30 )
       .attr("dy", "1em")
-      .style("text-anchor", "middle")
+      .style("text-anchor", "end")
       .text("Comienza la fase 2");           
 
 // Animation
