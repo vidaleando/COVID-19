@@ -33,7 +33,7 @@ function grafica(error,dataL,dataB) {
 
     dataL.forEach(function(d) {
                dataL.Fecha = new Date(dataL.Fecha);
-               console.log(dataL.Fecha);
+               console.log(dataL);
                dataL.México = +dataL.México;
             });
     dataB.forEach(function(d) {
