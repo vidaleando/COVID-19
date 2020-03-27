@@ -199,7 +199,6 @@ var fase12=new Date(2020,2,23);
       .style("text-anchor", "end")
       .text("Comienza la fase 2")
       .attr("stroke", "#000000")
-      .attr("font-size","10")
       .attr("font-family","sans-serif");           
 
 // Animation
