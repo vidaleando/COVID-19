@@ -11,31 +11,6 @@ var navMap = d3.select("#mapa").append("div")
     .attr("class", "nav_map")       
     .style("opacity", 0);
 
-var hover = function(d) {
-    var div = document.getElementById('tooltip');
-    div.innerHTML = d.properties.name;
-    var selector = div.innerHTML;
-    d3.csv(urlTotal, function(data) {
-        var largo = data.length;
-        var tope = largo - 1;
-        var tot = document.getElementById('col_tot');
-        tot.innerHTML = data[tope][div.innerHTML];
-    });
-    d3.csv(urlRecu, function(data) {
-        var largo = data.length;
-        var tope = largo - 1;
-        var recu = document.getElementById('col_recu');
-        recu.innerHTML = data[tope][div.innerHTML];
-        return recu.innerHTML;
-    });
-    console.log(document.getElementById('col_tot').innerHTML - document.getElementById('col_recu').innerHTML);
-    var finalTot = document.getElementById('col_tot');
-    var finalRecu = document.getElementById('col_recu');
-    var act = document.getElementById('col_act');
-    act.innerHTML = +finalTot.innerHTML - recu.innerHTML;
-
-};
-
 //define projection
 var projection = d3.geoMercator()
     .center([-100, 22])
@@ -61,7 +36,6 @@ d3.json("https://raw.githubusercontent.com/LeonardoCastro/COVID-20/master/assets
         .enter()
         .append("path")
         .attr("d", path)
-        //.on("mouseover", hover);
         .on("mouseover", function(d) { 
           d.properties.updated_at = new Date(d.properties.updated_at) ;
            formatMonth = d3.timeFormat("%b"), //%m
