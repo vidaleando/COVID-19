@@ -25,7 +25,7 @@ d3.csv(urlNuevos, function(data) {
 
   data.forEach(function(d) {
              d.Fecha = new Date(d.Fecha);
-             d.Mexico_pais = +d.Mexico_pais;
+             d.México = +d.México;
           });
 
   // X axis
@@ -56,7 +56,7 @@ d3.csv(urlNuevos, function(data) {
 
   // Add Y axis
   var y = d3.scaleLinear()
-            .domain([0, d3.max(data, function(d){return d.Mexico_pais;  })])
+            .domain([0, d3.max(data, function(d){return d.México;  })])
             .range([ height, 0]);
 
   svgBar.append("g")
@@ -68,9 +68,9 @@ d3.csv(urlNuevos, function(data) {
         .enter()
         .append("rect")
           .attr("x", function(d) { return x(+d.Fecha) - widthBar/2; })
-          //.attr("y", function(d) { return y(+d.Mexico_pais); })
+          //.attr("y", function(d) { return y(+d.México); })
           .attr("width", widthBar)
-          //.attr("height", function(d) { return height - y(+d.Mexico_pais); })
+          //.attr("height", function(d) { return height - y(+d.México); })
           .attr("fill", '#1f9bcf')
           // no bar at the beginning thus:
           .attr("height", function(d) { return height - y(0); }) // always equal to 0
@@ -79,7 +79,7 @@ d3.csv(urlNuevos, function(data) {
             tipH.transition()    
                 .duration(200)    
                 .style("opacity", .9);    
-            tipH.html("<h6>" + formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "</h6>"+ " <p class='text-primary'>"  + d.Mexico_pais + "</p>")  
+            tipH.html("<h6>" + formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "</h6>"+ " <p class='text-primary'>"  + d.México + "</p>")  
                 .style("left", (d3.event.pageX) + "px")   
                 .style("top", (d3.event.pageY - 28) + "px");  
             })          
@@ -93,8 +93,8 @@ d3.csv(urlNuevos, function(data) {
   svgBar.selectAll("rect")
   .transition()
   .duration(400)
-  .attr("y", function(d) { return y(+d.Mexico_pais); })
-  .attr("height", function(d) { return height - y(+d.Mexico_pais); })
+  .attr("y", function(d) { return y(+d.México); })
+  .attr("height", function(d) { return height - y(+d.México); })
   .delay(function(d,i){ return(i*100)})
 
 
