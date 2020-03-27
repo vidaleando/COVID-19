@@ -28,7 +28,7 @@ d3.csv(url, function(data) {
 
     data.forEach(function(d) {
                d.Fecha = new Date(d.Fecha);
-               d.Mexico_pais = +d.Mexico_pais;
+               d.México = +d.México;
             });
     //console.log(allGroupb);
     // add the options to the button
@@ -91,7 +91,7 @@ var fase12=new Date(2020,2,23);
 
     // Add Y axis      
     var y = d3.scaleLinear()
-    .domain( [0,d3.max(data, function(d){return d.Mexico_pais;  })*1.1])
+    .domain( [0,d3.max(data, function(d){return d.México;  })*1.1])
       .range([ height-10, 0 ]);
     svgT.append("g")
       .call(d3.axisLeft(y)) ;
@@ -118,7 +118,7 @@ var fase12=new Date(2020,2,23);
         .datum(data)
         .attr("d", d3.line()
           .x(function(d) { return x(d.Fecha) })
-          .y(function(d) { return y(+d.Mexico_pais) })
+          .y(function(d) { return y(+d.México) })
         )
         .attr("stroke", "#1f9bcf")
         .style("stroke-width", 3)
@@ -130,14 +130,14 @@ var fase12=new Date(2020,2,23);
       .enter()
       .append('circle')
         .attr("cx", function(d) { return x(d.Fecha) })
-        .attr("cy", function(d) { return y(+d.Mexico_pais) })
+        .attr("cy", function(d) { return y(+d.México) })
         .attr("r", 5)
         .style("fill", "#1F9BCF")
         .on("mouseover", function(d) {    
             tip.transition()    
                 .duration(200)    
                 .style("opacity", .9);    
-            tip.html("<h6>" + formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "</h6>"+ " <p class='text-primary'>"  + d.Mexico_pais + "</p>")  
+            tip.html("<h6>" + formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "</h6>"+ " <p class='text-primary'>"  + d.México + "</p>")  
                 .style("left", (d3.event.pageX) + "px")   
                 .style("top", (d3.event.pageY - 30) + "px");  
             })          
@@ -179,14 +179,14 @@ var fase12=new Date(2020,2,23);
         update(selectedOption)
     })
 
-   /*var fase= svgT.append("line")
-    .attr("x1", 5)
+  var fase= svgT.append("line")
+    .attr("x1", fase12)
     .attr("y1", 5)
-    .attr("x2", 50)
+    .attr("x2", fase12)
      .attr("y2", 50)
      .attr("stroke", "#1f9bcf")
         .style("stroke-width", 3)
-        .style("fill", "none");*/
+        .style("fill", "none");
 
 // Animation
   /* Add 'curtain' rectangle to hide entire graph */
