@@ -1,215 +1,287 @@
-var margin = {
-        top: 10,
-        right: 10,
-        bottom: 10,
-        left: 10
-    },
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom,
-    gutter = 30,
-    pyramid_h = height - 105,
-    /*dom_age = d3.extent(data, d => d.age),
-    dom_year = d3.extent(data, d => d.year),
-    dom_value = d3.extent(data, d => d.value),
-    formatter = d3.format(',d'),
-    barheight = (pyramid_h / (dom_age[1] - dom_age[0])) - 0.5,*/
-    cx = width / 2;;
+function pyramidBuilder(data, target, options) {
+    var w = typeof options.width === 'undefined' ? 400  : options.width,
+        h = typeof options.height === 'undefined' ? 400  : options.height,
+        w_full = w,
+        h_full = h;
 
-var svg = d3.select('#pob_beta').append('svg')
-    .attr('width', width + margin.left + margin.right)
-    .attr('height', height + margin.top + margin.bottom)
-    .append('g')
-    .attr('transform', `translate(${margin.left},${margin.top})`);
-
-var svg_text_m = svg.append('text')
-    .attr('transform', `translate(${cx-250},10)`)
-    .style('font', '15px sans-serif')
-    .attr('text-anchor', 'start');
-
-var svg_text_f = svg.append('text')
-    .attr('transform', `translate(${cx+250},10)`)
-    .style('font', '15px sans-serif')
-    .attr('text-anchor', 'end');
-
-var svg_text_t = svg.append('text')
-    .attr('transform', `translate(${cx},${pyramid_h+55})`)
-    .style('font', '15px sans-serif')
-    .attr('text-anchor', 'middle');
-
-function uptext(root, lines) {
-    var lines = this.selectAll('tspan').data(this.datum());
-    lines.text(d => d);
-    lines.exit().remove();
-    lines.enter().append('tspan')
-        .attr('x', 0)
-        .attr('dy', (d, i) => (i * 1.2) + 'em')
-        .text(d => d);
-    return this;
-}
-
-// year axis
-/*
-var s_year = d3.scaleLinear()
-    .domain(dom_year)
-    .range([0, 400])
-    .clamp(true); */
-
-var ax_year = d3.svg.axis()
-    .scale(s_year)
-    .orient('bottom')
-    .ticks(8)
-    .tickFormat(String);
-
-var svg_axis_year = svg.append('g')
-    .attr('class', 'axis year')
-    .attr('transform', `translate(${cx-200},${pyramid_h+85})`)
-    .call(ax_year);
-
-// age axis
-var s_age = d3.scaleLinear()
-    .domain(dom_age.concat().reverse())
-    .range([0, pyramid_h]);
-
-var ax_age_l = d3.svg.axis()
-    .scale(s_age)
-    .orient('left')
-    .tickFormat(d => s_age(d) ? '' + d : '');
-
-var ax_age_svg = svg.append('g')
-    .attr('class', 'axis age')
-    .attr('transform', `translate(${cx+gutter/2+10},0)`)
-    .call(ax_age_l);
-
-ax_age_svg.append('text')
-    .attr('dy', '.32em')
-    .text('Age');
-
-ax_age_svg.selectAll('text')
-    .attr('x', -gutter / 2 - 10)
-    .style('text-anchor', 'middle');
-
-var ax_age_r = d3.svg.axis()
-    .scale(s_age)
-    .orient('right')
-    .tickFormat(d => '');
-
-svg.append('g')
-    .attr('class', 'axis age')
-    .attr('transform', `translate(${cx-gutter/2-10},0)`)
-    .call(ax_age_r);
-
-// population axen
-var s_value = d3.scaleLinear()
-    .domain(dom_value)
-    .range([0, 250]);
-
-// male population axis
-var s_male = d3.scaleLinear()
-    .domain(dom_value.reverse())
-    .range([0, 250]);
-
-var ax_male = d3.svg.axis()
-    .scale(s_male)
-    .orient('bottom')
-    .ticks(5)
-    .tickFormat(formatter);
-
-svg.append('g')
-    .attr('class', 'axis population male')
-    .attr('transform',
-        `translate(${cx-250-gutter},${pyramid_h+5})`)
-    .call(ax_male);
-
-// female population axis
-var ax_female = d3.svg.axis()
-    .scale(s_value)
-    .orient('bottom')
-    .ticks(5)
-    .tickFormat(formatter);
-
-svg.append('g')
-    .attr('class', 'axis population female')
-    .attr('transform', `translate(${cx+gutter},${pyramid_h+5})`)
-    .call(ax_female);
-
-// population bars
-var bars = svg.append('g')
-    .attr('class', 'pyramid population');
-
-function update(current_year, animate) {
-
-    var _data = data.filter(d => d.year === current_year),
-        isMale = d => d.sex === 'male',
-        x_pos = d => {
-            return isMale(d) ?
-                cx - gutter - s_value(d.value) :
-                cx + gutter;
-        },
-        total = d3.sum(_data, d => d.value),
-        m_total = d3.sum(_data, d => isMale(d) ? d.value : 0);
-
-    svg_text_m.datum(['Males', formatter(m_total)])
-        .call(uptext);
-
-    svg_text_f.datum(['Females', formatter(total - m_total)])
-        .call(uptext);
-
-    svg_text_t.datum([`Total population of Iceland in
-            ${current_year} was ${formatter(total)}`])
-        .call(uptext);
-
-    var bar = bars.selectAll('.bar').data(_data);
-
-    bar.transition().duration(animate ? 450 : 0)
-        .attr('width', d => s_value(d.value))
-        .attr('x', x_pos);
-
-    bar.exit().remove();
-
-    bar.enter().append('rect')
-        .attr('class', d => 'bar ' + d.sex)
-        .attr('height', barheight)
-        .attr('width', d => s_value(d.value))
-        .attr('x', x_pos)
-        .attr('y', d => s_age(d.age) - barheight / 2);
-}
-
-// current year
-var curr_point = d3.svg.symbol()
-    .type('triangle-down')
-    .size(100);
-
-var brush = d3.svg.brush()
-    .x(s_year)
-    .extent([dom_year[1], dom_year[1]])
-    .on('brush', onbrush);
-
-var slider = svg_axis_year.append('g')
-    .attr('class', 'slider')
-    .call(brush);
-
-slider.selectAll('.extent,.resize').remove();
-
-slider.select('.background')
-    .attr('y', -20)
-    .attr('height', 40);
-
-var handle = slider.append('path')
-    .attr('class', 'handle')
-    .attr('d', curr_point);
-
-function onbrush() {
-    var value = brush.extent()[0],
-        animate = true;
-    if (d3.event && d3.event.sourceEvent) {
-        if (d3.event.sourceEvent.type === 'mousemove') {
-            animate = false;
-        }
-        value = d3.round(s_year.invert(d3.mouse(this)[0]));
-        brush.extent([value, value]);
+    if (w > $( window ).width()) {
+      w = $( window ).width();
     }
-    handle.attr('transform', `translate(${s_year(value)},-10)`);
-    update(value, animate);
-}
 
-onbrush();
+    var margin = {
+            top: 50,
+            right: 10,
+            bottom: 20,
+            left: 10,
+            middle: 20
+        },
+        sectorWidth = (w / 2) - margin.middle,
+        leftBegin = sectorWidth - margin.left,
+        rightBegin = w - margin.right - sectorWidth;
+
+    w = (w- (margin.left + margin.right) );
+    h = (h - (margin.top + margin.bottom));
+
+    if (typeof options.style === 'undefined') {
+      var style = {
+        leftBarColor: '#6c9dc6',
+        rightBarColor: '#de5454',
+        tooltipBG: '#fefefe',
+        tooltipColor: 'black'
+      };
+    } else {
+      var style = {
+        leftBarColor: typeof options.style.leftBarColor === 'undefined'  ? '#6c9dc6' : options.style.leftBarColor,
+        rightBarColor: typeof options.style.rightBarColor === 'undefined' ? '#de5454' : options.style.rightBarColor,
+        tooltipBG: typeof options.style.tooltipBG === 'undefined' ? '#fefefe' : options.style.tooltipBG,
+        tooltipColor: typeof options.style.tooltipColor === 'undefined' ? 'black' : options.style.tooltipColor
+    };
+  }
+
+    var totalPopulation = d3.sum(data, function(d) {
+            return d.male + d.female;
+        }),
+        percentage = function(d) {
+            return d / totalPopulation;
+        };
+
+    var styleSection = d3.select(target).append('style')
+    .text('svg {max-width:100%} \
+    .axis line,axis path {shape-rendering: crispEdges;fill: transparent;stroke: #555;} \
+    .axis text {font-size: 11px;} \
+    .bar {fill-opacity: 0.5;} \
+    .bar.left {fill: ' + style.leftBarColor + ';} \
+    .bar.left:hover {fill: ' + colorTransform(style.leftBarColor, '333333') + ';} \
+    .bar.right {fill: ' + style.rightBarColor + ';} \
+    .bar.right:hover {fill: ' + colorTransform(style.rightBarColor, '333333') + ';} \
+    .tooltip {position: absolute;line-height: 1.1em;padding: 7px; margin: 3px;background: ' + style.tooltipBG + '; color: ' + style.tooltipColor + '; pointer-events: none;border-radius: 6px;}')
+
+    var region = d3.select(target).append('svg')
+        .attr('width', w_full)
+        .attr('height', h_full);
+
+
+    var legend = region.append('g')
+        .attr('class', 'legend');
+
+        // TODO: fix these margin calculations -- consider margin.middle == 0 -- what calculations for padding would be necessary?
+    legend.append('rect')
+        .attr('class', 'bar left')
+        .attr('x', (w / 2) - (margin.middle * 3))
+        .attr('y', 12)
+        .attr('width', 12)
+        .attr('height', 12);
+
+    legend.append('text')
+        .attr('fill', '#000')
+        .attr('x', (w / 2) - (margin.middle * 2))
+        .attr('y', 18)
+        .attr('dy', '0.32em')
+        .text('Males');
+
+    legend.append('rect')
+        .attr('class', 'bar right')
+        .attr('x', (w / 2) + (margin.middle * 2))
+        .attr('y', 12)
+        .attr('width', 12)
+        .attr('height', 12);
+
+    legend.append('text')
+        .attr('fill', '#000')
+        .attr('x', (w / 2) + (margin.middle * 3))
+        .attr('y', 18)
+        .attr('dy', '0.32em')
+        .text('Females');
+
+    var tooltipDiv = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("opacity", 0);
+
+    var pyramid = region.append('g')
+        .attr('class', 'inner-region')
+        .attr('transform', translation(margin.left, margin.top));
+
+    // find the maximum data value for whole dataset
+    // and rounds up to nearest 5%
+    //  since this will be shared by both of the x-axes
+    var maxValue = Math.ceil(Math.max(
+        d3.max(data, function(d) {
+            return percentage(d.male);
+        }),
+        d3.max(data, function(d) {
+            return percentage(d.female);
+        })
+    )/0.05)*0.05;
+
+    // SET UP SCALES
+
+    // the xScale goes from 0 to the width of a region
+    //  it will be reversed for the left x-axis
+    var xScale = d3.scaleLinear()
+        .domain([0, maxValue])
+        .range([0, (sectorWidth-margin.middle)])
+        .nice();
+
+    var xScaleLeft = d3.scaleLinear()
+        .domain([0, maxValue])
+        .range([sectorWidth, 0]);
+
+    var xScaleRight = d3.scaleLinear()
+        .domain([0, maxValue])
+        .range([0, sectorWidth]);
+
+    var yScale = d3.scaleBand()
+        .domain(data.map(function(d) {
+            return d.age;
+        }))
+        .range([h, 0], 0.1);
+
+
+    // SET UP AXES
+    var yAxisLeft = d3.axisRight()
+        .scale(yScale)
+        .tickSize(4, 0)
+        .tickPadding(margin.middle - 4);
+
+    var yAxisRight = d3.axisLeft()
+        .scale(yScale)
+        .tickSize(4, 0)
+        .tickFormat('');
+
+    var xAxisRight = d3.axisBottom()
+        .scale(xScale)
+        .tickFormat(d3.format('.0%'));
+
+    var xAxisLeft = d3.axisBottom()
+        // REVERSE THE X-AXIS SCALE ON THE LEFT SIDE BY REVERSING THE RANGE
+        .scale(xScale.copy().range([leftBegin, 0]))
+        .tickFormat(d3.format('.0%'));
+
+    // MAKE GROUPS FOR EACH SIDE OF CHART
+    // scale(-1,1) is used to reverse the left side so the bars grow left instead of right
+    var leftBarGroup = pyramid.append('g')
+        .attr('transform', translation(leftBegin, 0) + 'scale(-1,1)');
+    var rightBarGroup = pyramid.append('g')
+        .attr('transform', translation(rightBegin, 0));
+
+    // DRAW AXES
+    pyramid.append('g')
+        .attr('class', 'axis y left')
+        .attr('transform', translation(leftBegin, 0))
+        .call(yAxisLeft)
+        .selectAll('text')
+        .style('text-anchor', 'middle');
+
+    pyramid.append('g')
+        .attr('class', 'axis y right')
+        .attr('transform', translation(rightBegin, 0))
+        .call(yAxisRight);
+
+    pyramid.append('g')
+        .attr('class', 'axis x left')
+        .attr('transform', translation(0, h))
+        .call(xAxisLeft);
+
+    pyramid.append('g')
+        .attr('class', 'axis x right')
+        .attr('transform', translation(rightBegin, h))
+        .call(xAxisRight);
+
+    // DRAW BARS
+    leftBarGroup.selectAll('.bar.left')
+        .data(data)
+        .enter().append('rect')
+        .attr('class', 'bar left')
+        .attr('x', 0)
+        .attr('y', function(d) {
+            return yScale(d.age) + margin.middle / 4;
+        })
+        .attr('width', function(d) {
+            return xScale(percentage(d.male));
+        })
+        .attr('height', (yScale.range()[0] / data.length) - margin.middle / 2)
+        .on("mouseover", function(d) {
+            tooltipDiv.transition()
+                .duration(200)
+                .style("opacity", 0.9);
+            tooltipDiv.html("<strong>Males Age " + d.age + "</strong>" +
+                    "<br />  Population: " + prettyFormat(d.male) +
+                    "<br />" + (Math.round(percentage(d.male) * 1000) / 10) + "% of Total")
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
+        })
+        .on("mouseout", function(d) {
+            tooltipDiv.transition()
+                .duration(500)
+                .style("opacity", 0);
+        });
+
+    rightBarGroup.selectAll('.bar.right')
+        .data(data)
+        .enter().append('rect')
+        .attr('class', 'bar right')
+        .attr('x', 0)
+        .attr('y', function(d) {
+            return yScale(d.age) + margin.middle / 4;
+        })
+        .attr('width', function(d) {
+            return xScale(percentage(d.female));
+        })
+        .attr('height', (yScale.range()[0] / data.length) - margin.middle / 2)
+        .on("mouseover", function(d) {
+            tooltipDiv.transition()
+                .duration(200)
+                .style("opacity", 0.9);
+            tooltipDiv.html("<strong> Females Age " + d.age + "</strong>" +
+                    "<br />  Population: " + prettyFormat(d.female) +
+                    "<br />" + (Math.round(percentage(d.female) * 1000) / 10) + "% of Total")
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
+        })
+        .on("mouseout", function(d) {
+            tooltipDiv.transition()
+                .duration(500)
+                .style("opacity", 0);
+        });
+
+    /* HELPER FUNCTIONS */
+
+    // string concat for translate
+    function translation(x, y) {
+        return 'translate(' + x + ',' + y + ')';
+    }
+
+    // numbers with commas
+    function prettyFormat(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    // lighten colors
+    function colorTransform(c1, c2) {
+        var c1 = c1.replace('#','')
+            origHex = {
+                r: c1.substring(0, 2),
+                g: c1.substring(2, 4),
+                b: c1.substring(4, 6)
+            },
+            transVec = {
+                r: c2.substring(0, 2),
+                g: c2.substring(2, 4),
+                b: c2.substring(4, 6)
+            },
+            newHex = {};
+
+        function transform(d, e) {
+            var f = parseInt(d, 16) + parseInt(e, 16);
+            if (f > 255) {
+                f = 255;
+            }
+            return f.toString(16);
+        }
+        newHex.r = transform(origHex.r, transVec.r);
+        newHex.g = transform(origHex.g, transVec.g);
+        newHex.b = transform(origHex.b, transVec.b);
+        return '#' + newHex.r + newHex.g + newHex.b;
+    }
+
+}
