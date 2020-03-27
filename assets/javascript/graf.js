@@ -87,7 +87,7 @@ function graficaPuntos(data, target, options) {
         .range([0, (sectorWidth-margin.middle)])
         .nice();
     pyramid.append("g")
-      .attr("transform", "translate(0," + (height-10) + ")")
+      .attr("transform", "translate(0," + (h-10) + ")")
       .attr("class","graph_date")
       .call(d3.axisBottom(x))
       .selectAll("text")  //Rota las labels
