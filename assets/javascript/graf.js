@@ -60,6 +60,15 @@ function graficaPuntos(data, target, options) {
     .bar.right:hover {fill: ' + colorTransform(style.rightBarColor, '333333') + ';} \
     .tooltip {position: absolute;line-height: 1.1em;padding: 7px; margin: 3px;background: ' + style.tooltipBG + '; color: ' + style.tooltipColor + '; pointer-events: none;border-radius: 6px;}')
 
+ //Crea el svg  
+    var region = d3.select(target).append('svg')
+        .attr('width', w_full)
+        .attr('height', h_full);
+
+
+    var legend = region.append('g')
+        .attr('class', 'legend');
+
 //genera el tooltip
     var tooltipDiv = d3.select("body").append("div")
         .attr("class", "tooltip")
