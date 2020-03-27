@@ -30,7 +30,7 @@ function grafica(error,dataL,dataB) {
     dataL.forEach(function(d) {
                dataL.Fecha = new Date(dataL.Fecha);
                dataL.México = +dataL.México;
-               console.log(dataL.México)
+               console.log(dataL[0])
             });
     dataB.forEach(function(d) {
                dataB.Fecha = new Date(dataB.Fecha);
