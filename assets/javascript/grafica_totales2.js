@@ -21,7 +21,7 @@ var svgT = d3.select("#grafica_totales")
 //Read the data
 d3.queue()
   .defer(d3.csv, 'https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv')
-  .defer(d3.csv, 'https://github.com/blas-ko/COVID-19_Coupled-Epidemics/blob/master/results/covid19_mex_proyeccion_susana_00.csv')
+  .defer(d3.csv, 'https://raw.githubusercontent.com/blas-ko/COVID-19_Coupled-Epidemics/master/results/covid19_mex_proyeccion_susana_00.csv')
   .await(grafica);
 
 function grafica(data) {
