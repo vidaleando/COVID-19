@@ -100,7 +100,7 @@ function graficaPuntos(data, target, options) {
     var y = d3.scaleLinear()
     .domain( [0,d3.max(data, function(d){return d.México;  })*1.1])
       .range([ h-10, 0 ]);
-    svgT.append("g")
+    pyramid.append("g")
 
 // Grafica
     var line = pyramid
