@@ -11,7 +11,7 @@ function pyramidBuilder(data, target, options) {
     var margin = {
             top: 50,
             right: 10,
-            bottom: 20,
+            bottom: 30,
             left: 10,
             middle: 20
         },
