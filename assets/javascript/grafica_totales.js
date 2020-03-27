@@ -186,7 +186,7 @@ var fase12=new Date(2020,2,23);
     .attr("x2", x(fase12))
      .attr("y2", y(y.domain()[1]))
      .attr("stroke", "#000000") //fd7e14
-        .style("stroke-width", 2)
+        .style("stroke-width", 1)
         .style("fill", "none")
         .style("stroke-dasharray", "5,5") ;
 
