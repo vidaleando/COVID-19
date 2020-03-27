@@ -179,14 +179,14 @@ var fase12=new Date(2020,2,23);
         update(selectedOption)
     })
 
-   var fase= svgT.append("line")
+   /*var fase= svgT.append("line")
     .attr("x1", 5)
     .attr("y1", 5)
     .attr("x2", 50)
      .attr("y2", 50)
      .attr("stroke", "#1f9bcf")
         .style("stroke-width", 3)
-        .style("fill", "none");
+        .style("fill", "none");*/
 
 // Animation
   /* Add 'curtain' rectangle to hide entire graph */
