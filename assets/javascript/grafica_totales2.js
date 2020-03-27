@@ -30,10 +30,11 @@ function grafica(error,dataL,dataB) {
     var allGroup = ["Lineal","Logarítmica"];
     //var allGroupb = {Lineal:Mexico,"Logarítmica":Mexico_log10};
     //var tope=data.length-1;
-
+console.log(dataL);              
+console.log(dataB.Fecha);
+console.log(new Date());
     dataL.forEach(function(d) {
                dataL.Fecha = new Date(dataL.Fecha);
-               console.log(dataL.Fecha);
                dataL.México = +dataL.México;
             });
     dataB.forEach(function(d) {
