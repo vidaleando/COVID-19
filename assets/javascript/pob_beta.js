@@ -48,10 +48,11 @@ function uptext(root, lines) {
 }
 
 // year axis
+/*
 var s_year = d3.scaleLinear()
     .domain(dom_year)
     .range([0, 400])
-    .clamp(true);
+    .clamp(true); */
 
 var ax_year = d3.svg.axis()
     .scale(s_year)
