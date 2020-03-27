@@ -181,9 +181,9 @@ var fase12=new Date(2020,2,23);
 
   var fase= svgT.append("line")
     .attr("x1", x(fase12))
-    .attr("y1", 5)
+    .attr("y1", y(y.domain()[0]))
     .attr("x2", x(fase12))
-     .attr("y2", 50)
+     .attr("y2", y(y.domain()[1]))
      .attr("stroke", "#1f9bcf")
         .style("stroke-width", 3)
         .style("fill", "none");
