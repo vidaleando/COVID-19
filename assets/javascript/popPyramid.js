@@ -204,9 +204,9 @@ function pyramidBuilder(data, target, options) {
             tooltipDiv.transition()
                 .duration(200)
                 .style("opacity", 0.9);
-            tooltipDiv.html("<strong>Males Age " + d.age + "</strong>" +
-                    "<br />  Population: " + prettyFormat(d.male) +
-                    "<br />" + (Math.round(percentage(d.male) * 1000) / 10) + "% of Total")
+            tooltipDiv.html("<strong>Edad " + d.age + "</strong>" +
+                    "<br />  Población: " + prettyFormat(d.male) +
+                    "<br />" + (Math.round(percentage(d.male) * 1000) / 10) + "% del total")
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
         })
@@ -232,9 +232,9 @@ function pyramidBuilder(data, target, options) {
             tooltipDiv.transition()
                 .duration(200)
                 .style("opacity", 0.9);
-            tooltipDiv.html("<strong> Females Age " + d.age + "</strong>" +
-                    "<br />  Population: " + prettyFormat(d.female) +
-                    "<br />" + (Math.round(percentage(d.female) * 1000) / 10) + "% of Total")
+            tooltipDiv.html("<strong> Edad " + d.age + "</strong>" +
+                    "<br />  Población: " + prettyFormat(d.female) +
+                    "<br />" + (Math.round(percentage(d.female) * 1000) / 10) + "% del total")
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 28) + "px");
         })
