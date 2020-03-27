@@ -92,7 +92,7 @@ d3.csv(urlNuevos, function(data) {
 
 var fase12=new Date(2020,2,23);
 //Añadde línea de fase 2
-  var fase= svgT.append("line")
+  var fase= svgBar.append("line")
     .attr("x1", x(fase12))
     .attr("y1", y(y.domain()[0]))
     .attr("x2", x(fase12))
@@ -103,7 +103,7 @@ var fase12=new Date(2020,2,23);
         .style("stroke-dasharray", "5,5") ;
 
     // texto fase 12
-  svgT.append("text")
+  svgBar.append("text")
       //.attr("transform", "rotate(-90)")
       .attr("y",y(y.domain()[1]))//-0 - margin.left
       .attr("x",x(fase12)-5)
