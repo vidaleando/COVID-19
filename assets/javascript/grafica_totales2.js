@@ -24,7 +24,7 @@ queue()
   .defer(d3.csv, 'https://github.com/blas-ko/COVID-19_Coupled-Epidemics/blob/master/results/covid19_mex_proyeccion_susana_00.csv')
   .await(grafica);
 
-grafica(data) {
+function grafica(data) {
 
     // List of groups (here I have one group per column)
     var allGroup = ["Lineal","Logarítmica"];
