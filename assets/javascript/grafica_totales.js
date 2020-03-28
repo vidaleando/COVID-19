@@ -60,7 +60,7 @@ var yyyy = today.getFullYear();
   var mindate = new Date(2020,1,28);
     // Add X axis --> it is a date format
     var x = d3.scaleTime()
-      .domain([mindate,today])
+      .domain([mindate,data[tope]['Fecha']])
       .range([ 0, width-10 ]);
 
 
