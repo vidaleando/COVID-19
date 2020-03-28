@@ -1,14 +1,5 @@
 // set the dimensions and margins of the graph
-/*var margin = {
-        top: 10,
-        right: 10,
-        bottom: 0,
-        left: 30
-    },
-    //width = 460 - margin.left - margin.right,
-    //height = 400 - margin.top - margin.bottom; 
-    width = $("#grafica_totales").width(),
-    height = width / 1.5;*/
+
     var w = 600,
         h = 400,
         w_full = w,
@@ -21,7 +12,7 @@
     var margin = {
             top: 10,
             right: 10,
-            bottom: 45,
+            bottom: 50,
             left: 40
         },
    w = (w- (margin.left + margin.right) );

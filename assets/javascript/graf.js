@@ -23,10 +23,6 @@ function graficaPuntos(data, target, options) {
             left: 10,
             middle: 20
         },
-        sectorWidth = (w / 2) - margin.middle,
-        leftBegin = sectorWidth - margin.left,
-        rightBegin = w - margin.right - sectorWidth;
-
     w = (w- (margin.left + margin.right) );
     h = (h - (margin.top + margin.bottom));
 
