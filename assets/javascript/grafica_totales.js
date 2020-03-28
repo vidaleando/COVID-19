@@ -215,36 +215,7 @@ d3.csv(url, function(data) {
                 .style("opacity", 0);
         });
 
-        
-        svgT.selectAll('circle')
-        .data(data)
-        .enter()
-        .append('circle')
-        .attr("cx", function(d) {
-            return x(d.Fecha)
-        })
-        .attr("cy", function(d) {
-            return y(+d.Susana_00)
-        })
-        .attr("r", 2)
-        .attr("opacity",1)
-        .attr("visibility", function(d, i) {
-            if (d.Susana_00 == 0) return "hidden";
-        })
-        .style("fill", "#000000")
-        .on("mouseover", function(d) {
-            tip.transition()
-                .duration(200)
-                .style("opacity", 0.9);
-            tip.html("<h6>" + formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "</h6>" + " <p class='text-primary'>" + d.Susana_00 + "</p>")
-                .style("left", (d3.event.pageX) + "px")
-                .style("top", (d3.event.pageY - 30) + "px");
-        })
-        .on("mouseout", function(d) {
-            tip.transition()
-                .duration(500)
-                .style("opacity", 0);
-        });
+
 
 
 
@@ -309,6 +280,16 @@ svgT.append("line")
         .style("stroke-dasharray","5,5")
         .style("fill", "none")
 svgT.append("text").attr("x", coordX).attr("y", coordY+2*offset).text("50% se auto-aisla").style("font-size", "10px").attr("alignment-baseline","middle")
+
+//Leyenda datos SSA
+svgT.append('circle')
+        .attr("cx", coordX-12)
+        .attr("cy", coordY+3*offset)
+        .attr("r", 5)
+        .attr("opacity",0.7)
+        .style("fill", "#1F9BCF")
+svgT.append("text").attr("x", coordX).attr("y", coordY+3*offset).text("Datos SSA").style("font-size", "10px").attr("alignment-baseline","middle")
+
     // Animation
     /* Add 'curtain' rectangle to hide entire graph */
     var curtain = svgT.append('rect')
