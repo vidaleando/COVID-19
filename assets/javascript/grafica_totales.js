@@ -107,7 +107,7 @@ d3.csv(url, function(data) {
         .domain([0, d3.max(data, function(d) {
             return +d.Susana_00;
         }) * 1.1])
-        .range([h-(margin.top+margin.bottom), 0]);//height - 10
+        .range([h-10, 0]);//height - 10
     svgT.append("g")
         .call(d3.axisLeft(y));
 
