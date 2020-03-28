@@ -152,6 +152,7 @@ d3.csv(url, function(data) {
         .style("stroke-dasharray","1,1")
         .style("fill", "none")
         .on("mouseover", function(d) {
+          console.log(d.Fecha);
             tip.transition()
                 .duration(200)
                 .style("opacity", .9);
