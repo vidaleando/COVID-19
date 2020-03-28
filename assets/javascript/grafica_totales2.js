@@ -25,12 +25,13 @@ d3.queue()
   .await(grafica);
 
 function grafica(error,dataL,dataB) {
-
-
+  console.log(dataL.Fecha);
+  console.log(dataL.México);
     dataL.forEach(function(d) {
+
                dataL.Fecha = new Date(dataL.Fecha);
                dataL.México = +dataL.México;
-               console.log(dataL[d]["Fecha"]);
+               console.log(dataL[0]["Fecha"]);
             });
     dataB.forEach(function(d) {
                dataB.Fecha = new Date(dataB.Fecha);
