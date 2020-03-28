@@ -213,6 +213,7 @@ d3.csv(url, function(data) {
             return y(+d.México)
         })
         .attr("r", 5)
+        .attr("opacity",0.5)
         .attr("visibility", function(d, i) {
             if (d.México == 0) return "hidden";
         })
@@ -298,30 +299,6 @@ d3.csv(url, function(data) {
         .attr("stroke", "#000000")
         .attr("font-family", "sans-serif");
 
-    // Line for proyecciones
-
-    // date for proyecciones
-    var fecha_proyecciones = new Date(2020, 02, 26);
-
-    var fase = svgT.append("line")
-        .attr("x1", x(fecha_proyecciones))
-        .attr("y1", y(y.domain()[0]))
-        .attr("x2", x(fecha_proyecciones))
-        .attr("y2", y(y.domain()[1]))
-        .attr("stroke", "#000000") //fd7e14
-        .style("stroke-width", 1)
-        .style("fill", "none")
-        .style("stroke-dasharray", "5,5");
-
-    // text proyecciones
-    svgT.append("text")
-        .attr("y", y(y.domain()[1]) + 20)
-        .attr("x", x(fecha_proyecciones) - 5)
-        .attr("dy", "1em")
-        .style("text-anchor", "end")
-        .text("Proyecciones")
-        .attr("stroke", "#000000")
-        .attr("font-family", "sans-serif");
 
     // Animation
     /* Add 'curtain' rectangle to hide entire graph */
