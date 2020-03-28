@@ -133,6 +133,9 @@ var fase12=new Date(2020,2,23);
         .attr("cx", function(d) { return x(d.Fecha) })
         .attr("cy", function(d) { return y(+d.México) })
         .attr("r", 5)
+        .attr("visibility", function(d,i){
+        if(d.México == 0) return "hidden";
+})
         .style("fill", "#1F9BCF")
         .on("mouseover", function(d) {    
             tip.transition()    
