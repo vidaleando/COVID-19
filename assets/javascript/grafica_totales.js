@@ -1,14 +1,33 @@
 // set the dimensions and margins of the graph
-var margin = {
+/*var margin = {
         top: 10,
         right: 10,
         bottom: 0,
         left: 30
     },
-    /*width = 460 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom; */
+    //width = 460 - margin.left - margin.right,
+    //height = 400 - margin.top - margin.bottom; 
     width = $("#grafica_totales").width(),
-    height = width / 1.5;
+    height = width / 1.5;*/
+    var w = 460,
+        h = 400,
+        w_full = w,
+        h_full = h;
+
+    if (w > $( window ).width()) {
+      w = $( window ).width();
+    }
+
+    var margin = {
+            top: 50,
+            right: 10,
+            bottom: 40,
+            left: 10,
+            middle: 20
+        },
+        sectorWidth = (w / 2) - margin.middle,
+        leftBegin = sectorWidth - margin.left,
+        rightBegin = w - margin.right - sectorWidth;    
 var url = "https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/proyecciones_04abril.csv";
 
 var tip = d3.select("#grafica_totales").append("div")
@@ -17,8 +36,8 @@ var tip = d3.select("#grafica_totales").append("div")
 
 var svgT = d3.select("#grafica_totales")
     .append("svg")
-    .attr("width", width + margin.left + margin.right + 0)
-    .attr("height", height + margin.top + margin.bottom + 70)
+    .attr("width", w_full)//weight + margin.left + margin.right + 0)
+    .attr("height", h_full)//height + margin.top + margin.bottom + 70)
     .append("g")
     .attr("transform",
         "translate(" + (10 + margin.left) + "," + (margin.top) + ")");
@@ -70,11 +89,11 @@ d3.csv(url, function(data) {
     // Add X axis --> it is a date format
     var x = d3.scaleTime()
         .domain([mindate, data[tope]['Fecha']])
-        .range([0, width - 10]);
+        .range([0, w]);//width - 10]);
 
 
     svgT.append("g")
-        .attr("transform", "translate(0," + (height - 10) + ")")
+        .attr("transform", "translate(0,"  +h + ")")//(height - 10)
         .attr("class", "graph_date")
         .call(d3.axisBottom(x))
         .selectAll("text")
@@ -103,7 +122,7 @@ d3.csv(url, function(data) {
         .domain([0, d3.max(data, function(d) {
             return +d.Susana_00;
         }) * 1.1])
-        .range([height - 10, 0]);
+        .range([h, 0]);//height - 10
     svgT.append("g")
         .call(d3.axisLeft(y));
 
@@ -305,10 +324,10 @@ d3.csv(url, function(data) {
     // Animation
     /* Add 'curtain' rectangle to hide entire graph */
     var curtain = svgT.append('rect')
-        .attr('x', -1 * width)
-        .attr('y', -1 * height)
-        .attr('height', height)
-        .attr('width', width)
+        .attr('x', -1 * w)//width
+        .attr('y', -1 * h)//height
+        .attr('height', h)//height
+        .attr('width', w)//width
         .attr('class', 'curtain')
         .attr('transform', 'rotate(180)')
         .style('fill', '#ffffff');
@@ -321,7 +340,7 @@ d3.csv(url, function(data) {
         .attr('x1', 1)
         .attr('y1', 1)
         .attr('x2', 1)
-        .attr('y2', height)
+        .attr('y2', h)//height
 
     /* Create a shared transition for anything we're animating */
     var t = svgT.transition()
@@ -338,7 +357,7 @@ d3.csv(url, function(data) {
     t.select('rect.curtain')
         .attr('width', 0);
     t.select('line.guide')
-        .attr('transform', 'translate(' + width + ', 0)')
+        .attr('transform', 'translate(' + w + ', 0)')//width
 
     d3.select("#show_guideline").on("change", function(e) {
         guideline.attr('stroke-width', this.checked ? 1 : 0);
