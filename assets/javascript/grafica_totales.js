@@ -296,7 +296,7 @@ d3.csv(url, function(data) {
  //Leyenda
 var coordX =(x(x.domain()[1])-(margin.left+margin.right))*0.25,
 coordY =  y(y.domain()[1])+margin.top;
-offset=20;
+offset=30;
 
 //Leyenda susi_00
 svgT.append("line")
