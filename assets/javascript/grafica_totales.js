@@ -277,7 +277,7 @@ d3.csv(url, function(data) {
         .attr("x1", x(fase12))
         .attr("y1", y(y.domain()[0]))
         .attr("x2", x(fase12))
-        .attr("y2", y(y.domain()[1])+15)
+        .attr("y2", y(y.domain()[1])+20)
         .attr("stroke", "#000000") //fd7e14
         .style("stroke-width", 1)
         .style("fill", "none")
