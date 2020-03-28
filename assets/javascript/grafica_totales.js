@@ -119,7 +119,7 @@ var fase12=new Date(2020,2,23);
         .attr("d", d3.line()
           .x(function(d) { return x(d.Fecha) })
           .y(function(d) { return y(+d.México) })
-          .defined(function(d) {return d.México !== null; })
+          .defined(function(d) {return y(d.México) !== null; })
         )
         .attr("stroke", "#1f9bcf")
         .style("stroke-width", 3)
