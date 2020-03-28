@@ -146,7 +146,7 @@ var fase12=new Date(2020,2,23);
                         .attr("stroke", "#000000")
                         .style("stroke-width", 3)
                         .style("fill", "none") */
-/*    
+
 
     // Initialize dots with group a
     var dot = svgT.selectAll('circle')
