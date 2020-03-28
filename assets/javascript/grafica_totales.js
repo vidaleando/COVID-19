@@ -40,14 +40,11 @@ var svgT = d3.select("#grafica_totales")
     .attr("height", h_full)//height + margin.top + margin.bottom + 70)
     .append("g")
     .attr("transform",
-        "translate(" + (10 + margin.left) + "," + (margin.top) + ")");
+        "translate(" + (10 + margin.left) + "," 0 ")");//+ (margin.top) +
 
 //Read the data
 d3.csv(url, function(data) {
 
-    // List of groups (here I have one group per column)
-    var allGroup = ["Lineal", "Logarítmica"];
-    //var allGroupb = {Lineal:Mexico,"Logarítmica":Mexico_log10};
     var tope = data.length - 1;
 
     data.forEach(function(d) {
