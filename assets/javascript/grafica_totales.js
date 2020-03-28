@@ -215,83 +215,10 @@ d3.csv(url, function(data) {
                 .style("opacity", 0);
         });
 
-      //Puntos de predicción
 
-var dotP = svgT.selectAll('circle')
-        .data(data)
-        .enter()
-        .append('circle')
-        .attr("cx", function(d) {
-            return x(d.Fecha)
-        })
-        .attr("cy", function(d) {
-            return y(+d.Susana_00)
-        })
-        .attr("r", 2)
-        .attr("opacity",1)
-        .attr("visibility", function(d, i) {
-            if (d.Susana_00 == 0) return "hidden";
-        })
-        .style("fill", "#000000")
-        .on("mouseover", function(d) {
-            tip.transition()
-                .duration(200)
-                .style("opacity", 1);
-            tip.html("<h6>" + formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "</h6>" + " <p class='text-primary'>" + d.Susana_00 + "</p>")
-                .style("left", (d3.event.pageX) + "px")
-                .style("top", (d3.event.pageY - 30) + "px");
-        })
-        .on("mouseout", function(d) {
-            tip.transition()
-                .duration(500)
-                .style("opacity", 0);
-        });
 
-    // A function that update the chart
-    function update(selectedGroup) {
 
-        // Create new data with the selection?
-        var dataFilter = data.map(function(d) {
-            return {
-                time: d.time,
-                value: d[selectedGroup]
-            }
-        })
-
-        // Give these new data to update line
-        line
-            .datum(dataFilter)
-            .transition()
-            .duration(1000)
-            .attr("d", d3.line()
-                .x(function(d) {
-                    return x(+d.time)
-                })
-                .y(function(d) {
-                    return y(+d.value)
-                })
-            )
-        dot
-            .data(dataFilter)
-            .transition()
-            .duration(1000)
-            .attr("cx", function(d) {
-                return x(+d.time)
-            })
-            .attr("cy", function(d) {
-                return y(+d.value)
-            })
-    }
-
-    // When the button is changed, run the updateChart function
-    d3.select("#selectButton").on("change", function(d) {
-        // recover the option that has been chosen
-        var selectedOption = d3.select(this).property("value")
-        // run the updateChart function with this selected option
-        update(selectedOption)
-    })
-
-    //Añadde línea de fase 2
+    //Añade línea de fase 2
     var fase = svgT.append("line")
         .attr("x1", x(fase12))
         .attr("y1", y(y.domain()[0]))
