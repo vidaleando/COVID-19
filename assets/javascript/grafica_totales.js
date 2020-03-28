@@ -34,6 +34,9 @@ var tip = d3.select("#grafica_totales").append("div")
     .attr("class", "tip")
     .style("opacity", 0);
 
+    d3.select("#grafica_totales").append('style')
+    .text('svg {max-width:100%}')
+
 var svgT = d3.select("#grafica_totales")
     .append("svg")
     .attr("width", w_full)//weight + margin.left + margin.right + 0)
