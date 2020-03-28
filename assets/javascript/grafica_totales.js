@@ -318,7 +318,6 @@ svgT.append("line")
     .attr("y2",coordY+offset).style("fill", "#69b3a2")
     .attr("stroke", "#000000")
         .style("stroke-width", 1.5)
-        .style("stroke-dasharray","1,1")
         .style("fill", "none")
 svgT.append("text").attr("x", coordX).attr("y", coordY+offset).text("Susana_20").style("font-size", "10px").attr("alignment-baseline","middle")
 
