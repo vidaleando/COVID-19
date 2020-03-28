@@ -132,7 +132,6 @@ var fase12=new Date(2020,2,23);
       .append('circle')
         .attr("cx", function(d) { return x(d.Fecha) })
         .attr("cy", function(d) { return y(+d.México) })
-        .defined(function(d) { return d.México !== 0; })
         .attr("r", 5)
         .style("fill", "#1F9BCF")
         .on("mouseover", function(d) {    
