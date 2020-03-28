@@ -19,10 +19,10 @@
     }
 
     var margin = {
-            top: 50,
+            top: 0,
             right: 10,
             bottom: 40,
-            left: 180
+            left: 40
         },
    w = (w- (margin.left + margin.right) );
     h = (h - (margin.top + margin.bottom));
@@ -41,7 +41,7 @@ var svgT = d3.select("#grafica_totales")
     .attr("height", h_full)//height + margin.top + margin.bottom + 70)
     .append("g")
     .attr("transform",
-       "translate(0,0)"); //"translate(" + (10 + margin.left) + "," + (margin.top) + ")");
+    "translate(" + ( margin.left) + "," + (margin.top) + ")");
 
 //Read the data
 d3.csv(url, function(data) {
