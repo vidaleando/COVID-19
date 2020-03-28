@@ -185,7 +185,6 @@ d3.csv(url, function(data) {
         )
         .attr("stroke", "#000000")
         .style("stroke-width", 1)
-        .style("stroke-dasharray","10,10")
         .style("fill", "none")
     var line = svgT.append('g')
         .append("path")
@@ -200,6 +199,7 @@ d3.csv(url, function(data) {
         )
         .attr("stroke", "#000000")
         .style("stroke-width", 1)
+        .style("stroke-dasharray","10,10")
         .style("fill", "none")
 
 
