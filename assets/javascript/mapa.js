@@ -20,7 +20,7 @@ var navMap = d3.select("#mapa").append("div")
 var projection = d3.geoMercator()
     .center([-100, 22])
     .translate([w / 1.85, h / 1.7])
-    .scale([w / .7]);
+    .scale([w / .9]);
 
 //define path generator
 var path = d3.geoPath()
