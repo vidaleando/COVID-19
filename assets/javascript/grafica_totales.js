@@ -144,7 +144,7 @@ var fase12=new Date(2020,2,23);
                               .y(function(d) { return y(+d.Susana_50) })
                               )
                         .attr("stroke", "#000000")
-                        .style("stroke-width", 3)
+                        .style("stroke-width", 1)
                         .style("fill", "none") 
 
 
