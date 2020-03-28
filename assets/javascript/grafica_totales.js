@@ -308,7 +308,7 @@ svgT.append("line")
         .style("stroke-width", 1.5)
         .style("stroke-dasharray","1,1")
         .style("fill", "none")
-svgT.append("text").attr("x", coordX).attr("y", coordY).text("Susana_00").style("font-size", "10px").attr("alignment-baseline","middle")
+svgT.append("text").attr("x", coordX).attr("y", coordY).text("0% se auto-aisla").style("font-size", "10px").attr("alignment-baseline","middle")
 
 //Leyenda susi_20
 svgT.append("line")
@@ -319,7 +319,7 @@ svgT.append("line")
     .attr("stroke", "#000000")
         .style("stroke-width", 1.5)
         .style("fill", "none")
-svgT.append("text").attr("x", coordX).attr("y", coordY+offset).text("Susana_20").style("font-size", "10px").attr("alignment-baseline","middle")
+svgT.append("text").attr("x", coordX).attr("y", coordY+offset).text("20% se auto-aisla").style("font-size", "10px").attr("alignment-baseline","middle")
 
 //Leyenda susi_50
 svgT.append("line")
@@ -331,7 +331,7 @@ svgT.append("line")
         .style("stroke-width", 1.5)
         .style("stroke-dasharray","5,5")
         .style("fill", "none")
-svgT.append("text").attr("x", coordX).attr("y", coordY+2*offset).text("Susana_50").style("font-size", "10px").attr("alignment-baseline","middle")
+svgT.append("text").attr("x", coordX).attr("y", coordY+2*offset).text("50% se auto-aisla").style("font-size", "10px").attr("alignment-baseline","middle")
     // Animation
     /* Add 'curtain' rectangle to hide entire graph */
     var curtain = svgT.append('rect')
