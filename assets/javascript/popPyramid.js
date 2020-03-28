@@ -183,6 +183,8 @@ function pyramidBuilder(data, target, options) {
         .call(xAxisLeft)
         .selectAll("text")
         .style("text-anchor", "end")
+        .attr("dx", "-.8em")
+        .attr("dy", ".15em")
         .attr("transform", "rotate(-90)");;
 
     pyramid.append('g')
