@@ -213,7 +213,7 @@ d3.csv(url, function(data) {
             return y(+d.México)
         })
         .attr("r", 5)
-        .attr("opacity",0.5)
+        .attr("opacity",0.7)
         .attr("visibility", function(d, i) {
             if (d.México == 0) return "hidden";
         })
