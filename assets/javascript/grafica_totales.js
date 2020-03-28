@@ -19,7 +19,7 @@
     }
 
     var margin = {
-            top: 15,
+            top: 0,
             right: 10,
             bottom: 40,
             left: 40
