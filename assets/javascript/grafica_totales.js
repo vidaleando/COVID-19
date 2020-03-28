@@ -166,6 +166,7 @@ d3.csv(url, function(data) {
         )
         .attr("stroke", "#000000")
         .style("stroke-width", 1.5)
+        .style("stroke-dasharray","10,10")
         .style("fill", "none")
     var line = svgT.append('g')
         .append("path")
@@ -180,7 +181,6 @@ d3.csv(url, function(data) {
         )
         .attr("stroke", "#000000")
         .style("stroke-width", 1.5)
-        .style("stroke-dasharray","10,10")
         .style("fill", "none")
 
 
@@ -266,6 +266,7 @@ svgT.append("line")
     .attr("y2",coordY+offset).style("fill", "#69b3a2")
     .attr("stroke", "#000000")
         .style("stroke-width", 1.5)
+        .style("stroke-dasharray","5,5")
         .style("fill", "none")
 svgT.append("text").attr("x", coordX).attr("y", coordY+offset).text("20% se auto-aisla").style("font-size", "10px").attr("alignment-baseline","middle")
 
@@ -277,7 +278,6 @@ svgT.append("line")
     .attr("y2",coordY+2*offset).style("fill", "#69b3a2")
     .attr("stroke", "#000000")
         .style("stroke-width", 1.5)
-        .style("stroke-dasharray","5,5")
         .style("fill", "none")
 svgT.append("text").attr("x", coordX).attr("y", coordY+2*offset).text("50% se auto-aisla").style("font-size", "10px").attr("alignment-baseline","middle")
 
