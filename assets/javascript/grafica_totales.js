@@ -321,6 +321,17 @@ svgT.append("line")
         .style("fill", "none")
 svgT.append("text").attr("x", coordX).attr("y", coordY+offset).text("Susana_20").style("font-size", "10px").attr("alignment-baseline","middle")
 
+//Leyenda susi_50
+svgT.append("line")
+    .attr("x1",coordX-5)
+    .attr("y1",coordY+2*offset)
+    .attr("x2",coordX-20)
+    .attr("y2",coordY+2*offset).style("fill", "#69b3a2")
+    .attr("stroke", "#000000")
+        .style("stroke-width", 1.5)
+        .style("stroke-dasharray","5,5")
+        .style("fill", "none")
+svgT.append("text").attr("x", coordX).attr("y", coordY+2*offset).text("Susana_50").style("font-size", "10px").attr("alignment-baseline","middle")
     // Animation
     /* Add 'curtain' rectangle to hide entire graph */
     var curtain = svgT.append('rect')
