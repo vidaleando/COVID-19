@@ -289,7 +289,7 @@ d3.csv(url, function(data) {
         .attr("y", y(y.domain()[1])) //-0 - margin.left
         .attr("x", x(fase12) - 5)
         .attr("dy", "1em")
-        .style("text-anchor", "end")
+        .style("text-anchor", "middle")
         .text("Comienza la fase 2")
         .attr("stroke", "#000000")
         .attr("font-family", "sans-serif");
