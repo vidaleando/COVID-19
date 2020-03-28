@@ -236,7 +236,7 @@ var dotP = svgT.selectAll('circle')
         .on("mouseover", function(d) {
             tip.transition()
                 .duration(200)
-                .style("opacity", .9);
+                .style("opacity", 1);
             tip.html("<h6>" + formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "</h6>" + " <p class='text-primary'>" + d.Susana_00 + "</p>")
                 .style("left", (d3.event.pageX) + "px")
                 .style("top", (d3.event.pageY - 30) + "px");
