@@ -156,7 +156,7 @@ d3.csv(url, function(data) {
         )
         .attr("stroke", "#000000")
         .style("stroke-width", 1)
-        .style("stroke-dasharray","5,5")
+        .style("stroke-dasharray","1,1")
         .style("fill", "none")
         .on("mouseover", function(d) {
             tip.transition()
