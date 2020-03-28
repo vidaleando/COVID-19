@@ -300,7 +300,7 @@ d3.csv(url, function(data) {
     var curtain = svgT.append('rect')
         .attr('x', -1 * w)//width
         .attr('y', -1 * h)//height
-        .attr('height', h)//height
+        .attr('height', h+5)//height
         .attr('width', w)//width
         .attr('class', 'curtain')
         .attr('transform', 'rotate(180)')
