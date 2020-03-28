@@ -293,7 +293,20 @@ d3.csv(url, function(data) {
         .text("Comienza la fase 2")
         .attr("stroke", "#000000")
         .attr("font-family", "sans-serif");
+ //Leyenda
 
+svgT.append("line")
+    .attr("x1",200)
+    .attr("y1",y(y.domain()[1])-10)
+    .attr("x2",205)
+    .attr("y2",y(y.domain()[1])-10).style("fill", "#69b3a2")
+    .attr("stroke", "#000000")
+        .style("stroke-width", 1.5)
+        .style("stroke-dasharray","1,1")
+        .style("fill", "none")
+svgT.append("circle").attr("cx",200).attr("cy",160).attr("r", 6).style("fill", "#404080")
+svgT.append("text").attr("x", 220).attr("y", y(y.domain()[1])-10).text("Susana_00").style("font-size", "10px").attr("alignment-baseline","middle")
+svgT.append("text").attr("x", 220).attr("y", 160).text("variable B").style("font-size", "15px").attr("alignment-baseline","middle")
 
     // Animation
     /* Add 'curtain' rectangle to hide entire graph */
