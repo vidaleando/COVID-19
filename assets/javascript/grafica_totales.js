@@ -24,9 +24,8 @@
             bottom: 40,
             left: 10
         },
-        sectorWidth = (w / 2) - margin.middle,
-        leftBegin = sectorWidth - margin.left,
-        rightBegin = w - margin.right - sectorWidth;    
+   w = (w- (margin.left + margin.right) );
+    h = (h - (margin.top + margin.bottom));
 var url = "https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/proyecciones_04abril.csv";
 
 var tip = d3.select("#grafica_totales").append("div")
