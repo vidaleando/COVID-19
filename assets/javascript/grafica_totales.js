@@ -91,7 +91,7 @@ var fase12=new Date(2020,2,23);
 
     // Add Y axis      
     var y = d3.scaleLinear()
-    .domain( [0,d3.max(data, function(d){return d.Susana_00;  })])
+    .domain( [0,d3.max(data, function(d){return d.Susana_00;  })*1.1])
       .range([ height-10, 0 ]);
     svgT.append("g")
       .call(d3.axisLeft(y)) ;
