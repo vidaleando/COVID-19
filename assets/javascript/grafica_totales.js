@@ -19,9 +19,9 @@
     }
 
     var margin = {
-            top: 0,
+            top: 10,
             right: 10,
-            bottom: 45,
+            bottom: 40,
             left: 40
         },
    w = (w- (margin.left + margin.right) );
