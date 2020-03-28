@@ -314,7 +314,7 @@ d3.csv(url, function(data) {
         .attr('x1', 1)
         .attr('y1', 1)
         .attr('x2', 1)
-        .attr('y2', h)//height
+        .attr('y2', h_full)//height
 
     /* Create a shared transition for anything we're animating */
     var t = svgT.transition()
