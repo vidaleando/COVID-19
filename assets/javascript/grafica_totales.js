@@ -123,7 +123,7 @@ d3.csv(url, function(data) {
 
 
     // Initialize line with group a
-    var line = svgT
+ /*   var line = svgT
         .append('g')
         .append("path")
         .datum(data)
@@ -141,7 +141,7 @@ d3.csv(url, function(data) {
         .attr("stroke", "#1f9bcf")
         .style("stroke-width", 3)
         .style("fill", "none")
-
+*/
     // SUSANAS
     var line = svgT.append('g')
         .append("path")
