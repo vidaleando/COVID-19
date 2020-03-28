@@ -213,6 +213,32 @@ d3.csv(url, function(data) {
             tip.transition()
                 .duration(500)
                 .style("opacity", 0);
+        })
+        .append('circle')
+        .attr("cx", function(d) {
+            return x(d.Fecha)
+        })
+        .attr("cy", function(d) {
+            return y(+d.Susana_00)
+        })
+        .attr("r", 2)
+        .attr("opacity",1)
+        .attr("visibility", function(d, i) {
+            if (d.Susana_00 == 0) return "hidden";
+        })
+        .style("fill", "#000000")
+        .on("mouseover", function(d) {
+            tip.transition()
+                .duration(200)
+                .style("opacity", 0.9);
+            tip.html("<h6>" + formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "</h6>" + " <p class='text-primary'>" + d.Susana_00 + "</p>")
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 30) + "px");
+        })
+        .on("mouseout", function(d) {
+            tip.transition()
+                .duration(500)
+                .style("opacity", 0);
         });
 
 
