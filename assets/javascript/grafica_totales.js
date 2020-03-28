@@ -64,7 +64,7 @@ d3.csv(url, function(data) {
     // Add X axis --> it is a date format
     var x = d3.scaleTime()
         .domain([mindate, data[tope]['Fecha']])
-        .range([0, w_full]);//width - 10]);
+        .range([0, w]);//width - 10]);
 
 
     svgT.append("g")
@@ -96,7 +96,7 @@ d3.csv(url, function(data) {
         .domain([0, d3.max(data, function(d) {
             return +d.Susana_00;
         }) * 1.1])
-        .range([h_full, 0]);//height - 10
+        .range([h, 0]);//height - 10
     svgT.append("g")
         .call(d3.axisLeft(y));
 
