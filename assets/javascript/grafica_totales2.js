@@ -25,6 +25,7 @@ d3.queue()
   .await(grafica);
 
 function grafica(error,dataL,dataB) {
+  console.log(dataL);
   console.log(dataL.Fecha);
   console.log(dataL.México);
     dataL.forEach(function(d) {
