@@ -298,7 +298,7 @@ d3.csv(url, function(data) {
     // Animation
     /* Add 'curtain' rectangle to hide entire graph */
     var curtain = svgT.append('rect')
-        .attr('x', -1 * (w+3))//width
+        .attr('x', -1 * (w+30))//width
         .attr('y', -1 * h)//height
         .attr('height', h+5)//height
         .attr('width', w)//width
