@@ -123,7 +123,30 @@ var fase12=new Date(2020,2,23);
         )
         .attr("stroke", "#1f9bcf")
         .style("stroke-width", 3)
-        .style("fill", "none")
+        .style("fill", "none");
+
+    // SUSANAS
+          var line = svgT.append('g')
+                        .append("path")
+                        .datum(data)
+                        .attr("d", d3.line()
+                              .x(function(d) { return x(d.Fecha) })
+                              .y(function(d) { return y(+d.Susana_00) })
+                              )
+                        .attr("stroke", "#000000")
+                        .style("stroke-width", 3)
+                        .style("fill", "none");    
+          var line = svgT.append('g')
+                        .append("path")
+                        .datum(data)
+                        .attr("d", d3.line()
+                              .x(function(d) { return x(d.Fecha) })
+                              .y(function(d) { return y(+d.Susana_50) })
+                              )
+                        .attr("stroke", "#000000")
+                        .style("stroke-width", 3)
+                        .style("fill", "none")
+/*    
 
     // Initialize dots with group a
     var dot = svgT.selectAll('circle')
@@ -204,6 +227,31 @@ var fase12=new Date(2020,2,23);
       .text("Comienza la fase 2")
       .attr("stroke", "#000000")
       .attr("font-family","sans-serif");           
+
+ // Line for proyecciones
+
+  // date for proyecciones
+  var fecha_proyecciones = new Date(2020, 02, 26);
+
+  var fase = svgT.append("line")
+                .attr("x1", x(fecha_proyecciones))
+                .attr("y1", y(y.domain()[0]))
+                .attr("x2", x(fecha_proyecciones))
+                .attr("y2", y(y.domain()[1]))
+                .attr("stroke", "#000000") //fd7e14
+                .style("stroke-width", 1)
+                .style("fill", "none")
+                .style("stroke-dasharray", "5,5") ;
+
+  // text proyecciones
+  svgT.append("text")
+      .attr("y",y(y.domain()[1])+20)
+      .attr("x",x(fecha_proyecciones)-5)
+      .attr("dy", "1em")
+      .style("text-anchor", "end")
+      .text("Proyecciones")
+      .attr("stroke", "#000000")
+      .attr("font-family","sans-serif");
 
 // Animation
   /* Add 'curtain' rectangle to hide entire graph */
