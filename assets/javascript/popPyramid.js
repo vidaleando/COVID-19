@@ -182,7 +182,7 @@ function pyramidBuilder(data, target, options) {
         .attr('transform', translation(0, h))
         .call(xAxisLeft)
         .selectAll("text")
-        .attr("transform", "rotate(-65)");;
+        .attr("transform", "rotate(-90)");;
 
     pyramid.append('g')
         .attr('class', 'axis x right')
