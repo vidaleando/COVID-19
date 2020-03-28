@@ -152,7 +152,6 @@ d3.csv(url, function(data) {
         .style("stroke-dasharray","1,1")
         .style("fill", "none")
         .on("mouseover", function(d) {
-          console.log("hey");
             tip.transition()
                 .duration(200)
                 .style("opacity", .9);
@@ -197,7 +196,7 @@ d3.csv(url, function(data) {
         .style("fill", "none")
 
 
-    // Initialize dots with group a
+    // Puntos de datos
     var dot = svgT.selectAll('circle')
         .data(data)
         .enter()
@@ -228,6 +227,37 @@ d3.csv(url, function(data) {
                 .style("opacity", 0);
         });
 
+      //Puntos de predicción
+
+var dotP = svgT.selectAll('circle')
+        .data(data)
+        .enter()
+        .append('circle')
+        .attr("cx", function(d) {
+            return x(d.Fecha)
+        })
+        .attr("cy", function(d) {
+            return y(+d.Susana_00)
+        })
+        .attr("r", 2)
+        .attr("opacity",1)
+        .attr("visibility", function(d, i) {
+            if (d.Susana_00 == 0) return "hidden";
+        })
+        .style("fill", "#000000")
+        .on("mouseover", function(d) {
+            tip.transition()
+                .duration(200)
+                .style("opacity", .9);
+            tip.html("<h6>" + formatDay(d.Fecha) + "/" + formatMonth(d.Fecha) + "</h6>" + " <p class='text-primary'>" + d.Susana_00 + "</p>")
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 30) + "px");
+        })
+        .on("mouseout", function(d) {
+            tip.transition()
+                .duration(500)
+                .style("opacity", 0);
+        });
 
     // A function that update the chart
     function update(selectedGroup) {
