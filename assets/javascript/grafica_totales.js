@@ -213,7 +213,12 @@ d3.csv(url, function(data) {
             tip.transition()
                 .duration(500)
                 .style("opacity", 0);
-        })
+        });
+
+        
+        svgT.selectAll('circle')
+        .data(data)
+        .enter()
         .append('circle')
         .attr("cx", function(d) {
             return x(d.Fecha)
