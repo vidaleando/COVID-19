@@ -21,7 +21,7 @@
     var margin = {
             top: 10,
             right: 10,
-            bottom: 0,
+            bottom: 10,
             left: 10
         },
         sectorWidth = (w / 2) - margin.middle,
@@ -107,7 +107,7 @@ d3.csv(url, function(data) {
         .domain([0, d3.max(data, function(d) {
             return +d.Susana_00;
         }) * 1.1])
-        .range([h, 0]);//height - 10
+        .range([h-(margin.top+margin.bottom), 0]);//height - 10
     svgT.append("g")
         .call(d3.axisLeft(y));
 
