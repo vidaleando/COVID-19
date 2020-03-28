@@ -22,7 +22,7 @@
             top: 50,
             right: 10,
             bottom: 40,
-            left: 10
+            left: -30
         },
    w = (w- (margin.left + margin.right) );
     h = (h - (margin.top + margin.bottom));
