@@ -4,7 +4,7 @@ var margin = {top: 10, right: 10, bottom: 0, left: 30},
     height = 400 - margin.top - margin.bottom; */
     width=$("#grafica_totales").width(),
     height=width/1.5;
-var url="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/series_tiempo/covid19_mex_casos_totales.csv";
+var url="https://raw.githubusercontent.com/LeonardoCastro/COVID19-Mexico/master/data/proyecciones_04abril.csv";
 
 var tip = d3.select("#grafica_totales").append("div") 
     .attr("class", "tip")       
