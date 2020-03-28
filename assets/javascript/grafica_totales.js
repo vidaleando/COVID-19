@@ -22,7 +22,7 @@
             top: 50,
             right: 10,
             bottom: 40,
-            left: 70
+            left: 180
         },
    w = (w- (margin.left + margin.right) );
     h = (h - (margin.top + margin.bottom));
@@ -98,7 +98,6 @@ d3.csv(url, function(data) {
       .text("Fecha");
 */
     var fase12 = new Date(2020, 2, 23);
-
 
 
     // Add Y axis      
