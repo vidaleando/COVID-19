@@ -305,7 +305,7 @@ svgT.append("line")
         .style("stroke-dasharray","1,1")
         .style("fill", "none")
 svgT.append("circle").attr("cx",200).attr("cy",160).attr("r", 6).style("fill", "#404080")
-svgT.append("text").attr("x", x(x.domain()[1])-margin.left).attr("y", y(y.domain()[1])+margin.top).text("Susana_00").style("font-size", "10px").attr("alignment-baseline","middle")
+svgT.append("text").attr("x", x(x.domain()[1])-(margin.left+margin.right)).attr("y", y(y.domain()[1])+margin.top).text("Susana_00").style("font-size", "10px").attr("alignment-baseline","middle")
 svgT.append("text").attr("x", 220).attr("y", 160).text("variable B").style("font-size", "15px").attr("alignment-baseline","middle")
 
     // Animation
