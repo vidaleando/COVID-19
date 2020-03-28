@@ -295,7 +295,7 @@ d3.csv(url, function(data) {
         .attr("font-family", "sans-serif");
  //Leyenda
 var coordX =(x(x.domain()[1])-(margin.left+margin.right))*0.25,
-coordY =  (y(y.domain()[1])+margin.top)*0.7;
+coordY =  (y(y.domain()[1])+margin.top)*0.5;
 offset=20;
 
 //Leyenda susi_00
