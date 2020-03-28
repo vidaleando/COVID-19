@@ -299,7 +299,7 @@ coordY =  y(y.domain()[1])+margin.top;
 svgT.append("line")
     .attr("x1",coordX-5)
     .attr("y1",coordY)
-    .attr("x2",coordX-15)
+    .attr("x2",coordX-20)
     .attr("y2",coordY).style("fill", "#69b3a2")
     .attr("stroke", "#000000")
         .style("stroke-width", 1.5)
