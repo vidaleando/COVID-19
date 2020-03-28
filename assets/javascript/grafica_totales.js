@@ -9,7 +9,7 @@
     //height = 400 - margin.top - margin.bottom; 
     width = $("#grafica_totales").width(),
     height = width / 1.5;*/
-    var w = 460,
+    var w = 600,
         h = 400,
         w_full = w,
         h_full = h;
