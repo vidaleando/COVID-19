@@ -296,9 +296,9 @@ d3.csv(url, function(data) {
  //Leyenda
 
 svgT.append("line")
-    .attr("x1",200)
+    .attr("x1",(x(x.domain()[1])-(margin.left+margin.right))*0.8-5)
     .attr("y1",y(y.domain()[1])-10)
-    .attr("x2",205)
+    .attr("x2",(x(x.domain()[1])-(margin.left+margin.right))*0.8-15)
     .attr("y2",y(y.domain()[1])-10).style("fill", "#69b3a2")
     .attr("stroke", "#000000")
         .style("stroke-width", 1.5)
