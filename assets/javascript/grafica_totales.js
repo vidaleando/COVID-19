@@ -51,20 +51,6 @@ d3.csv(url, function(data) {
         d.Fecha = new Date(d.Fecha);
         d.México = +d.México;
     });
-    //console.log(allGroupb);
-    // add the options to the button
-    d3.select("#selectButton")
-        .selectAll('myOptions')
-        .data(allGroup)
-        .enter()
-        .append('option')
-        .text(function(d) {
-            return d;
-        }) // text showed in the menu
-        .attr("value", function(d) {
-            return d;
-        }) // corresponding value returned by the button
-
 
     // define the x scale (horizontal)
 
