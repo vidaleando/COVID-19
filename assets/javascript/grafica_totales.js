@@ -295,7 +295,10 @@ d3.csv(url, function(data) {
         .attr("font-family", "sans-serif");
  //Leyenda
 var coordX =(x(x.domain()[1])-(margin.left+margin.right))*0.85,
-coordY =  y(y.domain()[1])+margin.top;
+coordY =  y(y.domain()[1])+margin.,
+offset=20;
+
+//Leyenda susi_00
 svgT.append("line")
     .attr("x1",coordX-5)
     .attr("y1",coordY)
@@ -305,9 +308,19 @@ svgT.append("line")
         .style("stroke-width", 1.5)
         .style("stroke-dasharray","1,1")
         .style("fill", "none")
-svgT.append("circle").attr("cx",200).attr("cy",160).attr("r", 6).style("fill", "#404080")
 svgT.append("text").attr("x", coordX).attr("y", coordY).text("Susana_00").style("font-size", "10px").attr("alignment-baseline","middle")
-svgT.append("text").attr("x", 220).attr("y", 160).text("variable B").style("font-size", "15px").attr("alignment-baseline","middle")
+
+//Leyenda susi_20
+svgT.append("line")
+    .attr("x1",coordX-5)
+    .attr("y1",coordY-offset)
+    .attr("x2",coordX-20)
+    .attr("y2",coordY-offset).style("fill", "#69b3a2")
+    .attr("stroke", "#000000")
+        .style("stroke-width", 1.5)
+        .style("stroke-dasharray","1,1")
+        .style("fill", "none")
+svgT.append("text").attr("x", coordX).attr("y", coordY-offset).text("Susana_20").style("font-size", "10px").attr("alignment-baseline","middle")
 
     // Animation
     /* Add 'curtain' rectangle to hide entire graph */
