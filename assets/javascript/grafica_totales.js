@@ -123,7 +123,7 @@ var fase12=new Date(2020,2,23);
         )
         .attr("stroke", "#1f9bcf")
         .style("stroke-width", 3)
-        .style("fill", "none");
+        .style("fill", "none")
 
     // SUSANAS
           var line = svgT.append('g')
@@ -135,7 +135,7 @@ var fase12=new Date(2020,2,23);
                               )
                         .attr("stroke", "#000000")
                         .style("stroke-width", 3)
-                        .style("fill", "none");    
+                        .style("fill", "none")    
           var line = svgT.append('g')
                         .append("path")
                         .datum(data)
