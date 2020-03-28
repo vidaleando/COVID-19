@@ -126,7 +126,7 @@ var fase12=new Date(2020,2,23);
         .style("fill", "none")
 
     // SUSANAS
-  /*        var line = svgT.append('g')
+          var line = svgT.append('g')
                         .append("path")
                         .datum(data)
                         .attr("d", d3.line()
@@ -134,9 +134,9 @@ var fase12=new Date(2020,2,23);
                               .y(function(d) { return y(+d.Susana_00) })
                               )
                         .attr("stroke", "#000000")
-                        .style("stroke-width", 3)
+                        .style("stroke-width", 1)
                         .style("fill", "none")    
-          var line = svgT.append('g')
+        /*  var line = svgT.append('g')
                         .append("path")
                         .datum(data)
                         .attr("d", d3.line()
