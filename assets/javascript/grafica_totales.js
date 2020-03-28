@@ -19,11 +19,10 @@
     }
 
     var margin = {
-            top: 50,
+            top: 10,
             right: 10,
-            bottom: 40,
-            left: 10,
-            middle: 20
+            bottom: 0,
+            left: 10
         },
         sectorWidth = (w / 2) - margin.middle,
         leftBegin = sectorWidth - margin.left,
